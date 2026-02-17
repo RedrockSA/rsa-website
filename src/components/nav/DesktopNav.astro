@@ -1,0 +1,78 @@
+---
+import { navItems } from './navData';
+import NavLogo from './NavLogo.astro';
+import ChevronDown from './icons/ChevronDown.astro';
+import ChevronRight from './icons/ChevronRight.astro';
+
+const leftItems = navItems.filter((item) => item.group === 'left');
+const rightItems = navItems.filter((item) => item.group === 'right');
+---
+<nav class="hidden nav-desktop:block" aria-label="Main navigation">
+  <!-- Top bar -->
+  <div class="container-wide flex items-center justify-center gap-10 h-[85px]" style="transition: height 0.3s ease;">
+    <!-- Left menu -->
+    <ul class="flex items-center gap-8">
+      {leftItems.map((item) => (
+        <li>
+          {item.children ? (
+            <a
+              href={item.href}
+              class="nav-link flex items-center gap-1"
+              style="text-transform: uppercase;"
+              data-nav-item={item.label}
+            >
+              {item.label}
+              <ChevronDown class="w-3.5 h-3.5 transition-transform duration-200" />
+            </a>
+          ) : (
+            <a href={item.href} class="nav-link" style="text-transform: uppercase;">{item.label}</a>
+          )}
+        </li>
+      ))}
+    </ul>
+
+    <!-- Center logo -->
+    <NavLogo />
+
+    <!-- Right menu -->
+    <ul class="flex items-center gap-8">
+      {rightItems.map((item) => (
+        <li>
+          {item.children ? (
+            <a
+              href={item.href}
+              class="nav-link flex items-center gap-1"
+              style="text-transform: uppercase;"
+              data-nav-item={item.label}
+            >
+              {item.label}
+              <ChevronDown class="w-3.5 h-3.5 transition-transform duration-200" />
+            </a>
+          ) : (
+            <a href={item.href} class="nav-link" style="text-transform: uppercase;">{item.label}</a>
+          )}
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <!-- Shared dropdown panel -->
+  <div
+    id="desktop-dropdown"
+    class="overflow-hidden transition-all duration-300 bg-white border-t border-secondary-200"
+    style="max-height: 0;"
+  >
+    <div class="container-wide flex py-10">
+      <!-- Parent link column -->
+      <div class="w-1/4 pr-8 border-r border-secondary-200 flex items-center justify-center">
+        <a id="dropdown-parent-link" href="#" class="text-xl font-semibold" style="color: #000; text-decoration: none; transition: all 0.2s;">
+          Parent
+        </a>
+      </div>
+      <!-- Sub-items grid -->
+      <div id="dropdown-items" class="flex-1 pl-8 grid gap-0">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </div>
+</nav>

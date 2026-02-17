@@ -1,0 +1,150 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Contact | Redrock Strategic Advisors" description="Get in touch with Redrock Strategic Advisors.">
+
+  <!-- Hero section -->
+  <section
+    class="relative bg-cover bg-center bg-no-repeat"
+    style="height: 60vh; background-image: url('/iStock-2251646674-Adj.jpg');"
+  >
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
+      <h1 class="text-white mb-4">Contact Us</h1>
+      <p class="text-xl max-w-2xl text-white/90">We'd love to hear from you.</p>
+    </div>
+  </section>
+
+  <main class="container-narrow py-16" style="min-height: 60vh;">
+    <h2 class="text-4xl font-bold text-secondary-900 mb-6">Let's Connect.</h2>
+
+    <p class="text-lg text-secondary-700 leading-relaxed mb-8">
+      Redrock Strategic Advisors welcomes an opportunity to learn about your business, explore a potential transaction, or simply share ideas. If you’re looking for someone specific at Redrock, or have a general inquiry, please feel free to reach out below or email us at <a href="mailto:advisors@redrocksa.com" class="text-[#C80026] underline">advisors@redrocksa.com</a>.
+    </p>
+
+    <h2 class="text-lg font-semibold text-secondary-800 mb-8">You can use the following for a general inquiry:</h2>
+
+    <form
+      action="https://formsubmit.co/advisors@redrocksa.com"
+      method="POST"
+      class="contact-form"
+    >
+      <!-- FormSubmit.co configuration -->
+      <input type="hidden" name="_subject" value="New Contact Inquiry from RSA Website" />
+      <input type="hidden" name="_captcha" value="true" />
+      <input type="hidden" name="_template" value="table" />
+
+      <div class="form-grid">
+        <div class="form-field">
+          <label for="first-name">FIRST NAME*</label>
+          <input type="text" id="first-name" name="First Name" required />
+        </div>
+
+        <div class="form-field">
+          <label for="last-name">LAST NAME*</label>
+          <input type="text" id="last-name" name="Last Name" required />
+        </div>
+
+        <div class="form-field">
+          <label for="company">COMPANY*</label>
+          <input type="text" id="company" name="Company" required />
+        </div>
+
+        <div class="form-field">
+          <label for="title">TITLE*</label>
+          <input type="text" id="title" name="Title" required />
+        </div>
+
+        <div class="form-field">
+          <label for="email">EMAIL*</label>
+          <input type="email" id="email" name="Email" required />
+        </div>
+
+        <div class="form-field">
+          <label for="phone">PHONE NUMBER</label>
+          <input type="tel" id="phone" name="Phone Number" />
+        </div>
+
+        <div class="form-field full-width">
+          <label for="inquiry">YOUR INQUIRY*</label>
+          <textarea id="inquiry" name="Inquiry" rows="4" required></textarea>
+        </div>
+      </div>
+
+      <div class="flex justify-end mt-8">
+        <button type="submit" class="submit-btn">SUBMIT REQUEST</button>
+      </div>
+    </form>
+  </main>
+</BaseLayout>
+
+<style>
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .form-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .form-field.full-width {
+    grid-column: 1 / -1;
+  }
+
+  .form-field label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: #64748b;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-field input,
+  .form-field textarea {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #cbd5e1;
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    color: #1e293b;
+    background: transparent;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .form-field input:focus,
+  .form-field textarea:focus {
+    border-bottom-color: #C80026;
+  }
+
+  .form-field textarea {
+    border: 1px solid #cbd5e1;
+    padding: 0.75rem;
+    resize: vertical;
+  }
+
+  .form-field textarea:focus {
+    border-color: #C80026;
+  }
+
+  .submit-btn {
+    background-color: #C80026;
+    color: white;
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: 0.08em;
+    padding: 0.75rem 2rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .submit-btn:hover {
+    background-color: #a30020;
+  }
+</style>

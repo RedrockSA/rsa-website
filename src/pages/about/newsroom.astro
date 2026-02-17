@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const allNews = await getCollection('news');
+const sortedNews = allNews.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+---
+
+<BaseLayout title="Newsroom | Redrock Strategic Advisors" description="Company news and events from Redrock Strategic Advisors.">
+
+  <!-- Hero section -->
+  <section
+    class="relative bg-cover bg-center bg-no-repeat"
+    style="height: 50vh; background-image: url('/RedrockCanyon.jpg');"
+  >
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
+      <h1 class="text-white mb-4">Newsroom</h1>
+      <p class="text-xl max-w-2xl text-white/90">Company News, Proprietary Research & Events</p>
+    </div>
+  </section>
+
+  <main class="container-narrow py-16" style="min-height: 50vh;">
+    <h2 class="text-4xl font-bold text-secondary-900 mb-10">Company News, Research & Events</h2>
+
+    <ul class="space-y-10">
+      {sortedNews.map((article) => {
+        const date = new Date(article.data.date);
+        const formatted = date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+        return (
+          <li class="border-b border-gray-200 pb-8">
+            <p class="text-xl font-bold text-secondary-900">{article.data.title}</p>
+            <p class="text-sm text-secondary-500 mt-1">{formatted}</p>
+            <p class="text-secondary-700 mt-2">{article.data.description}</p>
+            <a href={`/about/newsroom/${article.slug}`} class="text-[#C80026] text-sm mt-2 inline-block">Read more...</a>
+          </li>
+        );
+      })}
+    </ul>
+  </main>
+</BaseLayout>

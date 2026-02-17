@@ -1,0 +1,70 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface CTA {
+  text: string;
+  href: string;
+  style: 'primary' | 'secondary';
+}
+
+interface Hero {
+  heading: string;
+  subheading?: string;
+  backgroundImage: string;
+  cta?: CTA[];
+  height?: string;
+}
+
+interface Props {
+  title: string;
+  description?: string;
+  hero?: Hero;
+  pageWidth?: 'narrow' | 'wide';
+  showTitle?: boolean;
+}
+
+const {
+  title,
+  description = 'Redrock Strategic Advisors',
+  hero,
+  pageWidth = 'wide',
+  showTitle = true,
+} = Astro.props;
+
+const containerClass = pageWidth === 'narrow' ? 'container-narrow' : 'container-wide';
+const hasHero = !!hero;
+---
+
+<BaseLayout title={`${title} | Redrock Strategic Advisors`} description={description}>
+  {hasHero && (
+    <section
+      class="relative bg-cover bg-center bg-no-repeat"
+      style={`height: ${hero!.height || '60vh'}; background-image: url('${hero!.backgroundImage}');`}
+    >
+      <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
+        <h1 class="text-white mb-4">{hero!.heading}</h1>
+        {hero!.subheading && (
+          <p class="text-xl max-w-2xl mb-8 text-white/90">{hero!.subheading}</p>
+        )}
+        {hero!.cta && hero!.cta.length > 0 && (
+          <div class="flex gap-4">
+            {hero!.cta.map((btn) => (
+              <a href={btn.href} class={btn.style === 'secondary' ? 'btn-secondary' : 'btn-primary'}>
+                {btn.text}
+              </a>
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
+  )}
+
+  {!hasHero && <div style="padding-top: 120px;"></div>}
+
+  <main class={`${containerClass} py-16`} style="min-height: 60vh;">
+    {!hasHero && showTitle && <h1 class="mb-8">{title}</h1>}
+    <div class="prose prose-lg max-w-none">
+      <slot />
+    </div>
+  </main>
+</BaseLayout>

@@ -1,0 +1,133 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// HERO SETTINGS — adjust these to change the hero section
+const heroHeading = "Mergers & Acquisitions";
+const heroSubheading = "";
+const heroImage = "/iStock-2166651330.jpg";
+const heroHeight = "50vh";
+---
+
+<BaseLayout title="Mergers & Acquisitions | Redrock Strategic Advisors" description="Comprehensive M&A advisory services from start to through completion.">
+
+  <!-- Hero section — change heroHeight above to adjust -->
+  <section
+    class="relative bg-cover bg-center bg-no-repeat"
+    style={`height: ${heroHeight}; background-image: url('${heroImage}');`}
+  >
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
+      <h1 class="text-white mb-4">{heroHeading}</h1>
+      {heroSubheading && (
+        <p class="text-xl max-w-2xl text-white/90">{heroSubheading}</p>
+      )}
+    </div>
+  </section>
+
+  <main class="container-narrow py-16" style="min-height: 60vh;">
+
+    <div class="prose prose-lg max-w-none">
+      <h3>Redrock Strategic Advisors provides comprehensive merger &amp; acquisitions advisory services for founders, families and institutional investor groups.</h3>
+
+      <p><strong>Redrock</strong> leverages decades of experience to understand shareholder objectives and market dynamics, and design and execute a corresponding transaction strategy to achieve an ideal outcome for ownership.</p>
+
+      <p>Whether looking for a liquidity event, acquisitions or an ownership succession, <strong>Redrock</strong> guides its clients through every step of the process from <strong>start to completion</strong>. We provide a comprehensive set of M&A advisory services including buy and sell-side advisory, divestitures, management buyouts, and generational ownership transitions.</p>
+    </div>
+
+    <!-- Sell-Side Advisory — quote on LEFT -->
+    <hr class="my-12 border-secondary-200" />
+    <div class="flex flex-col md:flex-row gap-8 items-stretch">
+      <div class="md:w-1/3 shrink-0 overflow-hidden">
+        <img src="/iStock-2206368893.jpg" alt="Sell-side advisory" class="w-full h-full object-cover object-center" />
+      </div>
+      <div class="md:w-2/3 prose prose-lg max-w-none">
+
+        <h3>Sell-Side M&A Advisory</h3>
+        <p>We are a full-service M&A sell-side advisor, providing our experience and advice throughout the transaction process. While we have broad industry experience and relationships, <strong>we focus on aligning our extensive transaction expertise with our client's unsurpassed knowledge of their business and marketplace, to drive a successful outcome.</strong></p>
+        <p>Our sell-side advisory services are centered on supporting the entire transaction process, including:</p>
+        <ul>
+          <li><em>Prepare for all aspects of a potential transaction and help manage and work with our clients' broader professional deal team.</em></li>
+          <li><em>Identify, manage and confidentially engage with the right buyer universe.</em></li>
+          <li><em>Educate and coach management &amp; ownership teams at every stage of the process.</em></li>
+          <li><em>Structure and negotiate with counterparties and on a transaction.</em></li>
+          <li><em>Support through all counterparty due diligence efforts.</em></li>
+          <li><em>Guide our client through closing and transition activities</em></li>
+        </ul>
+        <p>Redrock works tirelessly with clients to develop and execute an M&A strategy to maximize the transaction outcome.</p>
+      </div>
+    </div>
+
+    <!-- Buy-Side Advisory — quote on RIGHT -->
+    <hr class="my-12 border-secondary-200" />
+    <div class="flex flex-col md:flex-row-reverse gap-8 items-center">
+      <div class="md:w-1/3 shrink-0 flex items-center justify-center">
+        <div class="bg-secondary-50 border-r-4 border-secondary-700 p-6 rounded-l-lg">
+          <p class="text-secondary-800 italic text-lg leading-relaxed text-center">"It's far better to buy a wonderful company at a fair price than a fair company at a wonderful price." 
+		<br>- <a href="https://berkshirehathaway.com/letters/1989.html#:~:text=It%27s%20far%20%0Abetter%20to%20buy%20a%20wonderful%20company%20at%20a%20fair%20price%20than%20a%20fair%20%		0Acompany%20at%20a%20wonderful%20price">Warren Buffett</a></br>
+	<br></br>
+	<p class="text-secondary-800 italic text-lg leading-relaxed text-center">Successful M&A growth strategies require a clear plan, consistent approach, discipline to the thesis, and excellent follow-through.</p>
+	<br></br>
+</p>
+
+        </div>
+      </div>
+      <div class="md:w-2/3 prose prose-lg max-w-none">
+        <h3>Buy-Side M&A Advisory</h3>
+        <p><strong>Redrock</strong> advises our clients on targeted and aggressive buy-side merger &amp; acquisition engagements. We work with our clients to:</p>
+        <ul>
+          <li><em>Develop a compelling and actionable acquisition-growth thesis and plan.</em></li>
+          <li><em>Identify, screen and initiate discussions with potential targets.</em></li>
+          <li><em>Manage discussions and relationships with each target.</em></li>
+          <li><em>Support with valuation and capital solutions.</em></li>
+          <li><em>Coordinate advisor networks to streamline due diligence efforts.</em></li>
+          <li><em>Deal structuring and negotiation support.</em></li>
+        </ul>
+        <p><strong>Redrock</strong> is focused on working with clients to develop the right path to closing and providing post-transaction strategic support.</p>
+      </div>
+    </div>
+
+    <!-- Management Buyouts — quote on LEFT -->
+    <hr class="my-12 border-secondary-200" />
+    <div class="flex flex-col md:flex-row gap-8 items-center">
+      <div class="md:w-1/3 shrink-0 flex items-center justify-center">
+        <div class="bg-primary-50 border-l-4 border-primary-900 p-6 rounded-r-lg">
+          <p class="text-primary-900 italic text-lg leading-relaxed text-center">"Navigating ownership transitions requires trust, experience, and a thoughtful approach."</p>
+        </div>
+      </div>
+      <div class="md:w-2/3 prose prose-lg max-w-none">
+        <h3>Management Buyouts &amp; Generational Transfers</h3>
+        <p>We actively work with owners who are considering a transaction that hands a larger ownership position to the next generation or current management team. We have a track record of working cooperatively with owners as they navigate the right exit and structure that meets their valuation and transaction objectives. <strong>Redrock</strong> routinely works through a full consideration of this alternative in conjunction with the exploration of other liquidity options for their ownership.</p>
+      </div>
+    </div>
+
+    <!-- Why Redrock -->
+    <hr class="my-12 border-secondary-200" />
+    <div class="prose prose-lg max-w-none">
+      <h2>Why Redrock?</h2>
+      <p><strong>Redrock</strong> is a results-driven advisor focused on providing senior-level execution with a highly capable team to ensure an exciting result. Our team has closed over 100 transactions representing more than $5.5B in transaction volume across a wide range of industries and deal sizes. <strong>Redrock</strong> works with a limited number of clients at a time, advising founders, families and institutional investors with global investment banking intensity but with the personalized attention and relationship-focus of a boutique firm.</p>
+    </div>
+
+    <div class="text-center mt-10">
+      <a href="/contact" class="submit-btn" style="text-decoration: none;">Let's Connect.</a>
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .submit-btn {
+    display: inline-block;
+    background-color: #C80026;
+    color: white;
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: 0.08em;
+    padding: 0.75rem 2rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .submit-btn:hover {
+    background-color: #a30020;
+    color: white;
+  }
+</style>

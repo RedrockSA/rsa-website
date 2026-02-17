@@ -1,0 +1,155 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+// =====================================================================
+//  INSIGHTS PAGE DATA — Edit these arrays to update page content.
+//  Add new items at the TOP of each array so newest appear first.
+// =====================================================================
+
+// COMPANY NEWS & EVENTS — auto-pulled from src/content/news/ (latest 4)
+const allNews = await getCollection('news');
+const companyNews = allNews
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+  .slice(0, 4)
+  .map((article) => ({
+    headline: article.data.title,
+    link: `/about/newsroom/${article.slug}`,
+    linkText: "Read More",
+  }));
+
+// WHAT WE'RE READING (max 10 shown)
+//   title : book title
+//   author: author name
+//   cover : image path — put file in /public/books/ and reference as "/books/filename.png"
+//   url   : link for both the cover image and "Read it too" (e.g. Amazon)
+const books = [
+  { title: "Critical Chain.", author: "Eliyahu M. Goldratt", cover: "/books/CriticalChain.png", url: "https://www.amazon.com/Critical-Chain-Eliyahu-M-Goldratt/dp/0884271536" },
+  { title: "The Thinking Machine.", author: "Stephen Witt", cover: "/books/TheThinkingMachine.png", url: "https://www.amazon.com/Thinking-Machine-Jensen-Coveted-Microchip/dp/B0D47TP8KT" },
+  { title: "Salt: A World History.", author: "Mark Kurlansky", cover: "/books/SaltAWorldHistory.png", url: "https://www.amazon.com/Salt-World-History-Mark-Kurlansky/dp/0142001619" },
+  { title: "Principles: Life and Work.", author: "Ray Dalio", cover: "/books/Principles.png", url: "https://www.amazon.com/Principles-Life-Work-Ray-Dalio/dp/1501124021" },
+  { title: "My Next Breath: A Memoir.", author: "Jeremy Renner", cover: "/books/MyNextBreath.png", url: "https://www.amazon.com/My-Next-Breath-Jeremy-Renner/dp/1250383536" },
+];
+
+// DEAL MARKET COMMENTARY
+// UPDATE QUARTERLY
+//   headline : article title
+//   url      : link to external article source
+const dealNews = [
+  { headline: "GF Data | Private Equity’s Five-Year Rollercoaster", url: "https://gfdata.com/private-equitys-five-year-rollercoaster/" },
+  { headline: "BCG | M&A Outlook 2026: Expectations Are High—Again", url: "https://www.bcg.com/publications/2026/m-and-a-outlook-expectations-are-high-again" },
+  { headline: "PYMNTS | Wall Street Banks on 2026 as Big Year for ‘Megadeals’", url: "https://www.pymnts.com/news/partnerships-acquisitions/2025/wall-street-banks-on-2026-as-big-year-for-megadeals" },
+  { headline: "Middle Market Growth | Breaking the Dam: ACG’s 2025 M&A Recap and 2026 Outlook", url: "https://middlemarketgrowth.org/webinar-gf-data-2025-recap-2026-outlook/" },
+  { headline: "WSJ/BakerMcKenzie | Private Equity’s Game Plan for the Next Phase of Growth", url: "https://partners.wsj.com/baker-mckenzie/m-and-a-matters/private-equitys-game-plan-for-the-next-phase-of-growth/" },
+  { headline: "MarketWatch | The ‘great wealth transfer’ is coming. Many people will be rich — but they’re not ready.", url: "https://www.marketwatch.com/story/the-great-wealth-transfer-is-coming-many-people-will-be-rich-but-theyre-not-ready-e206232f" },
+  { headline: "WSJ Video | BCG CEO: Half of CEOs Say Their Jobs Depend on Getting AI Right", url: "https://www.wsj.com/video/series/davos-ceobrief-2026/bcg-ceo-half-of-ceos-say-their-jobs-depend-on-getting-ai-right/9E5ADB2D-B05B-4E0A-A6CB-E29B60D6146C?" },
+  { headline: "Citizens | M&A Market Set to Broaden as Confidence Surges", url: "https://www.businesswire.com/news/home/20260106652514/en/MA-Market-Set-to-Broaden-as-Confidence-Surges" },
+  { headline: "WSJ | The Break Is Over. Companies Are Jacking Up Prices Again.", url: "https://www.wsj.com/business/price-increases-consumers-businesses-b70e4542" },
+  { headline: "WSJ | Farmers Are Aging. Their Kids Don’t Want to Be in the Family Business.", url: "https://www.wsj.com/business/family-farms-inheritance-44c9aa17" },
+  { headline: "Medium | The Great Wealth Transfer Isn’t What the WSJ Tells You It Is", url: "https://medium.com/@tdoherty_96508/the-great-wealth-transfer-isnt-what-you-think-30e967cca4c1" },
+];
+---
+
+<BaseLayout title="Insights | Redrock Strategic Advisors" description="Insights, news, and updates from Redrock Strategic Advisors.">
+
+  <!-- Hero section -->
+  <section
+    class="relative bg-cover bg-center bg-no-repeat"
+    style="height: 60vh; background-image: url('/iStock-512693445.jpg');"
+  >
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
+      <h1 class="text-white mb-4">Insights and Updates.</h1>
+      <p class="text-xl max-w-2xl text-white/90">News, research, readings, and deal activity from the Redrock team.</p>
+    </div>
+  </section>
+
+  <main class="container-narrow py-16" style="min-height: 60vh;">
+    <div class="prose prose-lg max-w-none mb-8">
+      <h3><strong>Redrock</strong> wants to provide proprietary insights, updates on what we're reading and seeing, and other firm developments.</h3>
+    </div>
+
+    <div class="insights-grid">
+      <!-- LEFT COLUMN -->
+      <div class="left-column">
+        <!-- Company News & Events -->
+        <section>
+          <h3 class="text-xl font-bold text-secondary-900 pb-2 border-b border-[#334155]">Company News & Events</h3>
+          <div style="height: 1rem;"></div>
+          <ul class="insights-list space-y-5">
+            {companyNews.slice(0, 5).map((item) => (
+              <li class="text-secondary-800">
+                <span class="font-semibold">{item.headline}</span>
+                {" "}
+                <a href={item.link} class="text-[#C80026] text-sm">[{item.linkText}]</a>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <div style="height: 3rem;"></div>
+
+        <!-- What We're Reading -->
+        <section>
+          <h3 class="text-xl font-bold text-secondary-900 pb-2 border-b border-[#334155]">What We're Reading</h3>
+          {books.slice(0, 10).map((book) => (
+            <div class="book-entry flex items-start mt-8" style="gap: 1.5rem;">
+              <a href={book.url} target="_blank" rel="noopener noreferrer" class="flex-shrink-0">
+                <img
+                  src={book.cover}
+                  alt={book.title}
+                  style="width: auto; max-height: 4.5em;"
+                  class="object-contain"
+                />
+              </a>
+              <div>
+                <p class="font-bold text-secondary-900">{book.title}</p>
+                <p class="text-sm text-secondary-600 italic">by {book.author}</p>
+                <a href={book.url} target="_blank" rel="noopener noreferrer" class="text-[#C80026] text-sm">
+                  Read it too
+                </a>
+              </div>
+            </div>
+          ))}
+        </section>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="right-column">
+        <section>
+          <h3 class="text-xl font-bold text-secondary-900 pb-2 border-b border-[#334155]">Deal Market Commentary</h3>
+          <div style="height: 1rem;"></div>
+          <ul class="insights-list space-y-5">
+            {dealNews.map((item) => (
+              <li class="text-secondary-800">
+                <span class="font-semibold">{item.headline}</span>
+                {" "}
+                <a href={item.url} target="_blank" rel="noopener noreferrer" class="text-[#C80026] text-sm">[Read More]</a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      </div>
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .insights-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  @media (min-width: 768px) {
+    .insights-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+  }
+
+  .insights-list {
+    list-style: disc;
+    padding-left: 1.1em;
+    margin-left: -0.1em;
+  }
+</style>

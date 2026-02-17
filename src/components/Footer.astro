@@ -1,0 +1,36 @@
+---
+const year = new Date().toLocaleDateString('en-US', { timeZone: 'America/New_York', year: 'numeric' });
+---
+<footer style="background-color: #c80026;">
+  <!-- Desktop: centered, Mobile: left-aligned with 48px padding to match nav logo -->
+  <div style="display: flex; align-items: center; padding-top: 16px; padding-bottom: 16px; padding-right: 16px; padding-left: 48px;" id="footer-inner">
+    <!-- Logo -->
+    <a href="/" style="display: block; flex-shrink: 0;">
+      <img
+        src="/RSA_white.png"
+        alt="Redrock Strategic Advisors"
+        style="height: 42px; width: auto;"
+      />
+    </a>
+
+    <!-- Divider -->
+    <div style="width: 1px; height: 48px; background-color: rgba(255,255,255,0.4); margin-left: 32px; margin-right: 32px; flex-shrink: 0;"></div>
+
+    <!-- Copyright + Privacy -->
+    <p style="color: white; font-size: 0.9375rem; margin: 0;">
+      &copy; {year}. Redrock Strategic Advisors LLC. All Rights Reserved.&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/privacy-policy" style="color: white; text-decoration: underline; text-underline-offset: 3px;">Privacy Policy</a>
+    </p>
+  </div>
+</footer>
+
+<style>
+  #footer-inner {
+    justify-content: flex-start;
+  }
+
+  @media (min-width: 960px) {
+    #footer-inner {
+      justify-content: center;
+    }
+  }
+</style>

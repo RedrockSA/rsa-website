@@ -1,0 +1,13 @@
+---
+interface Props {
+  class?: string;
+}
+const { class: className = '' } = Astro.props;
+---
+<a href="/" class:list={['block', className]}>
+  <img
+    src="/RSA_color.png"
+    alt="Redrock Strategic Advisors"
+    class="h-[42px] w-auto"
+  />
+</a>

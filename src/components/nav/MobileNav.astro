@@ -1,0 +1,94 @@
+---
+import { navItems } from './navData';
+import NavLogo from './NavLogo.astro';
+import Hamburger from './icons/Hamburger.astro';
+import CloseX from './icons/CloseX.astro';
+import ChevronRight from './icons/ChevronRight.astro';
+import ChevronLeft from './icons/ChevronLeft.astro';
+---
+<!-- Mobile top bar -->
+<div class="flex nav-desktop:hidden items-center justify-between h-[85px] pr-4" style="padding-left: 48px; transition: height 0.3s ease;">
+  <NavLogo />
+  <button
+    type="button"
+    id="hamburger-btn"
+    class="p-2 text-secondary-700 hover:text-primary-900 transition-colors"
+    aria-label="Open menu"
+  >
+    <Hamburger class="w-7 h-7" />
+  </button>
+</div>
+
+<!-- Full-screen overlay -->
+<div
+  id="mobile-overlay"
+  class="fixed inset-0 bg-white z-[60] translate-x-full transition-transform duration-300 ease-in-out flex flex-col nav-desktop:hidden"
+>
+  <!-- Overlay header -->
+  <div class="flex items-center justify-between h-[85px] pr-4 border-b border-secondary-200" style="padding-left: 48px;">
+    <NavLogo />
+    <button
+      type="button"
+      id="mobile-close-btn"
+      class="p-2 text-secondary-700 hover:text-primary-900 transition-colors"
+      aria-label="Close menu"
+    >
+      <CloseX class="w-7 h-7" />
+    </button>
+  </div>
+
+  <!-- Panels wrapper (overflow hidden for sliding) -->
+  <div class="flex-1 relative overflow-hidden">
+    <!-- Main menu panel -->
+    <div
+      id="mobile-main-panel"
+      class="absolute inset-0 overflow-y-auto transition-transform duration-300 ease-in-out"
+    >
+      <ul class="py-4">
+        {navItems.map((item) => (
+          <li style="border-bottom: 1px solid #f1f5f9;">
+            {item.children ? (
+              <button
+                type="button"
+                class="w-full flex items-center justify-between"
+                style="padding: 16px 16px 16px 48px; font-size:1.125rem; color:#1e293b; cursor:pointer; background:none; border:none;"
+                data-mobile-item={item.label}
+              >
+                <span>{item.label}</span>
+                <ChevronRight class="w-5 h-5 text-secondary-400" />
+              </button>
+            ) : (
+              <a href={item.href} style="display:block; padding: 16px 16px 16px 48px; font-size:1.125rem; color:#1e293b; text-decoration:none;">
+                {item.label}
+              </a>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <!-- Sub-menu panel -->
+    <div
+      id="mobile-sub-panel"
+      class="absolute inset-0 overflow-y-auto transition-transform duration-300 ease-in-out translate-x-full bg-white"
+    >
+      <!-- Sub-menu header: text aligns at 48px, chevron sits to its left -->
+      <div class="flex items-center py-4 pr-4 border-b border-secondary-200" style="padding-left: 48px;">
+        <button
+          type="button"
+          id="mobile-back-btn"
+          class="shrink-0 transition-colors"
+          style="color: #c80026; margin-left: -28px; padding: 4px;"
+          aria-label="Back to main menu"
+        >
+          <ChevronLeft class="w-5 h-5" />
+        </button>
+        <a id="mobile-sub-title" href="#" class="text-lg font-semibold" style="color: #c80026; text-decoration: none;"></a>
+      </div>
+      <!-- Sub-menu items -->
+      <ul id="mobile-sub-items" class="py-4">
+        <!-- Populated by JS -->
+      </ul>
+    </div>
+  </div>
+</div>

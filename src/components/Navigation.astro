@@ -1,0 +1,250 @@
+---
+import DesktopNav from './nav/DesktopNav.astro';
+import MobileNav from './nav/MobileNav.astro';
+import { navItems } from './nav/navData';
+---
+<header id="site-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white/50">
+  <DesktopNav />
+  <MobileNav />
+</header>
+
+<!-- Nav data bridge for client JS -->
+<script type="application/json" id="nav-data-json" set:html={JSON.stringify(navItems)} />
+
+<script>
+  // ── Data ──
+  const navData = JSON.parse(document.getElementById('nav-data-json')!.textContent!);
+
+  // ── Elements ──
+  const header = document.getElementById('site-header')!;
+  const dropdown = document.getElementById('desktop-dropdown')!;
+  const dropdownParentLink = document.getElementById('dropdown-parent-link') as HTMLAnchorElement;
+  const dropdownItems = document.getElementById('dropdown-items')!;
+  const navButtons = document.querySelectorAll<HTMLAnchorElement>('[data-nav-item]');
+
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const mobileOverlay = document.getElementById('mobile-overlay');
+  const mobileCloseBtn = document.getElementById('mobile-close-btn');
+  const mobileMainPanel = document.getElementById('mobile-main-panel');
+  const mobileSubPanel = document.getElementById('mobile-sub-panel');
+  const mobileSubTitle = document.getElementById('mobile-sub-title') as HTMLAnchorElement;
+  const mobileSubItems = document.getElementById('mobile-sub-items');
+  const mobileBackBtn = document.getElementById('mobile-back-btn');
+  const mobileItemBtns = document.querySelectorAll<HTMLButtonElement>('[data-mobile-item]');
+
+  // ── State ──
+  let activeDesktopItem: string | null = null;
+  let closeTimeout: ReturnType<typeof setTimeout> | null = null;
+
+  // ── Scroll handler ──
+  const navBars = document.querySelectorAll<HTMLElement>('#site-header .h-\\[85px\\]');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header.classList.remove('bg-white/50');
+      header.classList.add('bg-white', 'shadow-md');
+      navBars.forEach(bar => bar.style.height = '60px');
+    } else {
+      header.classList.remove('bg-white', 'shadow-md');
+      header.classList.add('bg-white/50');
+      navBars.forEach(bar => bar.style.height = '');
+    }
+  }, { passive: true });
+
+  // ── Desktop dropdown helpers ──
+  function findNavItem(label: string) {
+    return navData.find((item: any) => item.label === label);
+  }
+
+  function openDropdown(label: string) {
+    if (closeTimeout) {
+      clearTimeout(closeTimeout);
+      closeTimeout = null;
+    }
+
+    const item = findNavItem(label);
+    if (!item || !item.children) return;
+
+    activeDesktopItem = label;
+
+    // Highlight active button with red underline
+    navButtons.forEach((btn) => {
+      const isActive = btn.getAttribute('data-nav-item') === label;
+      if (isActive) {
+        btn.style.textDecoration = 'underline';
+        btn.style.textDecorationColor = '#c80026';
+        btn.style.textUnderlineOffset = '6px';
+        btn.style.textDecorationThickness = '2px';
+      } else {
+        btn.style.textDecoration = '';
+        btn.style.textDecorationColor = '';
+        btn.style.textUnderlineOffset = '';
+        btn.style.textDecorationThickness = '';
+      }
+      const chevron = btn.querySelector('svg');
+      if (chevron) {
+        chevron.style.transform = isActive ? 'rotate(180deg)' : '';
+      }
+    });
+
+    // Set parent link
+    dropdownParentLink.textContent = item.label;
+    dropdownParentLink.href = item.href;
+
+    // Set grid columns
+    const cols = item.dropdownColumns || 1;
+    dropdownItems.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
+
+    // Populate sub-items
+    dropdownItems.innerHTML = item.children
+      .map(
+        (child: any) =>
+          `<a href="${child.href}" style="display:flex; align-items:center; gap:0.5rem; padding:1rem 0.75rem; border-bottom:1px solid #f1f5f9; color:#334155; border-radius:0.25rem; text-decoration:none; transition:all 0.2s;" onmouseover="this.style.backgroundColor='#ff9fb1'" onmouseout="this.style.backgroundColor=''">
+            <span>${child.label}</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width:1rem; height:1rem; color:#94a3b8; flex-shrink:0;">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+            </svg>
+          </a>`
+      )
+      .join('');
+
+    // Open panel
+    dropdown.style.maxHeight = dropdown.scrollHeight + 'px';
+  }
+
+  function closeDropdown() {
+    activeDesktopItem = null;
+    dropdown.style.maxHeight = '0';
+
+    navButtons.forEach((btn) => {
+      btn.style.textDecoration = '';
+      btn.style.textDecorationColor = '';
+      btn.style.textUnderlineOffset = '';
+      btn.style.textDecorationThickness = '';
+      const chevron = btn.querySelector('svg');
+      if (chevron) {
+        chevron.style.transform = '';
+      }
+    });
+  }
+
+  function scheduleClose() {
+    closeTimeout = setTimeout(closeDropdown, 300);
+  }
+
+  function cancelClose() {
+    if (closeTimeout) {
+      clearTimeout(closeTimeout);
+      closeTimeout = null;
+    }
+  }
+
+  // ── Desktop dropdown events ──
+  navButtons.forEach((btn) => {
+    btn.addEventListener('mouseenter', () => {
+      openDropdown(btn.getAttribute('data-nav-item')!);
+    });
+
+    btn.addEventListener('mouseleave', () => {
+      scheduleClose();
+    });
+  });
+
+  dropdown.addEventListener('mouseenter', cancelClose);
+  dropdown.addEventListener('mouseleave', scheduleClose);
+
+  // Parent link hover
+  dropdownParentLink.addEventListener('mouseenter', () => {
+    dropdownParentLink.style.color = '#c80026';
+    dropdownParentLink.style.textDecoration = 'underline';
+    dropdownParentLink.style.textDecorationColor = '#c80026';
+    dropdownParentLink.style.textUnderlineOffset = '4px';
+    dropdownParentLink.style.textDecorationThickness = '2px';
+  });
+  dropdownParentLink.addEventListener('mouseleave', () => {
+    dropdownParentLink.style.color = '#000';
+    dropdownParentLink.style.textDecoration = 'none';
+  });
+
+  // Close on click outside
+  document.addEventListener('click', (e) => {
+    if (!activeDesktopItem) return;
+    const target = e.target as HTMLElement;
+    if (!target.closest('#desktop-dropdown') && !target.closest('[data-nav-item]')) {
+      closeDropdown();
+    }
+  });
+
+  // ── Escape key ──
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      if (activeDesktopItem) closeDropdown();
+      if (mobileOverlay && !mobileOverlay.classList.contains('translate-x-full')) {
+        closeMobileMenu();
+      }
+    }
+  });
+
+  // ── Mobile overlay ──
+  function openMobileMenu() {
+    if (!mobileOverlay) return;
+    mobileOverlay.classList.remove('translate-x-full');
+    mobileOverlay.classList.add('translate-x-0');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMobileMenu() {
+    if (!mobileOverlay || !mobileMainPanel || !mobileSubPanel) return;
+    mobileOverlay.classList.remove('translate-x-0');
+    mobileOverlay.classList.add('translate-x-full');
+    document.body.style.overflow = '';
+
+    // Reset sub-panel after transition
+    setTimeout(() => {
+      mobileMainPanel.style.transform = '';
+      mobileSubPanel.classList.remove('translate-x-0');
+      mobileSubPanel.classList.add('translate-x-full');
+    }, 300);
+  }
+
+  hamburgerBtn?.addEventListener('click', openMobileMenu);
+  mobileCloseBtn?.addEventListener('click', closeMobileMenu);
+
+  // ── Mobile sub-menu ──
+  function openMobileSubMenu(label: string) {
+    const item = findNavItem(label);
+    if (!item || !item.children || !mobileSubTitle || !mobileSubItems || !mobileMainPanel || !mobileSubPanel) return;
+
+    mobileSubTitle.textContent = item.label;
+    mobileSubTitle.href = item.href;
+
+    mobileSubItems.innerHTML = item.children
+      .map(
+        (child: any) =>
+          `<li style="border-bottom: 1px solid #f1f5f9;">
+            <a href="${child.href}" style="display:block; padding: 16px 16px 16px 48px; font-size:1.125rem; color:#1e293b; text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#c80026'" onmouseout="this.style.color='#1e293b'">${child.label}</a>
+          </li>`
+      )
+      .join('');
+
+    // Slide main panel left, sub panel in from right
+    mobileMainPanel.style.transform = 'translateX(-100%)';
+    mobileSubPanel.classList.remove('translate-x-full');
+    mobileSubPanel.classList.add('translate-x-0');
+  }
+
+  function closeMobileSubMenu() {
+    if (!mobileMainPanel || !mobileSubPanel) return;
+    mobileMainPanel.style.transform = '';
+    mobileSubPanel.classList.remove('translate-x-0');
+    mobileSubPanel.classList.add('translate-x-full');
+  }
+
+  mobileItemBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      openMobileSubMenu(btn.getAttribute('data-mobile-item')!);
+    });
+  });
+
+  mobileBackBtn?.addEventListener('click', closeMobileSubMenu);
+</script>
