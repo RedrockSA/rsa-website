@@ -4,7 +4,7 @@ description: Strategic advisory services from Redrock Strategic Advisors.
 hero:
   heading: Our Services
   subheading: Strategic transaction advisory tailored to your situation.
-  backgroundImage: /iStock-2054864236.jpg
+  backgroundImage: /iStock-2054864236-Adj.jpg
   cta:
     - text: Let's Connect
       href: /contact
