@@ -54,7 +54,7 @@ export default {
       },
       fontFamily: {
         sans: ['Raleway', '"Segoe UI"', 'Arial', 'sans-serif'],
-        heading: ['Merriweather', 'Georgia', 'serif'],
+        heading: ['Raleway', '"Segoe UI"', 'Arial', 'sans-serif'],
       },
       typography: ({ theme }) => ({
         DEFAULT: {

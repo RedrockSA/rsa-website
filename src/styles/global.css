@@ -17,7 +17,7 @@
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading text-secondary-700;
-    font-weight: 700;
+    font-weight: 200;
     letter-spacing: -0.02em;
     line-height: 1.2;
   }
