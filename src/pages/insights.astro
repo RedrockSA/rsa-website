@@ -93,11 +93,11 @@ const dealNews = [
           <h3 class="text-xl font-bold text-secondary-900 pb-2 border-b border-[#334155]">What We're Reading</h3>
           {books.slice(0, 10).map((book) => (
             <div class="book-entry flex items-start mt-8" style="gap: 1.5rem;">
-              <a href={book.url} target="_blank" rel="noopener noreferrer" class="flex-shrink-0">
+              <a href={book.url} target="_blank" rel="noopener noreferrer" class="flex-shrink-0" style="width: 60px; display: flex; justify-content: center;">
                 <img
                   src={book.cover}
                   alt={book.title}
-                  style="width: auto; max-height: 4.5em;"
+                  style="width: auto; max-height: 4.5em; max-width: 60px;"
                   class="object-contain"
                 />
               </a>
