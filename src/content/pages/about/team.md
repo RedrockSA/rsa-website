@@ -31,7 +31,7 @@ From the outset, our founding team is committed to creating a different kind of 
 	Geoffrey Loos
 	</p>
     <p style="font-size: 1rem; color: #64748b; margin: 0.25rem 0 0.75rem;">
-	Managing Director
+	Managing Director & Founder
 	</p>
     <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
       <a href="
