@@ -10,11 +10,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     <div class="relative z-10 flex items-center justify-center h-full px-4">
       <div class="relative max-w-2xl w-full pt-8">
-        <div class="absolute left-6 z-10 inline-block px-6 py-4" style="background-color: #C80026; top: -10; transform: translateY(0);">
-          <h1 class="text-white text-xl md:text-2xl font-bold leading-tight">Your Partner for the Middle Market.</h1>
+        <div class="hero-red-bar absolute left-0 md:left-6 z-10 inline-block px-6 py-4" style="background-color: #C80026; top: -10; transform: translateY(0);">
+          <h1 class="text-white text-base md:text-2xl font-bold leading-tight">Your Partner for the Middle Market.</h1>
         </div>
         <div class="mt-8" style="background-color: rgba(220, 220, 220, 0.55); backdrop-filter: blur(2px); padding-top: 2rem;">
-          <p class="text-lg md:text-xl leading-relaxed text-secondary-900" style="padding: 1rem 2.5rem 1rem 3rem;">
+          <p class="text-sm md:text-xl leading-relaxed text-secondary-900" style="padding: 1rem 2.5rem 1rem 3rem;">
             <b>Redrock Strategic Advisors</b> partners with middle-market business owners to achieve critical corporate milestones. Whether selling your business, transitioning ownership generationally, expanding through acquisitions, raising capital, or planning an exit, we deliver results that matter. 
 		<br>
 		<br>
@@ -114,6 +114,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <style>
+  @media (max-width: 767px) {
+    .hero-red-bar {
+      left: 0 !important;
+      right: 0;
+      width: 100%;
+    }
+  }
+
   .learn-more-btn {
     display: inline-block;
     padding: 0.5rem 1.5rem;
