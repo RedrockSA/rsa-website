@@ -49,9 +49,9 @@ From the outset, our founding team is committed to creating a different kind of 
     	<p style="font-size: 0.9375rem; color: #334155; line-height: 1.6; margin: 0.75rem 0 0;">
 	Geoff Loos has over 20 years of experience advising clients on both domestic and cross-border M&A transactions, covering mergers, acquisitions, 	corporate investments, management buyouts, recapitalizations, carveouts, and other value-creating transactions. 
 	<br></br>
-	Mr. Loos founded Redrock Strategic Advisors with a two-fold mission of successfully advising and supporting middle-market companies on critical 	corporate transactions, while also developing the next generation of industry-leading M&A professionals. Prior to founding Redrock, Geoff Loos was a 	Managing Director with CapM Advisors and a Director with D.A. Davidson’s investment banking group, where he was also a founding member of the firm’s 	consumer and technology investment banking teams. 
+	Mr. Loos founded Redrock Strategic Advisors with a two-fold mission of successfully advising and supporting middle-market companies on critical 	corporate transactions, while simultaneously developing the next generation of industry-leading M&A professionals. Prior to founding Redrock, Geoff Loos was a 	Managing Director with CapM Advisors and a Director with D.A. Davidson’s investment banking group, where he was also a founding member of the firm’s 	consumer and technology investment banking teams. 
 	<br></br>
-	He has advised clients on a variety of complex and highly successful transactions in the middle market in key industry sectors including industrial, technology, food & agriculture, consumer, and business services. 
+	He has advised clients on a variety of complex and highly successful transactions in the middle-market in key industry sectors including industrial, technology, food & agriculture, consumer, and business services. 
 	<br></br>
 	Mr. Loos resides in Utah with his wife and three kids. He loves actively supporting the growth of the local business community and also travelling 	to meet with business owners across the U.S. and at industry events. 
 	</p>
