@@ -4,7 +4,7 @@ description: Privacy Policy for Redrock Strategic Advisors LLC.
 pageWidth: narrow
 ---
 
-**Redrock Strategic Advisors LLC** (or “Redrock”) understands the importance of your personal privacy.  Therefore, we have created this Privacy Policy so that you know how we use and disclose your information when you make it available to us.  The Privacy Policy below discloses our practices regarding information collection and usage website located at [www.redrocksa.com](https://www.redrocksa.com), the related mobile website, and the mobile application (collectively, the “Websites”) and the service provided thereon (the “Service”).
+**Redrock Strategic Advisors LLC** (or “Redrock”) understands the importance of your personal privacy.  Therefore, we have created this Privacy Policy so that you know how we use and disclose your information when you make it available to us.  The Privacy Policy below discloses our practices regarding information collection and usage website located at [www.redrocksa.com](https://redrocksa.com), the related mobile website, and the mobile application (collectively, the “Websites”) and the service provided thereon (the “Service”).
  
 By using or accessing the Websites and the Service, you signify your agreement to be bound by this Privacy Policy. If you do not agree to this privacy policy you may not access or otherwise use our service or participate in our services.
  
