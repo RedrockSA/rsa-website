@@ -61,19 +61,19 @@ const dealFeatures = [
     <!-- Filter bar + panel -->
     <div id="filter-wrapper" class="mb-8 border border-secondary-200 overflow-hidden">
       <!-- Toggle bar -->
-      <div class="flex flex-wrap items-center gap-3 px-5 py-3 bg-secondary-500 cursor-pointer select-none" id="filter-bar">
-        <span class="text-white font-bold text-xl md:text-3xl tracking-wide">Selected Transactions</span>
-        <div class="ml-auto flex flex-col md:flex-row items-stretch md:items-center gap-2 md:gap-3">
+      <div class="flex items-start gap-3 px-5 py-3 bg-secondary-500 cursor-pointer select-none" id="filter-bar">
+        <span class="text-white font-bold text-lg md:text-3xl tracking-wide leading-tight">Selected Transactions</span>
+        <div class="ml-auto flex flex-col items-end gap-1.5 md:flex-row md:items-center md:gap-3 shrink-0">
           <button
             id="filter-toggle"
-            class="px-4 py-1.5 text-base font-semibold tracking-wide text-white transition-colors"
+            class="px-3 py-1 md:px-4 md:py-1.5 text-sm md:text-base font-semibold tracking-wide text-white transition-colors"
             style="background-color: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25);"
           >
             SHOW FILTERS
           </button>
           <button
             id="filter-reset"
-            class="px-4 py-1.5 text-base font-semibold tracking-wide transition-colors hidden"
+            class="px-3 py-1 md:px-4 md:py-1.5 text-sm md:text-base font-semibold tracking-wide transition-colors hidden"
             style="background-color: rgba(255,255,255,0.9); color: #334155; border: 1px solid rgba(255,255,255,0.5);"
           >
             RESET

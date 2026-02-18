@@ -27,7 +27,7 @@ From the outset, our founding team is committed to creating a different kind of 
     <img src="/team/GeoffLoos.jpg" alt="Geoffrey Loos" style="width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: 0.25rem; background-color: #e2e8f0; margin: 0 !important; padding: 0;" />
   </div>
   <div style="flex: 1;">
-    <p style="font-size: 1.5rem; font-weight: 200; font-family: Raleway, 'Segoe UI', Arial, sans-serif; color: #1e293b; margin: 0; padding: 0; line-height: 1.2;">
+    <p style="font-size: 1.5rem; font-weight: 500; font-family: Raleway, 'Segoe UI', Arial, sans-serif; color: #1e293b; margin: 0; padding: 0; line-height: 1.2;">
 	Geoffrey Loos
 	</p>
     <p style="font-size: 1rem; color: #64748b; margin: 0.25rem 0 0.75rem;">

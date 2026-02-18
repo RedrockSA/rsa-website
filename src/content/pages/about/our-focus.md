@@ -32,7 +32,7 @@ Our professionals have completed exciting transactions in a wide array of indust
 
 <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin: 2rem 0;">
   <div style="text-align: center; padding: 1.5rem 1rem;">
-    <p style="font-size: 2.5rem; font-weight: 200; font-family: Raleway, 'Segoe UI', Arial, sans-serif; text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 2px; margin: 0;">
+    <p style="font-size: 2.5rem; font-weight: 500; font-family: Raleway, 'Segoe UI', Arial, sans-serif; text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 2px; margin: 0;">
 		100+</p>
     <p style="font-weight: 700; font-size: 1rem; margin: 0.5rem 0 0.25rem;">
 		Completed Engagements</p>
@@ -40,7 +40,7 @@ Our professionals have completed exciting transactions in a wide array of indust
 		Across sectors, geographies, and ownership types</p>
   </div>
   <div style="text-align: center; padding: 1.5rem 1rem; border-left: 1px solid #C80026; border-right: 1px solid #C80026;">
-    <p style="font-size: 2.5rem; font-weight: 200; font-family: Raleway, 'Segoe UI', Arial, sans-serif; text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 2px; margin: 0;">
+    <p style="font-size: 2.5rem; font-weight: 500; font-family: Raleway, 'Segoe UI', Arial, sans-serif; text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 2px; margin: 0;">
 		$5.6B+</p>
     <p style="font-weight: 700; font-size: 1rem; margin: 0.5rem 0 0.25rem;">
 		Total Deal Value</p>
@@ -48,7 +48,7 @@ Our professionals have completed exciting transactions in a wide array of indust
 		Advising on transactions across the middle market, focused on deals ranging from $25m to $500m of transaction value</p>
   </div>
   <div style="text-align: center; padding: 1.5rem 1rem;">
-    <p style="font-size: 2.5rem; font-weight: 200; font-family: Raleway, 'Segoe UI', Arial, sans-serif; text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 2px; margin: 0;">
+    <p style="font-size: 2.5rem; font-weight: 500; font-family: Raleway, 'Segoe UI', Arial, sans-serif; text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 2px; margin: 0;">
 		Three</p>
     <p style="font-weight: 700; font-size: 1rem; margin: 0.5rem 0 0.25rem;">
 		Core Service Areas</p>
