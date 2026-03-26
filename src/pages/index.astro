@@ -11,7 +11,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="relative z-10 flex items-center justify-center h-full px-4">
       <div class="relative max-w-2xl w-full pt-8">
         <div class="hero-red-bar absolute left-0 md:left-6 z-10 inline-block px-6 py-4" style="background-color: #C80026; top: -10; transform: translateY(0);">
-          <h1 class="text-white text-base md:text-2xl font-bold leading-tight">Your Partner for the Middle Market.</h1>
+          <h1 class="text-white text-base md:text-2xl font-bold leading-tight" style="white-space: nowrap;">Your Partner for <span id="cycling-text" class="cycling-word">Mergers</span>.</h1>
         </div>
         <div class="mt-8" style="background-color: rgba(220, 220, 220, 0.55); backdrop-filter: blur(2px); padding-top: 2rem;">
           <p class="text-base md:text-xl leading-relaxed text-secondary-900" style="padding: 1rem 2.5rem 1rem 3rem;">
@@ -113,6 +113,39 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 </BaseLayout>
 
+<script>
+  const words = ['Mergers', 'Acquisitions', 'Divestitures', 'Liquidity Events', 'Recapitalization', 'Corporate Transactions', 'the Middle Market'];
+  const el = document.getElementById('cycling-text');
+  const bar = document.querySelector('.hero-red-bar');
+  const intervalMs = 1400;
+  let index = 0;
+
+  // Measure the widest word and lock the bar width
+  let maxWidth = 0;
+  for (const word of words) {
+    el.textContent = word;
+    maxWidth = Math.max(maxWidth, bar.offsetWidth);
+  }
+  el.textContent = words[0];
+  bar.style.minWidth = maxWidth + 'px';
+
+  function cycleWord() {
+    el.classList.remove('visible');
+    setTimeout(() => {
+      index++;
+      el.textContent = words[index];
+      el.classList.add('visible');
+      if (index < words.length - 1) {
+        setTimeout(cycleWord, intervalMs);
+      }
+    }, 300);
+  }
+
+  // Start with Mergers and begin cycling
+  el.classList.add('visible');
+  setTimeout(cycleWord, intervalMs);
+</script>
+
 <style>
   @media (max-width: 767px) {
     .hero-red-bar {
@@ -120,6 +153,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       right: 0;
       width: 100%;
     }
+  }
+
+  .cycling-word {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .cycling-word.visible {
+    opacity: 1;
   }
 
   .learn-more-btn {
