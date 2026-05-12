@@ -24,6 +24,7 @@ const companyNews = allNews
 //   cover : image path — put file in /public/books/ and reference as "/books/filename.png"
 //   url   : link for both the cover image and "Read it too" (e.g. Amazon)
 const books = [
+  { title: "Assyria, World's First Empire.", author: "Eckart Frahm", cover: "/books/Assyria.png", url: "https://www.amazon.com/Assyria-Rise-Worlds-First-Empire/dp/1541605152" },	    
   { title: "Critical Chain.", author: "Eliyahu M. Goldratt", cover: "/books/CriticalChain.png", url: "https://www.amazon.com/Critical-Chain-Eliyahu-M-Goldratt/dp/0884271536" },
   { title: "The Thinking Machine.", author: "Stephen Witt", cover: "/books/TheThinkingMachine.png", url: "https://www.amazon.com/Thinking-Machine-Jensen-Coveted-Microchip/dp/B0D47TP8KT" },
   { title: "Salt: A World History.", author: "Mark Kurlansky", cover: "/books/SaltAWorldHistory.png", url: "https://www.amazon.com/Salt-World-History-Mark-Kurlansky/dp/0142001619" },
@@ -35,7 +36,11 @@ const books = [
 // UPDATE QUARTERLY
 //   headline : article title
 //   url      : link to external article source
+// { headline: "SOURCE | ARTICLE TITLE", url: "LINK" },
 const dealNews = [
+  { headline: "M&A | Middle Market Continues to Lose Ground as Large Deals Dominate Global M&A", url: "https://www.pehub.com/news-and-analysis/pe-deals/" },
+  { headline: "FactSet | Flashwire U.S. Monthly, April 2026", url: "https://go.factset.com/hubfs/mergerstat_em/monthly/US-Flashwire-Monthly.pdf" },
+  { headline: "ROPES & GRAY | M&A Overview for May 2026", url: "https://www.ropesgray.com/en/insights/alerts/2026/05/us-pe-market-recap-may-2026" },
   { headline: "GF Data | Private Equity’s Five-Year Rollercoaster", url: "https://gfdata.com/private-equitys-five-year-rollercoaster/" },
   { headline: "BCG | M&A Outlook 2026: Expectations Are High—Again", url: "https://www.bcg.com/publications/2026/m-and-a-outlook-expectations-are-high-again" },
   { headline: "PYMNTS | Wall Street Banks on 2026 as Big Year for ‘Megadeals’", url: "https://www.pymnts.com/news/partnerships-acquisitions/2025/wall-street-banks-on-2026-as-big-year-for-megadeals" },
