@@ -2,7 +2,7 @@
 date: "2026-03-20"
 clientName: "Calise & Sons Bakery"
 clientLogo: "calise.png"
-actionText: "was acquired by"
+actionText: "has been acquired by"
 counterparties:
   - name: "Hudson Ferry Capital"
     logo: "hudsonferry.png"
