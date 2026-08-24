@@ -309,12 +309,20 @@ const dealFeatures = [
 
     const MIN_HEIGHT = 35; // never shrink below 35px
 
-    // Only cap when there's a single counterparty that would be taller than the client
+    // Only cap when there's a single counterparty that would outweigh the client.
+    // Match visual area rather than height, so a tall or square logo (icon over
+    // wordmark) carries the same presence as a wide one instead of collapsing.
     if (clientImg && clientImg.naturalHeight > 0 && cpImgs.length === 1) {
-      const clientRenderedH = clientImg.getBoundingClientRect().height;
-      const cpRenderedH = cpImgs[0].getBoundingClientRect().height;
-      if (cpRenderedH > clientRenderedH) {
-        cpImgs[0].style.maxHeight = `${Math.max(clientRenderedH, MIN_HEIGHT)}px`;
+      const clientRect = clientImg.getBoundingClientRect();
+      const clientArea = clientRect.width * clientRect.height;
+      const cpImg = cpImgs[0];
+      const cpAspect = cpImg.naturalWidth / cpImg.naturalHeight;
+      // Never tighten below the old height-based cap, so no existing logo shrinks.
+      const areaH = Math.sqrt(clientArea / cpAspect);
+      const cap = Math.max(areaH, clientRect.height, MIN_HEIGHT);
+      const cpRenderedH = cpImg.getBoundingClientRect().height;
+      if (cpRenderedH > cap) {
+        cpImg.style.maxHeight = `${cap}px`;
       }
     }
 
