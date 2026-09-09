@@ -24,7 +24,7 @@ We want successful Redrock interns to one day be leaders in our firm and world-c
 
 We offer a clear path for growth — from analyst to partner — with mentorship and development at every stage. We focus on giving our professionals opportunities to learn through study and hands-on experience, guided by a proven operational framework and professional mentors.
 
-<p style="text-align: center; font-style: italic; font-weight: 700;"><em>"When you talk about stacking wins, ...you have to believe and have faith in the power of doing that over the course of time."</em><br>—<a href="https://www.inc.com/justin-bariso/super-bowl-seahawks-coach-mike-macdonald-stacking-wins-how-to-win-emotional-intelligence/91299575#:~:text=When%20you%20talk%20about%20stacking%20wins%2C%20which%20is%20one%20of%20our%20core%20philosophies%2C%20you%20have%20to%20believe%20and%20have%20faith%20in%20the%20power%20of%20doing%20that%20over%20the%20course%20of%20time">Mike Macdonald</a></p>
+<p style="text-align: center; font-style: italic; font-weight: 700;"><em>"The models have to come from multiple disciplines — because all the wisdom of the world is not to be found in one little academic department."</em><br>—<a href="https://fs.blog/great-talks/a-lesson-on-worldly-wisdom/#:~:text=And%20the%20models%20have%20to%20come,one%20little%20academic%20department.">Charlie Munger</a></p>
 
 We want our team to excel professionally and personally, which is why we have developed a comprehensive plan to support our employees' lifelong personal learning in areas that complement their professional development.
 
