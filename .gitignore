@@ -29,3 +29,6 @@ pnpm-debug.log*
 # misc
 nul
 Examples/
+
+# internal docs (not part of the site)
+RSA-Website-Maintenance-Guide.docx

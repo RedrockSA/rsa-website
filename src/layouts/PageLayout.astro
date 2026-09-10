@@ -13,6 +13,7 @@ interface Hero {
   backgroundImage: string;
   cta?: CTA[];
   height?: string;
+  contentOffset?: string;
 }
 
 interface Props {
@@ -39,9 +40,12 @@ const hasHero = !!hero;
   {hasHero && (
     <section
       class="relative bg-cover bg-center bg-no-repeat"
-      style={`height: ${hero!.height || '60vh'}; background-image: url('${hero!.backgroundImage}');`}
+      style={`height: ${hero!.height || '50vh'}; background-image: url('${hero!.backgroundImage}');`}
     >
-      <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
+      <div
+        class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4"
+        style={hero!.contentOffset ? `padding-top: ${hero!.contentOffset};` : undefined}
+      >
         <h1 class="text-white mb-4">{hero!.heading}</h1>
         {hero!.subheading && (
           <p class="text-xl max-w-2xl mb-8 text-white/90">{hero!.subheading}</p>

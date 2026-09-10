@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import PageLayout from '../layouts/PageLayout.astro';
+import TeamGrid from '../components/TeamGrid.astro';
 
 export async function getStaticPaths() {
   const pages = await getCollection('pages', ({ data }) => {
@@ -15,9 +16,10 @@ export async function getStaticPaths() {
 
 const { page } = Astro.props;
 const { Content } = await page.render();
-const { title, description, hero, pageWidth, showTitle } = page.data;
+const { title, description, hero, pageWidth, showTitle, teamGrid } = page.data;
 ---
 
 <PageLayout title={title} description={description} hero={hero} pageWidth={pageWidth} showTitle={showTitle}>
   <Content />
+  {teamGrid && <TeamGrid />}
 </PageLayout>

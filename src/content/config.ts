@@ -15,10 +15,12 @@ const pages = defineCollection({
         style: z.enum(['primary', 'secondary']).default('primary'),
       })).optional(),
       height: z.string().optional(),              // e.g. "40vh", "300px" — defaults to "60vh"
+      contentOffset: z.string().optional(),       // e.g. "5rem" — pushes hero text lower on the image
     }).optional(),
     pageWidth: z.enum(['narrow', 'wide']).default('wide'),
     draft: z.boolean().default(false),
     showTitle: z.boolean().default(true),
+    teamGrid: z.boolean().default(false),        // render the team card grid below the page content
   }),
 });
 
@@ -46,6 +48,22 @@ const transactions = defineCollection({
   }),
 });
 
+const team = defineCollection({
+  type: 'content',
+  schema: z.object({
+    name: z.string(),                                    // display name, e.g. "Geoffrey Loos"
+    title: z.string(),                                   // e.g. "Managing Director"
+    photo: z.string(),                                   // path in /public, e.g. "/team/GeoffLoos.jpg"
+    email: z.string(),
+    phone: z.string().optional(),
+    linkedin: z.string().optional(),                     // full profile URL
+    joined: z.string(),                                  // ISO date joined the firm — default sort (longest tenure first)
+    order: z.number().optional(),                        // optional manual override; lower numbers come first
+    education: z.array(z.string()).default([]),          // one bullet per line
+    draft: z.boolean().default(false),
+  }),
+});
+
 const news = defineCollection({
   type: 'content',
   schema: z.object({
@@ -55,4 +73,4 @@ const news = defineCollection({
   }),
 });
 
-export const collections = { pages, transactions, news };
+export const collections = { pages, transactions, news, team };

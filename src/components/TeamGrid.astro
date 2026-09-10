@@ -1,0 +1,70 @@
+---
+/**
+ * TeamGrid — loads the `team` collection, sorts it, and renders the cards.
+ *
+ * Sort order: entries with an `order` value come first, lowest number first.
+ * Everyone else follows by `joined` date, longest tenure first.
+ */
+import { getCollection } from 'astro:content';
+import TeamCard from './TeamCard.astro';
+
+const members = await getCollection('team', ({ data }) =>
+  import.meta.env.PROD ? !data.draft : true
+);
+
+const sorted = members.sort((a, b) => {
+  const ao = a.data.order;
+  const bo = b.data.order;
+
+  if (ao != null && bo != null) return ao - bo;
+  if (ao != null) return -1;
+  if (bo != null) return 1;
+
+  return new Date(a.data.joined).getTime() - new Date(b.data.joined).getTime();
+});
+---
+
+<div class="team-grid not-prose">
+  {sorted.map((member) => (
+    <TeamCard member={member} id={member.slug} />
+  ))}
+</div>
+
+<script>
+  document.querySelectorAll('[data-bio-open]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const id = btn.getAttribute('data-bio-open');
+      const dialog = document.getElementById(`bio-${id}`);
+      if (dialog instanceof HTMLDialogElement) dialog.showModal();
+    });
+  });
+
+  document.querySelectorAll('dialog.bio-modal').forEach((el) => {
+    const dialog = el as HTMLDialogElement;
+
+    dialog.querySelector('[data-bio-close]')?.addEventListener('click', () => {
+      dialog.close();
+    });
+
+    // Clicking the backdrop (i.e. outside the panel) closes the modal
+    dialog.addEventListener('click', (event) => {
+      if (event.target === dialog) dialog.close();
+    });
+  });
+</script>
+
+<style>
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 2.5rem 2rem;
+    margin-top: 2rem;
+  }
+
+  @media (max-width: 520px) {
+    .team-grid {
+      grid-template-columns: 1fr;
+      max-width: 320px;
+    }
+  }
+</style>

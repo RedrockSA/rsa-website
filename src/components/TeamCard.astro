@@ -1,0 +1,369 @@
+---
+/**
+ * TeamCard — photo tile with a hover action bar, plus the bio modal it opens.
+ * Content comes from the `team` collection; see src/content/team/*.md.
+ */
+const { member, id } = Astro.props;
+const { name, title, photo, email, phone, linkedin, education } = member.data;
+const { Content } = await member.render();
+
+const RED = '#C80026';
+const telHref = phone ? `tel:${phone.replace(/[^+\d]/g, '')}` : '';
+---
+
+<div class="team-card">
+  <!-- Photo + hover bar -->
+  <div class="team-card__tile">
+    <img src={photo} alt={name} class="team-card__photo" loading="lazy" />
+
+    <div class="team-card__bar">
+      <a href={`mailto:${email}`} class="team-card__icon" aria-label={`Email ${name}`}>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+          <rect x="2" y="4" width="20" height="16" rx="1"></rect>
+          <path d="m2 6 10 7 10-7"></path>
+        </svg>
+      </a>
+
+      {linkedin && (
+        <a
+          href={linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="team-card__icon"
+          aria-label={`${name} on LinkedIn`}
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
+          </svg>
+        </a>
+      )}
+
+      <button class="team-card__viewbio" data-bio-open={id} aria-haspopup="dialog">
+        View Bio <span aria-hidden="true">&rsaquo;</span>
+      </button>
+    </div>
+  </div>
+
+  <p class="team-card__name">{name}</p>
+  <p class="team-card__title">{title}</p>
+</div>
+
+<!-- Bio modal -->
+<dialog class="bio-modal" id={`bio-${id}`} aria-label={`${name} biography`}>
+  <div class="bio-modal__inner">
+    <button class="bio-modal__close" data-bio-close aria-label="Close biography">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+        <circle cx="12" cy="12" r="10"></circle>
+        <path d="m8.5 8.5 7 7m0-7-7 7"></path>
+      </svg>
+    </button>
+
+    <header class="bio-modal__header">
+      <p class="bio-modal__name">{name}</p>
+      <p class="bio-modal__title">{title}</p>
+    </header>
+
+    <div class="bio-modal__body">
+      <!-- Left: photo sitting on the red contact block -->
+      <aside class="bio-modal__aside">
+        <img src={photo} alt={name} class="bio-modal__photo" />
+        <ul class="bio-modal__contact">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <rect x="2" y="4" width="20" height="16" rx="1"></rect>
+              <path d="m2 6 10 7 10-7"></path>
+            </svg>
+            <a href={`mailto:${email}`}>{email}</a>
+          </li>
+          {phone && (
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"></path>
+              </svg>
+              <a href={telHref}>{phone}</a>
+            </li>
+          )}
+          {linkedin && (
+            <li>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
+              </svg>
+              <a href={linkedin} target="_blank" rel="noopener noreferrer">Profile Link</a>
+            </li>
+          )}
+        </ul>
+      </aside>
+
+      <!-- Right: bio prose + education -->
+      <div class="bio-modal__prose">
+        <Content />
+        {education.length > 0 && (
+          <div class="bio-modal__education">
+            <p class="bio-modal__eduheading">Education:</p>
+            <ul class="bio-modal__edu">
+              {education.map((line) => <li>{line}</li>)}
+            </ul>
+          </div>
+        )}
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<style define:vars={{ red: RED }}>
+  /* ---------- Card ---------- */
+  .team-card {
+    width: 100%;
+    text-align: center;
+  }
+
+  .team-card__tile {
+    position: relative;
+    display: block;
+    width: 100%;
+    background: #e2e8f0;
+    overflow: hidden;
+  }
+
+  .team-card__photo {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: top center;
+  }
+
+  .team-card__bar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 0.6rem 0.85rem;
+    background: var(--red);
+    color: #fff;
+    transform: translateY(100%);
+    transition: transform 0.28s ease;
+  }
+
+  .team-card__tile:hover .team-card__bar,
+  .team-card__tile:focus-within .team-card__bar {
+    transform: translateY(0);
+  }
+
+  .team-card__icon {
+    display: inline-flex;
+    color: #fff;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+
+  .team-card__icon:hover {
+    opacity: 0.75;
+    color: #fff;
+  }
+
+  .team-card__icon svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .team-card__viewbio {
+    margin-left: auto;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: #fff;
+    font-family: inherit;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    line-height: 1.15;
+    text-align: right;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+
+  .team-card__viewbio:hover {
+    opacity: 0.75;
+  }
+
+  .team-card__name {
+    margin: 0.85rem 0 0;
+    font-size: 1.375rem;
+    font-weight: 600;
+    color: #1e293b;
+    line-height: 1.2;
+  }
+
+  .team-card__title {
+    margin: 0.15rem 0 0;
+    font-size: 1.0625rem;
+    color: #94a3b8;
+  }
+
+  /* Touch devices have no hover — keep the bar visible */
+  @media (hover: none) {
+    .team-card__bar {
+      transform: translateY(0);
+    }
+  }
+
+  /* ---------- Modal ---------- */
+  .bio-modal {
+    width: min(1040px, calc(100vw - 2rem));
+    max-height: calc(100vh - 3rem);
+    padding: 0;
+    border: 0;
+    background: #fff;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.35);
+  }
+
+  .bio-modal::backdrop {
+    background: rgb(15 23 42 / 0.55);
+  }
+
+  .bio-modal__inner {
+    position: relative;
+    border-top: 3px solid var(--red);
+    padding: 1.5rem 2rem 2rem;
+  }
+
+  .bio-modal__close {
+    position: absolute;
+    top: 1.1rem;
+    right: 1.1rem;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: #94a3b8;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+
+  .bio-modal__close:hover {
+    color: #475569;
+  }
+
+  .bio-modal__close svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .bio-modal__header {
+    padding-right: 3rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .bio-modal__name {
+    margin: 0;
+    font-size: 1.625rem;
+    font-weight: 600;
+    color: #1e293b;
+    line-height: 1.15;
+  }
+
+  .bio-modal__title {
+    margin: 0.1rem 0 0;
+    font-size: 1.125rem;
+    color: #94a3b8;
+  }
+
+  .bio-modal__body {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2.25rem;
+    align-items: start;
+  }
+
+  .bio-modal__aside {
+    background: var(--red);
+    padding-bottom: 0.35rem;
+  }
+
+  .bio-modal__photo {
+    display: block;
+    width: calc(100% - 1.75rem);
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: top center;
+  }
+
+  .bio-modal__contact {
+    list-style: none;
+    margin: 0;
+    padding: 1rem 1.1rem 0.9rem;
+  }
+
+  .bio-modal__contact li {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.3rem 0;
+    color: #fff;
+    font-size: 0.9375rem;
+  }
+
+  .bio-modal__contact svg {
+    width: 20px;
+    height: 20px;
+    flex: 0 0 20px;
+  }
+
+  .bio-modal__contact a {
+    color: #fff;
+    text-decoration: none;
+    word-break: break-word;
+  }
+
+  .bio-modal__contact a:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+
+  .bio-modal__prose {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: #334155;
+  }
+
+  .bio-modal__prose :global(p) {
+    margin: 0 0 1rem;
+  }
+
+  .bio-modal__education {
+    margin-top: 1.5rem;
+  }
+
+  .bio-modal__eduheading {
+    margin: 0 0 0.35rem;
+    font-weight: 700;
+    color: #1e293b;
+  }
+
+  .bio-modal__edu {
+    margin: 0;
+    padding-left: 1.15rem;
+    list-style: disc outside;
+  }
+
+  .bio-modal__edu li {
+    margin: 0.15rem 0;
+  }
+
+  @media (max-width: 720px) {
+    .bio-modal__inner {
+      padding: 1.25rem 1.25rem 1.5rem;
+    }
+
+    .bio-modal__body {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .bio-modal__photo {
+      width: 100%;
+    }
+  }
+</style>
