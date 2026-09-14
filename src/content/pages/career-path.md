@@ -6,7 +6,6 @@ hero:
   heading: The Redrock Team
   subheading: Join the next generation of transaction professionals.
   backgroundImage: /iStock-173242551-Adj.jpg
-  height: 50vh
 ---
 
 ## Building the Right Team for Clients

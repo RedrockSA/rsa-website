@@ -2,7 +2,7 @@
 # ─── PROFILE ───────────────────────────────────────────────
 name: "Geoffrey Loos"
 title: "Managing Director"
-photo: "/team/GeoffLoos.jpg"
+photo: "/team/geoff-loos.webp"
 
 # ─── CONTACT ───────────────────────────────────────────────
 email: "gloos@redrocksa.com"

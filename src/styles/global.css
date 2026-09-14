@@ -83,6 +83,49 @@
            transition-colors duration-200;
   }
 
+  /* ── Page hero ──────────────────────────────────────────────
+     Every page hero. One class so the height is tunable in one
+     place rather than across a dozen inline styles.
+
+     Mobile keeps a viewport-relative band. On desktop the hero
+     sizes to its own content instead, so it ends just below the
+     text rather than running on - the longest subheading on the
+     site (Our Team) sets the tallest case, and --hero-min is the
+     floor for short ones. Top padding clears the fixed 85px nav,
+     which the old vertical centring used to handle implicitly. */
+  .page-hero {
+    position: relative;
+    display: flex;
+    min-height: 20rem;
+    padding-top: calc(85px + 1.5rem);   /* clears the fixed nav at every width */
+    padding-bottom: 2rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* Let the inner content block fill the padded box so it still centres. */
+  .page-hero > * {
+    flex: 1 1 auto;
+  }
+
+  /* Long subheads ran past the bottom of the old fixed-height hero on a
+     phone. Smaller type means fewer lines, and the hero grows if it still
+     needs to rather than clipping the text. */
+  @media (max-width: 640px) {
+    .page-hero p {
+      font-size: 1.0625rem;
+      line-height: 1.5;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .page-hero {
+      min-height: var(--hero-min, 16rem);
+      padding-bottom: 2.5rem;
+    }
+  }
+
   .container-narrow {
     @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
   }

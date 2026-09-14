@@ -1,0 +1,233 @@
+---
+/**
+ * "Redrock Reading List" — the reading module for /insights.
+ *
+ * Layout follows the design mockup:
+ *   row 1   three featured shelves as 2x2 cover blocks, plus a filter rail
+ *   row 2+  full-width bands for the big general-interest groups
+ *
+ * The rail filters toggle visibility client-side, so every book in a rail
+ * shelf or a band is in the static HTML. Featured shelves show a preview and
+ * link out to the expanded page, which carries the full 110 for crawlers.
+ */
+import CoverTile from './CoverTile.astro';
+import ShelfBand from './ShelfBand.astro';
+import {
+  FEATURED_SHELVES,
+  FEATURED_PREVIEW,
+  SHELF_BANDS,
+  railShelves,
+  shelfLabel,
+  readingListUrl,
+} from '../../utils/shelves';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  books: CollectionEntry<'books'>[]; // pre-sorted, most recently read first
+  expandedHref?: string;
+}
+
+const { books, expandedHref = '/insights/books' } = Astro.props;
+
+const byShelf = new Map<string, CollectionEntry<'books'>[]>();
+for (const book of books) {
+  const shelf = book.data.primaryCategory || 'unshelved';
+  if (!byShelf.has(shelf)) byShelf.set(shelf, []);
+  byShelf.get(shelf)!.push(book);
+}
+
+const counts = new Map([...byShelf].map(([s, b]) => [s, b.length]));
+const rail = railShelves(counts);
+
+const featured = FEATURED_SHELVES.filter((s) => byShelf.has(s)).map((s) => ({
+  slug: s,
+  label: shelfLabel(s),
+  books: byShelf.get(s)!,
+}));
+
+const bands = SHELF_BANDS.map((b) => ({
+  ...b,
+  books: b.shelves.flatMap((s) => byShelf.get(s) ?? []),
+})).filter((b) => b.books.length > 0);
+
+// The rail doubles as the reveal mechanism for shelves without their own
+// block - clicking one swaps the featured row for that shelf's covers.
+const railData = rail.map((s) => ({
+  slug: s,
+  label: shelfLabel(s),
+  count: counts.get(s) ?? 0,
+  books: byShelf.get(s)!,
+}));
+---
+
+<section class="reading-module" x-data="{ shelf: null }">
+  <!-- Featured shelves + filter rail -->
+  <div class="reading-top">
+    <div class="featured-row">
+      {featured.map((shelf) => (
+        <div class="shelf-block" x-show="shelf === null">
+          <h3 class="shelf-heading">{shelf.label}</h3>
+          <div class="cover-grid cover-grid--stack" style="--tile-h: 132px;">
+            {shelf.books.slice(0, FEATURED_PREVIEW).map((book, i) => (
+              <CoverTile
+                title={book.data.title}
+                author={book.data.author}
+                slug={book.slug}
+                coverImage={book.data.coverImage}
+                coverWidth={book.data.coverWidth}
+                coverHeight={book.data.coverHeight}
+                eager={i < FEATURED_PREVIEW}
+              />
+            ))}
+          </div>
+          {shelf.books.length > FEATURED_PREVIEW && (
+            <a href={readingListUrl([shelf.slug])} class="more-link">More…</a>
+          )}
+        </div>
+      ))}
+
+      <!-- A rail shelf, revealed in place of the featured row -->
+      {railData.map((shelf) => (
+        <div class="shelf-block shelf-block--wide" x-show={`shelf === '${shelf.slug}'`} x-cloak>
+          <h3 class="shelf-heading">{shelf.label}</h3>
+          <div class="cover-grid cover-grid--flow" style="--tile-h: 132px;">
+            {shelf.books.map((book) => (
+              <CoverTile
+                title={book.data.title}
+                author={book.data.author}
+                slug={book.slug}
+                coverImage={book.data.coverImage}
+                coverWidth={book.data.coverWidth}
+                coverHeight={book.data.coverHeight}
+              />
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <aside class="filter-rail">
+      <p class="rail-title">Browse by topic</p>
+      <button
+        type="button"
+        class="rail-item"
+        x-on:click="shelf = null"
+        x-bind:class="shelf === null && 'rail-item--active'"
+      >
+        Featured
+      </button>
+      {railData.map((shelf) => (
+        <button
+          type="button"
+          class="rail-item"
+          x-on:click={`shelf = shelf === '${shelf.slug}' ? null : '${shelf.slug}'`}
+          x-bind:class={`shelf === '${shelf.slug}' && 'rail-item--active'`}
+        >
+          {shelf.label} <span class="rail-count">({shelf.count})</span>
+        </button>
+      ))}
+    </aside>
+  </div>
+
+  <!-- Full-width bands: single scrollable row each -->
+  {bands.map((band) => (
+    <ShelfBand
+      label={band.label}
+      id={band.slug}
+      books={band.books}
+      seeAllHref={readingListUrl(band.shelves)}
+    />
+  ))}
+
+</section>
+
+<script>
+  import Alpine from 'alpinejs';
+  window.Alpine = Alpine;
+  Alpine.start();
+</script>
+
+<style>
+  [x-cloak] { display: none !important; }
+
+  .reading-module { display: flex; flex-direction: column; gap: 3rem; }
+
+  .reading-top {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  @media (min-width: 900px) {
+    .reading-top { grid-template-columns: minmax(0, 1fr) 15rem; gap: 3rem; }
+  }
+
+  .featured-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 2rem;
+    align-items: start;
+  }
+  /* A revealed rail shelf takes the full width of the featured area. */
+  .shelf-block--wide { grid-column: 1 / -1; }
+
+  .shelf-heading {
+    font-style: italic;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #0f172a;
+    margin-bottom: 0.85rem;
+  }
+
+  .cover-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    align-items: flex-end;   /* uneven cover heights sit on a common baseline */
+  }
+  .cover-grid--flow { gap: 1rem; }
+
+  /* Featured shelves read as a stacked column, not a side-by-side pair. */
+  .cover-grid--stack {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .more-link {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-size: 0.8rem;
+    font-style: italic;
+    color: #C80026;
+  }
+  .more-link:hover { text-decoration: underline; }
+
+  .filter-rail { display: flex; flex-direction: column; gap: 0.15rem; }
+  .rail-title {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #94a3b8;
+    margin-bottom: 0.3rem;
+  }
+  /* Padding and size are tuned so the nine rail rows total roughly the
+     height of the two stacked covers beside them. */
+  .rail-item {
+    text-align: left;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 0.82rem;
+    color: #334155;
+    padding: 0.28rem 0.25rem;
+    border-bottom: 1px solid #cbd5e1;
+    background: none;
+    cursor: pointer;
+    transition: color 120ms ease, border-color 120ms ease;
+  }
+  .rail-item:hover { color: #C80026; }
+  .rail-item--active { color: #C80026; border-color: #C80026; }
+  .rail-count { font-weight: 400; color: #94a3b8; }
+
+  .shelf-band { scroll-margin-top: 6rem; }
+</style>

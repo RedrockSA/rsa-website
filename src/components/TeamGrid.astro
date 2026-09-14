@@ -54,17 +54,22 @@ const sorted = members.sort((a, b) => {
 </script>
 
 <style>
+  /* Tracks are capped rather than 1fr: with 1fr the columns stretched to
+     fill the row, which pinned a short team to the left edge with empty
+     space beside it. Bounded tracks plus justify-content centres the whole
+     group, and still packs left-to-right as the team grows. */
   .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(240px, 280px));
+    justify-content: center;
     gap: 2.5rem 2rem;
     margin-top: 2rem;
   }
 
   @media (max-width: 520px) {
     .team-grid {
-      grid-template-columns: 1fr;
-      max-width: 320px;
+      grid-template-columns: minmax(0, 320px);
+      justify-content: center;
     }
   }
 </style>

@@ -4,7 +4,6 @@ description: Support unique business situations with advisory on capital solutio
 hero:
   heading: Capital Advisory
   backgroundImage: /iStock-108223280.jpg
-  height: 50vh
 pageWidth: narrow
 ---
 

@@ -1,0 +1,184 @@
+---
+/**
+ * /insights/books/<slug> — one indexable page per book.
+ *
+ * Carries schema.org Book JSON-LD so the shelf is legible to search engines
+ * as structured data, not just a wall of images.
+ */
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import CoverTile from '../../../components/reading/CoverTile.astro';
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import { buildAffiliateLink } from '../../../utils/amazon';
+import { shelfLabel, bookUrl, readingListUrl, READING_LIST_ALL } from '../../../utils/shelves';
+
+export async function getStaticPaths() {
+  const books = await getCollection('books');
+  return books.map((book) => ({ params: { slug: book.slug }, props: { book, books } }));
+}
+
+interface Props {
+  book: CollectionEntry<'books'>;
+  books: CollectionEntry<'books'>[];
+}
+
+const { book, books } = Astro.props;
+const d = book.data;
+
+// The CSV's amazon_url is the source of truth - edits there reach the site
+// directly. buildAffiliateLink only fills in if a row has no URL.
+const affiliate = d.amazonUrl || (d.asin ? buildAffiliateLink(d.asin) : undefined);
+const plainIsbn = (d.isbn13 || '').replace(/-/g, '');
+
+// A few more from the same shelf, for onward browsing.
+const alsoOnShelf = books
+  .filter((b) => b.slug !== book.slug && b.data.primaryCategory === d.primaryCategory)
+  .slice(0, 8);
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Book',
+  name: d.subtitle || d.title,
+  author: { '@type': 'Person', name: d.author },
+  ...(plainIsbn ? { isbn: plainIsbn } : {}),
+  ...(d.publisher ? { publisher: { '@type': 'Organization', name: d.publisher } } : {}),
+  ...(d.pages ? { numberOfPages: d.pages } : {}),
+  ...(d.originalPublicationYear ? { datePublished: String(d.originalPublicationYear) } : {}),
+  ...(d.topics.length ? { genre: d.topics } : {}),
+  ...(d.coverImage ? { image: new URL(d.coverImage, Astro.site).toString() } : {}),
+  url: new URL(bookUrl(book.slug), Astro.site).toString(),
+};
+
+const facts: [string, string][] = [
+  ['Author', d.author],
+  ...(d.publisher ? ([['Publisher', d.publisher]] as [string, string][]) : []),
+  ...(d.originalPublicationYear
+    ? ([['First published', String(d.originalPublicationYear)]] as [string, string][])
+    : []),
+  ...(d.pages ? ([['Pages', String(d.pages)]] as [string, string][]) : []),
+  ...(d.isbn13 ? ([['ISBN-13', d.isbn13]] as [string, string][]) : []),
+];
+---
+
+<BaseLayout
+  title={`${d.title} — ${d.author} | Redrock Strategic Advisors`}
+  description={d.oneLiner || `${d.subtitle || d.title} by ${d.author} — from the Redrock reading list.`}
+>
+  <!-- No hero on a detail page, so pad past the fixed 85px header explicitly. -->
+  <main class="container-narrow pb-16" style="padding-top: calc(85px + 3rem);">
+    <p class="mb-8 text-sm">
+      <a href={READING_LIST_ALL} style="color:#C80026;">&larr; Redrock Reading List</a>
+    </p>
+
+    <div class="book-detail">
+      <div class="book-detail__cover" style="--tile-h: 280px;">
+        <CoverTile
+          title={d.title}
+          author={d.author}
+          slug={book.slug}
+          coverImage={d.coverImage}
+          coverWidth={d.coverWidth}
+          coverHeight={d.coverHeight}
+          eager={true}
+          href={affiliate}
+          external={!!affiliate}
+        />
+      </div>
+
+      <div>
+        <h1 class="text-3xl font-bold leading-tight text-secondary-900">{d.title}</h1>
+        {d.subtitle && d.subtitle !== d.title && (
+          <p class="mt-1 text-lg italic text-secondary-600">{d.subtitle}</p>
+        )}
+        <p class="mt-3 text-lg text-secondary-700">{d.author}</p>
+
+        {d.oneLiner && <p class="mt-6 text-secondary-800">{d.oneLiner}</p>}
+
+        {d.primaryCategory && (
+          <p class="mt-6 text-sm text-secondary-600">
+            On the
+            <a href={readingListUrl([d.primaryCategory])} class="italic font-semibold" style="color:#C80026;">
+              {shelfLabel(d.primaryCategory)}
+            </a>
+            shelf
+          </p>
+        )}
+
+        {(d.topics.length > 0 || d.secondaryCategories.length > 0) && (
+          <div class="mt-4 flex flex-wrap gap-2">
+            {d.topics.map((g) => (
+              <span class="rounded-full bg-secondary-800 px-2.5 py-0.5 text-xs font-medium text-white">{g}</span>
+            ))}
+            {d.secondaryCategories.map((s) => (
+              <span class="rounded-full bg-secondary-100 px-2.5 py-0.5 text-xs text-secondary-700">{s}</span>
+            ))}
+          </div>
+        )}
+
+        {affiliate && (
+          <p class="mt-8">
+            <a
+              href={affiliate}
+              target="_blank"
+              rel="sponsored noopener noreferrer"
+              class="inline-block rounded border border-secondary-300 px-5 py-2 text-sm font-semibold text-secondary-800 transition-colors hover:border-[#C80026] hover:text-[#C80026]"
+            >
+              Add To Library (From Amazon)
+            </a>
+          </p>
+        )}
+
+        <dl class="mt-10 grid grid-cols-[auto_1fr] gap-x-6 gap-y-2 text-sm">
+          {facts.map(([k, v]) => (
+            <>
+              <dt class="font-semibold text-secondary-500">{k}</dt>
+              <dd class="text-secondary-800">{v}</dd>
+            </>
+          ))}
+        </dl>
+      </div>
+    </div>
+
+    {alsoOnShelf.length > 0 && (
+      <section class="mt-20">
+        <h2 class="mb-4 border-b border-secondary-300 pb-2 text-lg font-bold italic text-secondary-900">
+          More on the {shelfLabel(d.primaryCategory || '')} shelf
+        </h2>
+        <div class="also-grid" style="--tile-h: 120px;">
+          {alsoOnShelf.map((b) => (
+            <CoverTile
+              title={b.data.title}
+              author={b.data.author}
+              slug={b.slug}
+              coverImage={b.data.coverImage}
+              coverWidth={b.data.coverWidth}
+              coverHeight={b.data.coverHeight}
+            />
+          ))}
+        </div>
+      </section>
+    )}
+  </main>
+
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+</BaseLayout>
+
+<style>
+  .book-detail {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: start;
+  }
+  @media (min-width: 700px) {
+    .book-detail { grid-template-columns: auto minmax(0, 1fr); gap: 3.5rem; }
+  }
+  .book-detail__cover { display: flex; }
+
+  .also-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: flex-end;
+  }
+</style>

@@ -1,0 +1,110 @@
+---
+/**
+ * A single book cover in the reading module.
+ *
+ * Sized by HEIGHT with width:auto, so every cover keeps its true
+ * proportions and the tops/bottoms of a row still line up - the way a real
+ * shelf looks. Eight of the 110 covers are near-square (Great Courses and a
+ * few others), so a fixed-width grid would have to crop or letterbox them.
+ *
+ * Height comes from the --tile-h custom property set by the parent shelf,
+ * so the same tile serves the dense featured blocks and the wider bands.
+ */
+import { bookUrl } from '../../utils/shelves';
+
+interface Props {
+  title: string;
+  author: string;
+  slug: string;
+  coverImage?: string;
+  coverWidth?: number;
+  coverHeight?: number;
+  /** Above-the-fold tiles should not lazy-load. */
+  eager?: boolean;
+  /** Override the destination - e.g. the detail page sends its own cover to Amazon. */
+  href?: string;
+  /** Set for off-site destinations: opens a new tab with the right rel flags. */
+  external?: boolean;
+}
+
+const {
+  title, author, slug, coverImage, coverWidth, coverHeight,
+  eager = false, href, external = false,
+} = Astro.props;
+
+const destination = href ?? bookUrl(slug);
+
+// Reserve the exact box before the image lands, so nothing shifts.
+const ratio = coverWidth && coverHeight ? `${coverWidth} / ${coverHeight}` : '2 / 3';
+---
+
+<a
+  href={destination}
+  class="cover-tile group"
+  style={`aspect-ratio: ${ratio};`}
+  title={external ? `${title} — find it on Amazon` : `${title} — ${author}`}
+  target={external ? '_blank' : undefined}
+  rel={external ? 'sponsored noopener noreferrer' : undefined}
+>
+  {coverImage ? (
+    <img
+      src={coverImage}
+      alt={`${title} by ${author}`}
+      width={coverWidth}
+      height={coverHeight}
+      loading={eager ? 'eager' : 'lazy'}
+      decoding="async"
+    />
+  ) : (
+    <span class="cover-fallback">{title}</span>
+  )}
+</a>
+
+<style>
+  .cover-tile {
+    display: block;
+    height: var(--tile-h, 150px);
+    width: auto;
+    flex: 0 0 auto;
+    border-radius: 2px;
+    overflow: hidden;
+    background: #e2e8f0;
+    box-shadow: 0 1px 3px rgb(15 23 42 / 0.18), 0 6px 12px -6px rgb(15 23 42 / 0.22);
+    transition: transform 160ms ease, box-shadow 160ms ease;
+  }
+
+  .cover-tile:hover,
+  .cover-tile:focus-visible {
+    transform: translateY(-3px);
+    box-shadow: 0 2px 5px rgb(15 23 42 / 0.22), 0 14px 22px -10px rgb(15 23 42 / 0.35);
+  }
+
+  .cover-tile img {
+    height: 100%;
+    width: 100%;
+    object-fit: fill; /* box already matches the image ratio exactly */
+    display: block;
+  }
+
+  .cover-fallback {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    font-size: 0.65rem;
+    line-height: 1.2;
+    text-align: center;
+    color: #64748b;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cover-tile {
+      transition: none;
+    }
+    .cover-tile:hover {
+      transform: none;
+    }
+  }
+</style>

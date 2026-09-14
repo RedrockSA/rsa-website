@@ -39,8 +39,8 @@ const hasHero = !!hero;
 <BaseLayout title={`${title} | Redrock Strategic Advisors`} description={description}>
   {hasHero && (
     <section
-      class="relative bg-cover bg-center bg-no-repeat"
-      style={`height: ${hero!.height || '50vh'}; background-image: url('${hero!.backgroundImage}');`}
+      class="page-hero"
+      style={`background-image: url('${hero!.backgroundImage}');${hero!.height ? ` --hero-mobile: ${hero!.height};` : ''}`}
     >
       <div
         class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4"
@@ -48,10 +48,10 @@ const hasHero = !!hero;
       >
         <h1 class="text-white mb-4">{hero!.heading}</h1>
         {hero!.subheading && (
-          <p class="text-xl max-w-2xl mb-8 text-white/90">{hero!.subheading}</p>
+          <p class="text-xl max-w-2xl lg:max-w-3xl mb-0 text-white/90">{hero!.subheading}</p>
         )}
         {hero!.cta && hero!.cta.length > 0 && (
-          <div class="flex gap-4">
+          <div class="flex gap-4 mt-8">
             {hero!.cta.map((btn) => (
               <a href={btn.href} class={btn.style === 'secondary' ? 'btn-secondary' : 'btn-primary'}>
                 {btn.text}

@@ -1,0 +1,28 @@
+---
+title: "All Creatures Great and Small"
+author: "James Herriot"
+authorLastName: "herriot"
+isbn13: "978-1-250057839"
+isbn10: "1-250057833"
+asin: "1250057833"
+amazonUrl: "https://www.amazon.com/dp/1250057833?tag=redrock07-20"
+publisher: "Griffin"
+pages: 442
+yearPublished: 2014
+originalPublicationYear: 1970
+type: fiction
+primaryCategory: "memoir-biography"
+topics: ["nature"]
+secondaryCategories: ["culture"]
+era: "early-20th-century"
+eraPublished: "1970s"
+geography: "britain"
+coverImage: "/books/covers/herriot_all-creatures-great-and-small.webp"
+coverWidth: 324
+coverHeight: 500
+oneLiner: ""
+featured: false
+dateAdded: 2018-08-11
+---
+
+<!-- Auto-generated from src/data/books.csv - edit the CSV, not this file. Regenerate with `npm run generate:books`. -->

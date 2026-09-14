@@ -33,6 +33,12 @@ export const navItems: NavItem[] = [
     label: 'Insights',
     href: '/insights',
     group: 'left',
+    dropdownColumns: 1,
+    children: [
+      { label: "Redrock Reading List", href: '/insights/books' },
+      { label: 'Newsroom', href: '/about/newsroom' },
+      { label: 'Deal Market Commentary', href: '/insights/commentary' },
+    ],
   },
   {
     label: 'Career Path',

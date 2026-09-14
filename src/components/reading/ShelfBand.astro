@@ -1,0 +1,177 @@
+---
+/**
+ * A full-width shelf as a single scrollable row — the "gallery" treatment for
+ * the large general-interest groups (46 biographies, 7 fiction).
+ *
+ * Arrows sit ON the row rather than in the header: the next arrow floats over
+ * the right edge of the last visible cover, the previous arrow over the left.
+ * The previous arrow stays hidden until the row has actually been scrolled,
+ * so a gallery at rest shows exactly one control.
+ *
+ * The scrollbar is hidden — the arrows and a natural swipe are the interface.
+ * Scrolling is still native overflow with scroll-snap, so touch and trackpad
+ * work with no JS at all; the arrows are an enhancement on top.
+ */
+import CoverTile from './CoverTile.astro';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  label: string;
+  id: string;
+  books: CollectionEntry<'books'>[];
+  /** Where "See all" points - the expanded view, anchored to this shelf. */
+  seeAllHref: string;
+  tileHeight?: string;
+}
+
+const { label, id, books, seeAllHref, tileHeight = '132px' } = Astro.props;
+---
+
+<div
+  class="shelf-band"
+  id={id}
+  x-data="{
+    atStart: true,
+    atEnd: false,
+    scrollable: false,
+    measure() {
+      const t = $refs.track;
+      if (!t) return;
+      this.scrollable = t.scrollWidth > t.clientWidth + 4;
+      this.atStart = t.scrollLeft <= 4;
+      this.atEnd = t.scrollLeft + t.clientWidth >= t.scrollWidth - 4;
+    },
+    page(dir) {
+      $refs.track.scrollBy({ left: dir * $refs.track.clientWidth * 0.85, behavior: 'smooth' });
+    }
+  }"
+  x-init="$nextTick(() => measure())"
+  x-on:resize.window.debounce.150="measure()"
+>
+  <div class="band-head">
+    <h3 class="shelf-heading">{label}</h3>
+    <a href={seeAllHref} class="see-all">See all {books.length} &rarr;</a>
+  </div>
+
+  <div class="band-viewport">
+    <div
+      class="band-track"
+      style={`--tile-h: ${tileHeight};`}
+      x-ref="track"
+      x-on:scroll.debounce.60="measure()"
+    >
+      {books.map((book) => (
+        <CoverTile
+          title={book.data.title}
+          author={book.data.author}
+          slug={book.slug}
+          coverImage={book.data.coverImage}
+          coverWidth={book.data.coverWidth}
+          coverHeight={book.data.coverHeight}
+        />
+      ))}
+    </div>
+
+    <!-- Only appears once the row has been scrolled off its start. -->
+    <button
+      type="button"
+      class="arrow arrow--prev"
+      aria-label={`Scroll ${label} left`}
+      x-show="scrollable && !atStart"
+      x-transition.opacity
+      x-cloak
+      x-on:click="page(-1)"
+    >&#8249;</button>
+
+    <button
+      type="button"
+      class="arrow arrow--next"
+      aria-label={`Scroll ${label} right`}
+      x-show="scrollable && !atEnd"
+      x-transition.opacity
+      x-cloak
+      x-on:click="page(1)"
+    >&#8250;</button>
+  </div>
+</div>
+
+<style>
+  [x-cloak] { display: none !important; }
+
+  .shelf-band { scroll-margin-top: 6rem; }
+
+  .band-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.75rem 1.5rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .shelf-heading {
+    font-style: italic;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #0f172a;
+    margin: 0;
+  }
+
+  .see-all {
+    font-size: 0.8rem;
+    color: #C80026;
+    white-space: nowrap;
+  }
+  .see-all:hover { text-decoration: underline; }
+
+  /* Positioning context for the floating arrows. */
+  .band-viewport { position: relative; }
+
+  .band-track {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-end;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    padding-bottom: 0.5rem;   /* room for the tile hover lift */
+    /* No visible scrollbar - the arrows and swipe are the interface. */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .band-track::-webkit-scrollbar { display: none; }
+  .band-track > :global(*) { scroll-snap-align: start; }
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 9999px;
+    background: rgb(15 23 42 / 0.45);
+    color: #fff;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgb(15 23 42 / 0.3);
+    transition: background-color 140ms ease, transform 140ms ease;
+  }
+  /* Darker on hover, as requested. */
+  .arrow:hover,
+  .arrow:focus-visible {
+    background: rgb(15 23 42 / 0.85);
+  }
+
+  .arrow--next { right: 0.35rem; }
+  .arrow--prev { left: 0.35rem; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .band-track { scroll-behavior: auto; }
+    .arrow { transition: none; }
+  }
+</style>

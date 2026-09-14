@@ -12,7 +12,9 @@ export async function getStaticPaths() {
 
 const { article } = Astro.props;
 const { Content } = await article.render();
-const date = new Date(article.data.date);
+// Parsed with an explicit time so the date is read as local rather than
+// UTC midnight, which rendered every article a day early.
+const date = new Date(`${article.data.date}T00:00:00`);
 const formatted = date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 ---
 

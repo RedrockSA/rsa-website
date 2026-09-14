@@ -4,7 +4,6 @@ description: M&A advisory services from Redrock Strategic Advisors.
 hero:
   heading: Strategic & Board Advisory
   backgroundImage: /iStock-481100064.jpg
-  height: 50vh
 pageWidth: narrow
 ---
 

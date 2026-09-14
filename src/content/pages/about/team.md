@@ -4,10 +4,8 @@ description: Meet the Redrock Strategic Advisors team.
 hero:
   heading: Our Team
   subheading: >-
-    Our growing team of dedicated professionals have hands-on experience representing business owners in over 100 transactions. With deep experience across middle-market M&A, capital advisory, and strategic transactions, Redrock brings the expertise and commitment needed to guide founder and family-owned companies through some of their most important decisions.
+    A dedicated and professional team with hands-on experience representing business owners in transactions across middle-market M&A, capital advisory, and strategic advisory.
   backgroundImage: /iStock-1048931984.jpg
-  height: 50vh
-  contentOffset: 6rem
 pageWidth: narrow
 showTitle: false
 teamGrid: true

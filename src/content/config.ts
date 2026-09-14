@@ -73,4 +73,43 @@ const news = defineCollection({
   }),
 });
 
-export const collections = { pages, transactions, news, team };
+
+const books = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    subtitle: z.string().optional(),                     // full title with subtitle, when different
+    author: z.string(),
+    authorLastName: z.string().optional(),
+
+    isbn13: z.string().optional(),                       // hyphenated, e.g. "978-0-307719218"
+    isbn10: z.string().optional(),
+    asin: z.string().optional(),
+    amazonUrl: z.string().optional(),                    // the affiliate link, straight from the CSV
+
+    publisher: z.string().optional(),
+    pages: z.number().optional(),
+    yearPublished: z.number().optional(),
+    originalPublicationYear: z.number().optional(),
+
+    type: z.enum(['fiction', 'non-fiction']).default('non-fiction'),
+    primaryCategory: z.string().optional(),              // one per book - the shelf, and the Primary Category filter
+    topics: z.array(z.string()).default([]),             // granular tags, multi-value
+    secondaryCategories: z.array(z.string()).default([]), // broad buckets, multi-value
+    era: z.string().optional(),
+    eraPublished: z.string().optional(),
+    geography: z.string().optional(),
+
+    coverImage: z.string().optional(),                   // derived by generate-books.mjs
+    coverWidth: z.number().optional(),                   // dimensions of the SHIPPED webp, not the source
+    coverHeight: z.number().optional(),
+
+    oneLiner: z.string().default(''),
+    featured: z.boolean().default(false),
+    myRating: z.number().optional(),                     // private - not rendered publicly
+    dateRead: z.coerce.date().optional(),
+    dateAdded: z.coerce.date(),
+  }),
+});
+
+export const collections = { pages, transactions, news, team, books };
