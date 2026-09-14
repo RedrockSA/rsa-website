@@ -13,7 +13,7 @@ yearPublished: 2013
 originalPublicationYear: 2013
 type: non-fiction
 primaryCategory: "memoir-biography"
-topics: ["leadership", "sports"]
+topics: ["leadership"]
 secondaryCategories: ["culture", "history"]
 era: "early-20th-century"
 eraPublished: "2010s"

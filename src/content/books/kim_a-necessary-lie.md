@@ -9,7 +9,7 @@ pages: 439
 yearPublished: 2023
 type: non-fiction
 primaryCategory: "memoir-biography"
-topics: []
+topics: ["culture", "war", "leadership"]
 secondaryCategories: []
 era: "contemporary"
 eraPublished: "2020s"

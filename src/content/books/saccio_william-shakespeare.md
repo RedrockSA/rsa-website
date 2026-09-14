@@ -13,7 +13,7 @@ yearPublished: 2013
 originalPublicationYear: 1999
 type: non-fiction
 primaryCategory: "relevant-fiction"
-topics: []
+topics: ["arts"]
 secondaryCategories: ["culture"]
 era: "early-modern"
 eraPublished: "1990s"

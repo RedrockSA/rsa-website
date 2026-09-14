@@ -13,7 +13,7 @@ yearPublished: 1993
 originalPublicationYear: 1993
 type: non-fiction
 primaryCategory: "memoir-biography"
-topics: []
+topics: ["technology-and-science"]
 secondaryCategories: ["science-technology"]
 era: "mid-20th-century"
 eraPublished: "1990s"

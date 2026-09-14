@@ -13,7 +13,7 @@ yearPublished: 2018
 originalPublicationYear: 1985
 type: non-fiction
 primaryCategory: "memoir-biography"
-topics: []
+topics: ["technology-and-science"]
 secondaryCategories: ["science-technology"]
 era: "mid-20th-century"
 eraPublished: "1980s"

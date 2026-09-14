@@ -13,7 +13,7 @@ yearPublished: 2021
 originalPublicationYear: 2021
 type: non-fiction
 primaryCategory: "history"
-topics: []
+topics: ["war", "strategy"]
 secondaryCategories: []
 era: "medieval"
 eraPublished: "2020s"

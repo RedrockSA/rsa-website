@@ -13,7 +13,7 @@ yearPublished: 2023
 originalPublicationYear: 2023
 type: non-fiction
 primaryCategory: "history"
-topics: []
+topics: ["culture", "war", "leadership"]
 secondaryCategories: []
 era: "ancient"
 eraPublished: "2020s"

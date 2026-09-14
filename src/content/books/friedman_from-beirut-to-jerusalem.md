@@ -12,7 +12,7 @@ yearPublished: 1995
 originalPublicationYear: 1989
 type: non-fiction
 primaryCategory: "history"
-topics: []
+topics: ["war", "religion", "negotiation"]
 secondaryCategories: ["biography-memoir", "politics-society"]
 era: "late-20th-century"
 eraPublished: "1980s"

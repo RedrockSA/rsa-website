@@ -13,7 +13,7 @@ yearPublished: 2023
 originalPublicationYear: 2023
 type: non-fiction
 primaryCategory: "memoir-biography"
-topics: []
+topics: ["arts"]
 secondaryCategories: []
 era: "contemporary"
 eraPublished: "2020s"

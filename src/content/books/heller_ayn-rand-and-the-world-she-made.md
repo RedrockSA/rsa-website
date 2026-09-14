@@ -12,7 +12,7 @@ yearPublished: 2009
 originalPublicationYear: 2009
 type: non-fiction
 primaryCategory: "memoir-biography"
-topics: []
+topics: ["economics", "psychology"]
 secondaryCategories: []
 era: "mid-20th-century"
 eraPublished: "2000s"

@@ -13,7 +13,7 @@ yearPublished: 2011
 originalPublicationYear: 2011
 type: non-fiction
 primaryCategory: "history"
-topics: []
+topics: ["arts", "technology-and-science"]
 secondaryCategories: ["biography-memoir"]
 era: "19th-century"
 eraPublished: "2010s"
