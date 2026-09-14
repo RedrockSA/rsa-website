@@ -4,7 +4,7 @@ description: Strategic advisory services from Redrock Strategic Advisors.
 hero:
   heading: Redrock Strategic Advisors
   subheading: We focus on partnering with clients at critical milestones in their business lifecycle.
-  backgroundImage: /iStock-530770239.jpg
+  backgroundImage: /iStock-530770239.webp
 pageWidth: narrow
 showTitle: false
 ---

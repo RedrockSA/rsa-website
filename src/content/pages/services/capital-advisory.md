@@ -3,7 +3,7 @@ title: Capital Advisory
 description: Support unique business situations with advisory on capital solutions.
 hero:
   heading: Capital Advisory
-  backgroundImage: /iStock-108223280.jpg
+  backgroundImage: /iStock-108223280.webp
 pageWidth: narrow
 ---
 

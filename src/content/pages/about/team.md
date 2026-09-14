@@ -5,7 +5,7 @@ hero:
   heading: Our Team
   subheading: >-
     A dedicated and professional team with hands-on experience representing business owners in transactions across middle-market M&A, capital advisory, and strategic advisory.
-  backgroundImage: /iStock-1048931984.jpg
+  backgroundImage: /iStock-1048931984.webp
 pageWidth: narrow
 showTitle: false
 teamGrid: true

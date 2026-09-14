@@ -5,7 +5,7 @@ pageWidth: narrow
 hero:
   heading: The Redrock Team
   subheading: Join the next generation of transaction professionals.
-  backgroundImage: /iStock-173242551-Adj.jpg
+  backgroundImage: /iStock-173242551-Adj.webp
 ---
 
 ## Building the Right Team for Clients

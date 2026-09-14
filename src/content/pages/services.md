@@ -4,7 +4,7 @@ description: Strategic advisory services from Redrock Strategic Advisors.
 hero:
   heading: Our Services
   subheading: Strategic transaction advisory tailored to your situation.
-  backgroundImage: /iStock-2054864236-Adj.jpg
+  backgroundImage: /iStock-2054864236-Adj.webp
   cta:
     - text: Let's Connect
       href: /contact
@@ -17,7 +17,7 @@ showTitle: false
 
 <div style="display: flex; gap: 2.5rem; margin: 1.5rem 0;">
   <div style="flex: 0 0 240px; min-height: 0;">
-    <img src="/iStock-1281536292.jpg" alt="Redrock Services" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.25rem;" />
+    <img src="/iStock-1281536292.webp" alt="Redrock Services" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.25rem;" />
   </div>
   <div style="flex: 1;">
     <p><strong>>>Mergers & Acquisitions.</strong> We advise on transactions that result in change of control ownership, including the transfer of ownership from one generation to the next, control sale of businesses to strategic or institutional owners, carve-outs/divestitures, management buyouts or the recapitalization of the company where current owners retain only a minority position in the go-forward business.</p>
