@@ -49,20 +49,20 @@ If you delete your cookies, change browsers or use a different cookie, our cooki
  
 ## Analytics and Website Hosting
 
-**Cloudflare Web Analytics.** We use Cloudflare Web Analytics to understand how visitors use the Websites — for example, which pages are viewed most often and which sites refer visitors to us. We selected this service specifically because it is privacy-preserving:
+**Website analytics.** We use a privacy-preserving analytics service to understand how visitors use the Websites — for example, which pages are viewed most often and which sites refer visitors to us. We selected our provider specifically because of how little it collects:
 
 - It does **not** use cookies, localStorage, or any similar identifier stored on your device.
 - It does **not** fingerprint individual visitors, and it does not track you across other websites.
-- It does **not** collect or store your IP address in the analytics reports available to us.
-- It does **not** sell your data or use it to build advertising profiles.
+- It does **not** make your IP address available to us in its analytics reports.
+- It does **not** sell your data or use it to build advertising or marketing profiles.
 
-The information reported to us is aggregate and does not identify you. It includes the page visited, the referring website, general device and browser type, country-level location, and page performance timings. Because this service does not place cookies or store identifiers on your device, there is no analytics cookie to opt out of. You can find Cloudflare's privacy documentation at [www.cloudflare.com/privacypolicy](https://www.cloudflare.com/privacypolicy/).
+The information reported to us is aggregate and does not identify you. It includes the page visited, the referring website, general device and browser type, country-level location, and page performance timings. Because this service does not place cookies or store identifiers on your device, there is no analytics cookie for you to opt out of.
 
-**Cloudflare hosting and network services.** The Websites are hosted and delivered through Cloudflare Pages, and Cloudflare's global network sits between your browser and our site. In delivering pages to you and protecting the Websites against abuse, Cloudflare processes technical information including your IP address, request headers, and the resources you request. Cloudflare acts as our service provider for this purpose and processes such information on our behalf in accordance with its own privacy commitments.
+**Hosting and content delivery.** The Websites are hosted and delivered through third-party hosting and content-delivery providers, whose networks sit between your browser and our site. In delivering pages to you and protecting the Websites against abuse, these providers process technical information including your IP address, request headers, and the resources you request. They act as our service providers for this purpose and process such information on our behalf, subject to their own privacy commitments and to contractual obligations to us.
 
 **Other analytics services.** We may in the future use additional analytics or conversion-tracking services, including services that do use cookies, JavaScript, and similar technologies. Should we do so, the information generated about your use of the Websites (which may include your IP address or a truncated version of it) would be transmitted to and stored by those providers, who would use it to compile reports for us on website activity. We will update this Privacy Policy before introducing any such service, and where a service offers a public opt-out mechanism we will identify it here.
 
-We may also collect information about your computer, including IP address, operating system, and browser type, for system administration and to create reports. This is statistical data about our users' browsing actions and patterns and does not identify any individual.
+**Identifying our providers.** If you would like to know which hosting, content-delivery, or analytics providers we currently use, or to exercise any right you may have with respect to information they process on our behalf, contact us at [info@redrocksa.com](mailto:info@redrocksa.com) and we will respond with that information.
 
 ## Automatically Collected Information
 When you access the Service or open one of our HTML emails, we may automatically record certain information from your system by using cookies and other types of tracking technologies. This "automatically collected" information may include Internet Protocol address ("IP Address"), a unique user ID, device type, device identifiers, browser types and language, referring and exit pages, platform type, version of software installed, system type, the content and pages that you access on the Service, the number of clicks, the amount of time spent on pages, the dates and times that you visit the Service, and other similar information. Depending on the law of your country of residence, your IP address may legally be considered personally identifiable information.
