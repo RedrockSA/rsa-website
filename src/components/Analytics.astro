@@ -1,0 +1,32 @@
+---
+/**
+ * Cloudflare Web Analytics beacon.
+ *
+ * Privacy-first and cookieless, which is why it was chosen over GA4 — no
+ * consent banner obligation in most jurisdictions, and no measurable weight
+ * on page load.
+ *
+ * SETUP: set PUBLIC_CF_BEACON_TOKEN in .env (local) and in the Cloudflare
+ * Pages project's environment variables (production). Until it is set this
+ * component renders nothing, so the build and the site are unaffected.
+ *
+ * ALTERNATIVE: Cloudflare Pages can inject this beacon automatically from the
+ * dashboard, with no code at all. If you enable it there, leave the token
+ * unset here — otherwise the beacon loads twice and page views double-count.
+ *
+ * The exact snippet is worth confirming against your Cloudflare dashboard
+ * (Web Analytics -> your site -> "Add the JS snippet"); Cloudflare has changed
+ * the beacon host before.
+ */
+const token = import.meta.env.PUBLIC_CF_BEACON_TOKEN;
+---
+
+{
+  token && (
+    <script
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon={`{"token": "${token}"}`}
+    />
+  )
+}

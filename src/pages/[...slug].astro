@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import PageLayout from '../layouts/PageLayout.astro';
 import TeamGrid from '../components/TeamGrid.astro';
+import { ORG_ID, SITE_URL, breadcrumbSchema } from '../utils/seo';
 
 export async function getStaticPaths() {
   const pages = await getCollection('pages', ({ data }) => {
@@ -17,9 +18,75 @@ export async function getStaticPaths() {
 const { page } = Astro.props;
 const { Content } = await page.render();
 const { title, description, hero, pageWidth, showTitle, teamGrid } = page.data;
+
+/**
+ * Structured data for the content-driven pages.
+ *
+ * Built here rather than in each markdown file so the schema stays in code
+ * (where it can reference ORG_ID and be type-checked) while the prose stays in
+ * markdown.
+ */
+const nodes: Record<string, unknown>[] = [];
+
+// Breadcrumbs for anything nested, e.g. /services/capital-advisory/.
+// Titles come from the slug segments, with the page's own title for the leaf.
+const segments = page.slug.split('/');
+if (segments.length > 1) {
+  const parentLabels: Record<string, string> = {
+    services: 'Services',
+    about: 'About Us',
+  };
+  const parent = segments[0];
+  nodes.push(
+    breadcrumbSchema([
+      [parentLabels[parent] ?? parent, `/${parent}/`],
+      [title, `/${page.slug}/`],
+    ]),
+  );
+}
+
+// Service pages describe an offering provided by the firm.
+if (segments[0] === 'services' && segments.length > 1) {
+  nodes.push({
+    '@type': 'Service',
+    name: title,
+    description,
+    provider: { '@id': ORG_ID },
+    serviceType: title,
+    areaServed: { '@type': 'Country', name: 'United States' },
+    url: `${SITE_URL}/${page.slug}/`,
+  });
+}
+
+// The team page carries a Person node per member, each employed by the firm.
+// Same PROD draft filter as TeamGrid so a draft member never appears in
+// structured data while being hidden from the rendered page.
+if (teamGrid) {
+  const members = await getCollection('team', ({ data }) =>
+    import.meta.env.PROD ? !data.draft : true,
+  );
+  for (const m of members) {
+    nodes.push({
+      '@type': 'Person',
+      name: m.data.name,
+      jobTitle: m.data.title,
+      worksFor: { '@id': ORG_ID },
+      ...(m.data.photo ? { image: `${SITE_URL}${m.data.photo}` } : {}),
+      ...(m.data.email ? { email: m.data.email } : {}),
+      ...(m.data.linkedin ? { sameAs: [m.data.linkedin] } : {}),
+    });
+  }
+}
 ---
 
-<PageLayout title={title} description={description} hero={hero} pageWidth={pageWidth} showTitle={showTitle}>
+<PageLayout
+  title={title}
+  description={description}
+  hero={hero}
+  pageWidth={pageWidth}
+  showTitle={showTitle}
+  jsonLd={nodes}
+>
   <Content />
   {teamGrid && <TeamGrid />}
 </PageLayout>

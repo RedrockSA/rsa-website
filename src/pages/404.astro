@@ -1,0 +1,45 @@
+---
+/**
+ * 404 page.
+ *
+ * Without this file Astro emits no dist/404.html, and Cloudflare Pages falls
+ * back to serving site HTML with a 200 status for every unknown URL — a "soft
+ * 404". That is harmless while nothing is crawling the site, but once a
+ * sitemap is submitted it hands search engines an unbounded space of
+ * 200-OK URLs to index. Astro emits this as dist/404.html, which Pages serves
+ * with a real 404 status.
+ *
+ * noindex is belt-and-braces: a correct 404 status already keeps this out of
+ * the index.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Page Not Found | Redrock Strategic Advisors"
+  pageTitle="Page Not Found"
+  description="The page you are looking for could not be found."
+  noindex={true}
+>
+  <main class="container-narrow py-16 text-center" style="padding-top: calc(85px + 6rem); min-height: 60vh;">
+    <p class="text-sm tracking-widest uppercase mb-4" style="color: #C80026;">404</p>
+    <h1 class="mb-6">Page Not Found</h1>
+    <p class="text-lg text-secondary-600 mb-10 max-w-xl mx-auto">
+      The page you're looking for doesn't exist or may have moved. Here are a few
+      places worth trying instead.
+    </p>
+
+    <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 mb-12">
+      <a href="/" style="color:#C80026;">Home</a>
+      <a href="/services/" style="color:#C80026;">Services</a>
+      <a href="/transactions/" style="color:#C80026;">Transactions</a>
+      <a href="/insights/" style="color:#C80026;">Insights</a>
+      <a href="/about/team/" style="color:#C80026;">Team</a>
+      <a href="/contact/" style="color:#C80026;">Contact</a>
+    </div>
+
+    <p class="text-sm text-secondary-500">
+      Still stuck? <a href="/contact/" style="color:#C80026;">Get in touch</a> and we'll point you the right way.
+    </p>
+  </main>
+</BaseLayout>

@@ -10,9 +10,12 @@
     "predev": "node scripts/generate-books.mjs",
     "prebuild": "node scripts/generate-books.mjs",
     "generate:books": "node scripts/generate-books.mjs",
-    "prepare:covers": "node scripts/prepare-covers.mjs"
+    "prepare:covers": "node scripts/prepare-covers.mjs",
+    "generate:og": "node scripts/generate-og-image.mjs"
   },
   "dependencies": {
+    "@astrojs/rss": "^4.0.19",
+    "@astrojs/sitemap": "^3.2.1",
     "@astrojs/tailwind": "^5.1.0",
     "alpinejs": "^3.17.2",
     "astro": "^4.16.0",

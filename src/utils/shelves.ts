@@ -76,7 +76,7 @@ export function railShelves(counts: Map<string, number>): string[] {
 
 /** Where a book's detail page lives - a subpage of Insights. */
 export function bookUrl(slug: string): string {
-  return `/insights/books/${slug}`;
+  return `/insights/books/${slug}/`;
 }
 
 /**
@@ -87,11 +87,11 @@ export function bookUrl(slug: string): string {
  */
 export function readingListUrl(shelves: string[] = []): string {
   if (!shelves.length) return READING_LIST_ALL;
-  return `/insights/books?primary=${shelves.map(encodeURIComponent).join(',')}`;
+  return `/insights/books/?primary=${shelves.map(encodeURIComponent).join(',')}`;
 }
 
 /**
  * The Reading List with nothing filtered. Needed because a bare
  * /insights/books opens on the default category - this opts out of that.
  */
-export const READING_LIST_ALL = '/insights/books?all=1';
+export const READING_LIST_ALL = '/insights/books/?all=1';

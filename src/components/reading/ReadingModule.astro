@@ -27,7 +27,7 @@ interface Props {
   expandedHref?: string;
 }
 
-const { books, expandedHref = '/insights/books' } = Astro.props;
+const { books, expandedHref = '/insights/books/' } = Astro.props;
 
 const byShelf = new Map<string, CollectionEntry<'books'>[]>();
 for (const book of books) {

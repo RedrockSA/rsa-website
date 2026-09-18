@@ -11,6 +11,7 @@ import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import { buildAffiliateLink } from '../../../utils/amazon';
 import { shelfLabel, bookUrl, readingListUrl, READING_LIST_ALL } from '../../../utils/shelves';
+import { breadcrumbSchema } from '../../../utils/seo';
 
 export async function getStaticPaths() {
   const books = await getCollection('books');
@@ -35,8 +36,9 @@ const alsoOnShelf = books
   .filter((b) => b.slug !== book.slug && b.data.primaryCategory === d.primaryCategory)
   .slice(0, 8);
 
+// No '@context' here: this node is merged into BaseLayout's site-wide
+// @graph, which declares the context once for the whole page.
 const jsonLd = {
-  '@context': 'https://schema.org',
   '@type': 'Book',
   name: d.subtitle || d.title,
   author: { '@type': 'Person', name: d.author },
@@ -62,7 +64,16 @@ const facts: [string, string][] = [
 
 <BaseLayout
   title={`${d.title} — ${d.author} | Redrock Strategic Advisors`}
+  pageTitle={`${d.title} — ${d.author}`}
   description={d.oneLiner || `${d.subtitle || d.title} by ${d.author} — from the Redrock reading list.`}
+  jsonLd={[
+    jsonLd,
+    breadcrumbSchema([
+      ['Insights', '/insights/'],
+      ['Redrock Reading List', '/insights/books/'],
+      [d.title, bookUrl(book.slug)],
+    ]),
+  ]}
 >
   <!-- No hero on a detail page, so pad past the fixed 85px header explicitly. -->
   <main class="container-narrow pb-16" style="padding-top: calc(85px + 3rem);">
@@ -159,8 +170,6 @@ const facts: [string, string][] = [
       </section>
     )}
   </main>
-
-  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 </BaseLayout>
 
 <style>

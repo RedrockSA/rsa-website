@@ -14,52 +14,52 @@ export interface NavItem {
 export const navItems: NavItem[] = [
   {
     label: 'Services',
-    href: '/services',
+    href: '/services/',
     group: 'left',
     dropdownColumns: 1,
     children: [
-      { label: 'Mergers & Acquisitions', href: '/services/mergers-and-acquisitions' },
-      { label: 'Capital Advisory', href: '/services/capital-advisory' },
-      { label: 'Strategic & Board Advisory', href: '/services/strategic-and-board-advisory' },
+      { label: 'Mergers & Acquisitions', href: '/services/mergers-and-acquisitions/' },
+      { label: 'Capital Advisory', href: '/services/capital-advisory/' },
+      { label: 'Strategic & Board Advisory', href: '/services/strategic-and-board-advisory/' },
     ],
   },
   {
     label: 'Transactions',
-    href: '/transactions',
+    href: '/transactions/',
     group: 'left',
     
   },
   {
     label: 'Insights',
-    href: '/insights',
+    href: '/insights/',
     group: 'left',
     dropdownColumns: 1,
     children: [
-      { label: "Redrock Reading List", href: '/insights/books' },
-      { label: 'Newsroom', href: '/about/newsroom' },
-      { label: 'Deal Market Commentary', href: '/insights/commentary' },
+      { label: "Redrock Reading List", href: '/insights/books/' },
+      { label: 'Newsroom', href: '/about/newsroom/' },
+      { label: 'Deal Market Commentary', href: '/insights/commentary/' },
     ],
   },
   {
     label: 'Career Path',
-    href: '/career-path',
+    href: '/career-path/',
     group: 'right',
   },
   {
     label: 'About Us',
-    href: '/about/our-focus',
+    href: '/about/our-focus/',
     group: 'right',
     dropdownColumns: 2,
     children: [
-      { label: 'Our Focus', href: '/about/our-focus' },
-      { label: 'Team', href: '/about/team' },
-      { label: 'Transactions', href: '/transactions' },
-      { label: 'Newsroom', href: '/about/newsroom' },
+      { label: 'Our Focus', href: '/about/our-focus/' },
+      { label: 'Team', href: '/about/team/' },
+      { label: 'Transactions', href: '/transactions/' },
+      { label: 'Newsroom', href: '/about/newsroom/' },
     ],
   },
   {
     label: 'Contact',
-    href: '/contact',
+    href: '/contact/',
     group: 'right',
   },
 ];

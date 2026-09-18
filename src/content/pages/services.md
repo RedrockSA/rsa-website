@@ -1,13 +1,13 @@
 ---
 title: Our Services
-description: Strategic advisory services from Redrock Strategic Advisors.
+description: Strategic advisory services from Redrock.
 hero:
   heading: Our Services
   subheading: Strategic transaction advisory tailored to your situation.
   backgroundImage: /iStock-2054864236-Adj.webp
   cta:
     - text: Let's Connect
-      href: /contact
+      href: /contact/
       style: primary
 pageWidth: narrow
 showTitle: false
@@ -22,11 +22,11 @@ showTitle: false
   <div style="flex: 1;">
     <p><strong>>>Mergers & Acquisitions.</strong> We advise on transactions that result in change of control ownership, including the transfer of ownership from one generation to the next, control sale of businesses to strategic or institutional owners, carve-outs/divestitures, management buyouts or the recapitalization of the company where current owners retain only a minority position in the go-forward business.</p>
     <p>Redrock provides comprehensive buy and sell-side M&A advisory — from target identification and valuation through due diligence, negotiation, and closing. We represent both buyers and sellers across a range of transaction sizes and complexity.</p>
-    <p>Learn more about <strong>Redrock's</strong> <a href="/services/mergers-and-acquisitions">M&A advisory services</a>.</p>
-    <p><strong>>>Capital Advisory.</strong> We support businesses as they seek capital for a range of transactions, from the refinance of existing debt facilities where a broader search and more complicated structure is required, to identifying and securing a partner for non-dilutive growth capital solutions to fund an array of corporate initiatives. Learn more about <strong>Redrock's</strong> <a href="/services/capital-advisory">capital advisory</a>.</p>
-    <p><strong>>>Strategic Advisory.</strong> Whether a company's team is contemplating new strategic growth initiatives (such as M&A-related growth strategies) or a merger-of-equals, or a company requiring insight on whether a strategy is financially sound or represents a market value, Redrock is experienced at advising boards, management teams and owners to navigate various strategic projects. Learn more about <strong>Redrock's</strong> <a href="/services/strategic-and-board-advisory">strategic & board advisory</a>.</p>
+    <p>Learn more about <strong>Redrock's</strong> <a href="/services/mergers-and-acquisitions/">M&A advisory services</a>.</p>
+    <p><strong>>>Capital Advisory.</strong> We support businesses as they seek capital for a range of transactions, from the refinance of existing debt facilities where a broader search and more complicated structure is required, to identifying and securing a partner for non-dilutive growth capital solutions to fund an array of corporate initiatives. Learn more about <strong>Redrock's</strong> <a href="/services/capital-advisory/">capital advisory</a>.</p>
+    <p><strong>>>Strategic Advisory.</strong> Whether a company's team is contemplating new strategic growth initiatives (such as M&A-related growth strategies) or a merger-of-equals, or a company requiring insight on whether a strategy is financially sound or represents a market value, Redrock is experienced at advising boards, management teams and owners to navigate various strategic projects. Learn more about <strong>Redrock's</strong> <a href="/services/strategic-and-board-advisory/">strategic & board advisory</a>.</p>
     <p style="text-align: center; margin-top: 1.5rem;">
-      <a href="/contact" style="display: inline-block; background-color: #C80026; color: white; font-weight: 600; font-size: 0.875rem; letter-spacing: 0.08em; padding: 0.75rem 2rem; text-decoration: none;">Let's Connect.</a>
+      <a href="/contact/" style="display: inline-block; background-color: #C80026; color: white; font-weight: 600; font-size: 0.875rem; letter-spacing: 0.08em; padding: 0.75rem 2rem; text-decoration: none;">Let's Connect.</a>
     </p>
   </div>
 </div>

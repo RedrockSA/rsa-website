@@ -24,7 +24,7 @@ const companyNews = allNews
   .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
   .map((article) => ({
     headline: article.data.title,
-    link: `/about/newsroom/${article.slug}`,
+    link: `/about/newsroom/${article.slug}/`,
   }));
 
 // Reading module: most recently read first. Books with no date_read sort
@@ -77,7 +77,7 @@ const commentary = sortedCommentary();
           </ul>
           {companyNews.length > PREVIEW_COUNT && (
             <p class="mt-6">
-              <a href="/about/newsroom" class="more-button">More news &amp; events</a>
+              <a href="/about/newsroom/" class="more-button">More news &amp; events</a>
             </p>
           )}
         </section>
@@ -99,7 +99,7 @@ const commentary = sortedCommentary();
           </ul>
           {commentary.length > PREVIEW_COUNT && (
             <p class="mt-6">
-              <a href="/insights/commentary" class="more-button">More commentary</a>
+              <a href="/insights/commentary/" class="more-button">More commentary</a>
             </p>
           )}
         </section>

@@ -31,7 +31,7 @@ const sortedNews = allNews.sort((a, b) => new Date(b.data.date).getTime() - new 
             <p class="text-xl font-bold text-secondary-900">{article.data.title}</p>
             <p class="text-sm text-secondary-500 mt-1">{formatted}</p>
             <p class="text-secondary-700 mt-2">{article.data.description}</p>
-            <a href={`/about/newsroom/${article.slug}`} class="text-[#C80026] text-sm mt-2 inline-block">Read more...</a>
+            <a href={`/about/newsroom/${article.slug}/`} class="text-[#C80026] text-sm mt-2 inline-block">Read more...</a>
           </li>
         );
       })}

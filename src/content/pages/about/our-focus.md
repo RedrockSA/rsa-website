@@ -1,6 +1,6 @@
 ---
 title: About Us
-description: Strategic advisory services from Redrock Strategic Advisors.
+description: Redrock Strategic Advisors partners with middle-market companies through capital raises, acquisitions, and liquidity events.
 hero:
   heading: Redrock Strategic Advisors
   subheading: We focus on partnering with clients at critical milestones in their business lifecycle.
@@ -20,10 +20,10 @@ showTitle: false
   </div>
   <div style="flex: 0 0 180px; background-color: #f1f5f9; border-radius: 0.5rem; padding: 1.25rem; align-self: flex-start;">
     <p style="font-weight: 700; font-size: 0.875rem; color: #334155; margin: 0 0 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">Explore</p>
-    <a href="/transactions" style="display: block; color: #C80026; font-size: 0.9375rem; text-decoration: none; padding: 0.4rem 0; border-bottom: 1px solid #e2e8f0; text-transform: uppercase;">Transactions</a>
-    <a href="/about/team" style="display: block; color: #C80026; font-size: 0.9375rem; text-decoration: none; padding: 0.4rem 0; border-bottom: 1px solid #e2e8f0; text-transform: uppercase;">Team</a>
-    <a href="/about/newsroom" style="display: block; color: #C80026; font-size: 0.9375rem; text-decoration: none; padding: 0.4rem 0; border-bottom: 1px solid #e2e8f0; text-transform: uppercase;">Newsroom</a>
-    <a href="/insights" style="display: block; color: #C80026; font-size: 0.9375rem; text-decoration: none; padding: 0.4rem 0; text-transform: uppercase;">Insights</a>
+    <a href="/transactions/" style="display: block; color: #C80026; font-size: 0.9375rem; text-decoration: none; padding: 0.4rem 0; border-bottom: 1px solid #e2e8f0; text-transform: uppercase;">Transactions</a>
+    <a href="/about/team/" style="display: block; color: #C80026; font-size: 0.9375rem; text-decoration: none; padding: 0.4rem 0; border-bottom: 1px solid #e2e8f0; text-transform: uppercase;">Team</a>
+    <a href="/about/newsroom/" style="display: block; color: #C80026; font-size: 0.9375rem; text-decoration: none; padding: 0.4rem 0; border-bottom: 1px solid #e2e8f0; text-transform: uppercase;">Newsroom</a>
+    <a href="/insights/" style="display: block; color: #C80026; font-size: 0.9375rem; text-decoration: none; padding: 0.4rem 0; text-transform: uppercase;">Insights</a>
   </div>
 </div>
 

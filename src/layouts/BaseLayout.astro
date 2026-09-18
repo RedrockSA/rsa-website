@@ -2,13 +2,69 @@
 import '../styles/global.css';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
+import Analytics from '../components/Analytics.astro';
+import {
+  SITE_NAME,
+  TITLE_SUFFIX,
+  DEFAULT_OG_IMAGE,
+  ORG_ID,
+  organizationSchema,
+  serializeJsonLd,
+} from '../utils/seo';
 
 interface Props {
+  /** Full contents of <title>, brand suffix included — unchanged from before. */
   title: string;
+  /**
+   * Bare page name for og:title / twitter:title. Optional: when omitted the
+   * brand suffix is stripped off `title`, since og:site_name already carries
+   * the firm name and repeating it reads badly in a share card.
+   */
+  pageTitle?: string;
   description?: string;
+  /** Site-relative path to the share image. Resolved to absolute below. */
+  image?: string;
+  /** Set on pages that should stay out of the index (404, thank-you pages). */
+  noindex?: boolean;
+  /** Extra schema.org node(s) for this page, merged into the site @graph. */
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
-const { title, description = 'Redrock Strategic Advisors' } = Astro.props;
+const {
+  title,
+  pageTitle,
+  description = 'Redrock Strategic Advisors',
+  image = DEFAULT_OG_IMAGE,
+  noindex = false,
+  jsonLd,
+} = Astro.props;
+
+// trailingSlash: 'always' in astro.config.mjs means Astro.url.pathname already
+// carries the trailing slash, so this matches the URL Cloudflare serves with a
+// 200 — and matches what @astrojs/sitemap emits. All three agreeing is what
+// keeps Search Console from reporting the whole site as redirects.
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+const ogImage = new URL(image, Astro.site).toString();
+const socialTitle = pageTitle ?? title.replace(TITLE_SUFFIX, '');
+
+// One @graph per page: the firm, plus whatever the page added. Keeping the
+// Organization node on every page (rather than the homepage alone) lets any
+// entry point establish who published it.
+const pageNodes = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
+const graph = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    organizationSchema,
+    {
+      '@type': 'WebSite',
+      '@id': `${Astro.site}#website`,
+      url: `${Astro.site}`,
+      name: SITE_NAME,
+      publisher: { '@id': ORG_ID },
+    },
+    ...pageNodes,
+  ],
+};
 ---
 
 <!doctype html>
@@ -20,9 +76,42 @@ const { title, description = 'Redrock Strategic Advisors' } = Astro.props;
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;700&display=swap" rel="stylesheet" />
-    <meta name="description" content={description} />
-    <meta name="generator" content={Astro.generator} />
+
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+
+    <!-- Open Graph: LinkedIn, Facebook, Slack, iMessage -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:title" content={socialTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={`${SITE_NAME} — ${socialTitle}`} />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={socialTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <meta name="generator" content={Astro.generator} />
+
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title={`${SITE_NAME} — Newsroom`}
+      href={new URL('/rss.xml', Astro.site).toString()}
+    />
+
+    <script type="application/ld+json" set:html={serializeJsonLd(graph)} />
+
+    <Analytics />
   </head>
   <body class="flex flex-col min-h-screen">
     <Navigation />
