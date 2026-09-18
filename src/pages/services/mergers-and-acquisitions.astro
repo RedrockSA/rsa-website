@@ -41,7 +41,13 @@ const heroImage = "/iStock-2166651330-Adj.webp";
         <HeroImage
           src="/iStock-2206368893.webp"
           alt="Sell-side advisory"
-          sizes="(min-width: 768px) 33vw, 100vw"
+          {/* This column is ~1/3 wide but stretches to the prose height beside
+              it, and object-cover then fills the HEIGHT. So the resolution
+              needed is driven by height, not by the 33vw layout width -- a
+              33vw hint here made the browser pick a variant it then upscaled.
+              The image is pre-cropped to the column's ratio, so asking for a
+              deliberately generous width keeps the tall case sharp. */}
+          sizes="(min-width: 768px) 800px, 100vw"
           priority={false}
           class="object-center !relative"
         />

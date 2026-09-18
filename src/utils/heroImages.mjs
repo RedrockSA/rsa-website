@@ -35,9 +35,19 @@ export const HERO_WIDTHS = [
  */
 export const INLINE_OVERRIDES = {
   'iStock-1281536292.webp': [
-    [280, 86],
-    [420, 86],
-    [560, 86],
+    [280, 90],
+    [420, 90],
+    [560, 90],
+    [700, 90],
+  ],
+  // Renders in a md:w-1/3 column on the M&A page that stretches to the prose
+  // height beside it (~740-900px). Same cover-fills-height trap; the ladder
+  // has to reach far enough that the tallest case is not upscaled.
+  'iStock-2206368893.webp': [
+    [350, 90],
+    [500, 90],
+    [650, 90],
+    [800, 88],
   ],
 };
 
@@ -57,6 +67,7 @@ export const INLINE_OVERRIDES = {
  */
 export const CROP_OVERRIDES = {
   'iStock-1281536292.webp': { ratio: 0.3 },
+  'iStock-2206368893.webp': { ratio: 0.35 },
 };
 
 /** The width ladder that applies to a given public/ filename. */

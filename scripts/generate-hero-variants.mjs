@@ -25,6 +25,10 @@ import { HERO_WIDTHS, widthsFor, CROP_OVERRIDES } from '../src/utils/heroImages.
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const PUBLIC = path.join(root, 'public');
 const OUT = path.join(PUBLIC, 'heroes');
+// Pre-cropped, high-resolution intermediates for the CROP_OVERRIDES images.
+// Committed, and not served (src/ is not copied to dist/). Built by
+// scripts/prepare-hero-masters.mjs. See that file for why.
+const MASTERS = path.join(root, 'src', 'assets', 'hero-masters');
 
 fs.mkdirSync(OUT, { recursive: true });
 
@@ -56,11 +60,16 @@ for (const file of sources) {
   const made = [];
   const crop = CROP_OVERRIDES[file];
 
-  // Pre-crop to the aspect ratio the image is actually displayed at, so the
-  // pixels we ship are pixels the browser keeps rather than pixels CSS throws
-  // away. See CROP_OVERRIDES in src/utils/heroImages.mjs.
+  // A cropped image resizes from its committed master, which is already
+  // cropped and at a far higher resolution than the public/ copy. Only fall
+  // back to cropping here if the master is missing.
+  const master = path.join(MASTERS, `${base}.webp`);
+  const hasMaster = crop && fs.existsSync(master);
+  const input = hasMaster ? master : src;
+  const inputMeta = hasMaster ? await sharp(master).metadata() : meta;
+
   let region = null;
-  if (crop) {
+  if (crop && !hasMaster) {
     const cropW = Math.round((meta.height ?? 0) * crop.ratio);
     region = {
       left: Math.round(((meta.width ?? 0) - cropW) / 2),
@@ -70,14 +79,14 @@ for (const file of sources) {
     };
   }
 
-  const deliveredWidth = region ? region.width : (meta.width ?? 0);
-  const deliveredHeight = region ? region.height : (meta.height ?? 0);
+  const deliveredWidth = region ? region.width : (inputMeta.width ?? 0);
+  const deliveredHeight = region ? region.height : (inputMeta.height ?? 0);
 
   for (const [w, q] of widths) {
     // withoutEnlargement: never upscale past the source's real resolution.
     if (deliveredWidth < w && w !== widths[0][0]) continue;
     const out = path.join(OUT, `${base}-${w}.webp`);
-    let pipeline = sharp(src);
+    let pipeline = sharp(input);
     if (region) pipeline = pipeline.extract(region);
     await pipeline
       .resize({ width: w, withoutEnlargement: true })

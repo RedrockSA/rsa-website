@@ -14,7 +14,8 @@
     "generate:og": "node scripts/generate-og-image.mjs",
     "generate:favicons": "node scripts/generate-favicons.mjs",
     "serve": "node scripts/serve-dist.mjs",
-    "generate:heroes": "node scripts/generate-hero-variants.mjs"
+    "generate:heroes": "node scripts/generate-hero-variants.mjs",
+    "prepare:masters": "node scripts/prepare-hero-masters.mjs"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
