@@ -6,16 +6,15 @@ import HeroImage from '../../components/HeroImage.astro';
 const heroHeading = "Mergers & Acquisitions";
 const heroSubheading = "";
 const heroImage = "/iStock-2166651330-Adj.webp";
-const heroHeight = "50vh";
+// No height override here: a hardcoded 50vh made this hero noticeably taller
+// than every other page's. .page-hero sizes itself from its content and the
+// shared min-height, which is what keeps the set consistent.
 ---
 
 <BaseLayout title="Mergers & Acquisitions | Redrock Strategic Advisors" description="Comprehensive M&A advisory services from start to through completion.">
 
-  <!-- Hero section — change heroHeight above to adjust -->
-  <section
-    class="page-hero"
-    style={`height: ${heroHeight};`}
-  >
+  <!-- Hero section -->
+  <section class="page-hero">
     <HeroImage src={heroImage} />
     <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
       <h1 class="text-white mb-4">{heroHeading}</h1>

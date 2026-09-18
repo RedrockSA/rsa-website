@@ -20,7 +20,7 @@ import sharp from 'sharp';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { HERO_WIDTHS, widthsFor } from '../src/utils/heroImages.mjs';
+import { HERO_WIDTHS, widthsFor, CROP_OVERRIDES } from '../src/utils/heroImages.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const PUBLIC = path.join(root, 'public');
@@ -54,12 +54,32 @@ for (const file of sources) {
 
   const widths = widthsFor(file);
   const made = [];
+  const crop = CROP_OVERRIDES[file];
+
+  // Pre-crop to the aspect ratio the image is actually displayed at, so the
+  // pixels we ship are pixels the browser keeps rather than pixels CSS throws
+  // away. See CROP_OVERRIDES in src/utils/heroImages.mjs.
+  let region = null;
+  if (crop) {
+    const cropW = Math.round((meta.height ?? 0) * crop.ratio);
+    region = {
+      left: Math.round(((meta.width ?? 0) - cropW) / 2),
+      top: 0,
+      width: cropW,
+      height: meta.height ?? 0,
+    };
+  }
+
+  const deliveredWidth = region ? region.width : (meta.width ?? 0);
+  const deliveredHeight = region ? region.height : (meta.height ?? 0);
 
   for (const [w, q] of widths) {
     // withoutEnlargement: never upscale past the source's real resolution.
-    if ((meta.width ?? 0) < w && w !== widths[0][0]) continue;
+    if (deliveredWidth < w && w !== widths[0][0]) continue;
     const out = path.join(OUT, `${base}-${w}.webp`);
-    await sharp(src)
+    let pipeline = sharp(src);
+    if (region) pipeline = pipeline.extract(region);
+    await pipeline
       .resize({ width: w, withoutEnlargement: true })
       .webp({ quality: q, effort: 6 })
       .toFile(out);
@@ -71,10 +91,13 @@ for (const file of sources) {
     totalLargest += made[made.length - 1][1];
   }
 
+  // Record the DELIVERED dimensions, not the source's: a cropped image has a
+  // different aspect ratio, and the <img> must declare what it actually is.
   manifest[file] = {
-    width: meta.width,
-    height: meta.height,
+    width: deliveredWidth,
+    height: deliveredHeight,
     widths: made.map(([w]) => w),
+    ...(crop ? { cropped: true } : {}),
   };
 
   const summary = made.map(([w, kb]) => `${w}px:${kb}KB`).join('  ');

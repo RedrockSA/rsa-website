@@ -33,12 +33,14 @@
     ]
   },
   "iStock-1281536292.webp": {
-    "width": 1518,
+    "width": 810,
     "height": 2699,
     "widths": [
-      480,
-      720
-    ]
+      280,
+      420,
+      560
+    ],
+    "cropped": true
   },
   "iStock-173242551-Adj.webp": {
     "width": 2400,
