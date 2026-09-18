@@ -7,6 +7,7 @@
  */
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { sortedCommentary, formatCommentaryDate } from '../../data/commentary';
+import HeroImage from '../../components/HeroImage.astro';
 
 const items = sortedCommentary();
 ---
@@ -18,8 +19,8 @@ const items = sortedCommentary();
   <!-- Hero clears the fixed 85px header, matching every other page on the site. -->
   <section
     class="page-hero"
-    style="background-image: url('/iStock-512693445-Adj.webp');"
   >
+    <HeroImage src="/iStock-512693445-Adj.webp" />
     <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
       <h1 class="text-white mb-4">Deal Market Commentary</h1>
       <p class="text-xl max-w-2xl text-white/90 italic">What we're reading on the market.</p>

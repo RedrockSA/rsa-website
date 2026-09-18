@@ -1,0 +1,78 @@
+---
+/**
+ * A full-bleed hero image, positioned behind its section's content.
+ *
+ * Replaces `style="background-image: url(...)"`. CSS backgrounds cannot carry
+ * a srcset, so every visitor was downloading the 2400px original — the cause
+ * of the 4,208ms LCP P99 in Core Web Vitals. An <img> lets the browser pick a
+ * width, which is a 60-90% saving depending on device.
+ *
+ * Usage: place as the FIRST child of a `position: relative` section, and give
+ * the content that follows `relative z-10` so it stacks above.
+ *
+ * `alt=""` is intentional and correct for the heroes: they are decorative and
+ * carry no information the surrounding heading does not. An empty alt tells a
+ * screen reader to skip them rather than announce a filename. Pass real alt
+ * text only when the image is genuinely content.
+ *
+ * Widths and intrinsic dimensions come from src/data/heroManifest.json, which
+ * scripts/generate-hero-variants.mjs regenerates on every build. Do not
+ * hardcode either: the sources are not all the same aspect ratio
+ * (iStock-1281536292 is 1518x2699, iStock-2251646674-Adj is 2400x1024).
+ */
+import manifest from '../data/heroManifest.json';
+import { widthsFor, variantPath } from '../utils/heroImages.mjs';
+
+interface Props {
+  /** Original public/ path, e.g. "/iStock-1048931984.webp". */
+  src: string;
+  /** Leave empty for decorative images; set only if the image carries meaning. */
+  alt?: string;
+  /** Layout width hint. Heroes span the viewport, so 100vw is the default. */
+  sizes?: string;
+  /**
+   * Above-the-fold heroes should load eagerly at high priority — this is the
+   * LCP element, so deprioritising it is counterproductive. Set false for an
+   * image further down a page.
+   */
+  priority?: boolean;
+  class?: string;
+}
+
+const {
+  src,
+  alt = '',
+  sizes = '100vw',
+  priority = true,
+  class: className = '',
+} = Astro.props;
+
+const file = src.replace(/^\//, '');
+const entry = (manifest as Record<string, { width: number; height: number; widths: number[] }>)[file];
+
+if (!entry) {
+  // Fail loudly at build time: a silent fallback here would ship a srcset
+  // pointing at variants that were never generated.
+  throw new Error(
+    `HeroImage: "${src}" is not in src/data/heroManifest.json. ` +
+      `Add the file to public/ and run: npm run generate:heroes`,
+  );
+}
+
+const widths = entry.widths.length ? entry.widths : widthsFor(file).map(([w]) => w);
+const srcset = widths.map((w) => `${variantPath(file, w)} ${w}w`).join(', ');
+const widest = widths[widths.length - 1];
+---
+
+<img
+  src={variantPath(file, widest)}
+  srcset={srcset}
+  sizes={sizes}
+  alt={alt}
+  width={entry.width}
+  height={entry.height}
+  loading={priority ? 'eager' : 'lazy'}
+  fetchpriority={priority ? 'high' : 'auto'}
+  decoding="async"
+  class={`absolute inset-0 w-full h-full object-cover ${className}`}
+/>

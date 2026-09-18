@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import HeroImage from '../../components/HeroImage.astro';
 
 const allNews = await getCollection('news');
 const sortedNews = allNews.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
@@ -11,8 +12,8 @@ const sortedNews = allNews.sort((a, b) => new Date(b.data.date).getTime() - new 
   <!-- Hero section -->
   <section
     class="page-hero"
-    style="background-image: url('/RedrockCanyon.webp');"
   >
+    <HeroImage src="/RedrockCanyon.webp" />
     <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
       <h1 class="text-white mb-4">Newsroom</h1>
       <p class="text-xl max-w-2xl text-white/90">Company News, Proprietary Research & Events</p>

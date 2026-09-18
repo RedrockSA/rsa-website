@@ -1,5 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import HeroImage from '../components/HeroImage.astro';
 
 interface CTA {
   text: string;
@@ -56,8 +57,9 @@ const hasHero = !!hero;
   {hasHero && (
     <section
       class="page-hero"
-      style={`background-image: url('${hero!.backgroundImage}');${hero!.height ? ` --hero-mobile: ${hero!.height};` : ''}`}
+      style={hero!.height ? `--hero-mobile: ${hero!.height};` : undefined}
     >
+      <HeroImage src={hero!.backgroundImage} />
       <div
         class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4"
         style={hero!.contentOffset ? `padding-top: ${hero!.contentOffset};` : undefined}

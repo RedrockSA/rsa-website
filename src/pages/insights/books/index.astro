@@ -21,6 +21,7 @@ import CoverTile from '../../../components/reading/CoverTile.astro';
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import { shelfLabel } from '../../../utils/shelves';
+import HeroImage from '../../../components/HeroImage.astro';
 
 const books = await getCollection('books');
 
@@ -97,7 +98,8 @@ const sorted = [...books].sort(
   title="Reading List | Redrock Strategic Advisors"
   description="A curated list of books we've read and recommend, spanning the leadership, strategy, and decision-making topics that matter most to business owners and executives."
 >
-  <section class="page-hero" style="background-image: url('/iStock-512693445-Adj.webp');">
+  <section class="page-hero">
+    <HeroImage src="/iStock-512693445-Adj.webp" />
     <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
       <h1 class="text-white mb-4">Redrock Reading List</h1>
       <p class="text-xl max-w-2xl lg:max-w-3xl text-white/90 italic">Books we recommend to founders and executives.</p>

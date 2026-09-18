@@ -99,9 +99,11 @@
     min-height: 20rem;
     padding-top: calc(85px + 1.5rem);   /* clears the fixed nav at every width */
     padding-bottom: 2rem;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    /* The image is now an <img> child (HeroImage.astro) rather than a CSS
+       background, so the browser can choose a width from a srcset. overflow
+       clips it to the section; object-cover on the <img> does the framing the
+       old background-size/position pair used to. */
+    overflow: hidden;
   }
 
   /* Let the inner content block fill the padded box so it still centres. */

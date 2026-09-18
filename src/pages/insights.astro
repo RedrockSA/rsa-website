@@ -5,6 +5,7 @@ import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import { sortedCommentary } from '../data/commentary';
 import { READING_LIST_ALL } from '../utils/shelves';
+import HeroImage from '../components/HeroImage.astro';
 
 // =====================================================================
 //  INSIGHTS PAGE DATA
@@ -47,8 +48,8 @@ const commentary = sortedCommentary();
   <!-- Hero section -->
   <section
     class="page-hero"
-    style="background-image: url('/iStock-512693445-Adj.webp');"
   >
+    <HeroImage src="/iStock-512693445-Adj.webp" />
     <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
       <h1 class="text-white mb-4">Insights for Business Owners &amp; Executives.</h1>
       <p class="text-xl max-w-2xl text-white/90 italic">Learnings, reading, and deal insights from Redrock.</p>

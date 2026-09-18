@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroImage from '../components/HeroImage.astro';
 ---
 
 <BaseLayout title="Contact | Redrock Strategic Advisors" description="Get in touch with Redrock Strategic Advisors.">
@@ -7,8 +8,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <!-- Hero section -->
   <section
     class="page-hero"
-    style="background-image: url('/iStock-2251646674-Adj.webp');"
   >
+    <HeroImage src="/iStock-2251646674-Adj.webp" />
     <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
       <h1 class="text-white mb-4">Contact Us</h1>
       <p class="text-xl max-w-2xl text-white/90">We'd love to hear from you.</p>

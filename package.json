@@ -7,13 +7,14 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "predev": "node scripts/generate-books.mjs",
-    "prebuild": "node scripts/generate-books.mjs",
+    "predev": "node scripts/generate-books.mjs && node scripts/generate-hero-variants.mjs",
+    "prebuild": "node scripts/generate-books.mjs && node scripts/generate-hero-variants.mjs",
     "generate:books": "node scripts/generate-books.mjs",
     "prepare:covers": "node scripts/prepare-covers.mjs",
     "generate:og": "node scripts/generate-og-image.mjs",
     "generate:favicons": "node scripts/generate-favicons.mjs",
-    "serve": "node scripts/serve-dist.mjs"
+    "serve": "node scripts/serve-dist.mjs",
+    "generate:heroes": "node scripts/generate-hero-variants.mjs"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
