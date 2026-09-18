@@ -11,7 +11,9 @@
     "prebuild": "node scripts/generate-books.mjs",
     "generate:books": "node scripts/generate-books.mjs",
     "prepare:covers": "node scripts/prepare-covers.mjs",
-    "generate:og": "node scripts/generate-og-image.mjs"
+    "generate:og": "node scripts/generate-og-image.mjs",
+    "generate:favicons": "node scripts/generate-favicons.mjs",
+    "serve": "node scripts/serve-dist.mjs"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",

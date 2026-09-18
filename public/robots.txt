@@ -1,37 +1,4 @@
-# robots.txt for redrocksa.com
-#
-# Default posture: everything is open to crawlers, including AI crawlers.
-# For an advisory firm this is usually what you want — being readable by
-# ChatGPT, Claude, Perplexity and Google's AI surfaces is how you get cited
-# when someone asks about middle-market M&A advisors.
-#
-# To reverse that decision, uncomment the AI crawler block at the bottom.
-# Note that blocking Google-Extended affects only Gemini/AI training use and
-# does NOT remove you from regular Google Search results.
-
 User-agent: *
 Allow: /
 
 Sitemap: https://redrocksa.com/sitemap-index.xml
-
-# ---------------------------------------------------------------------------
-# Opt out of AI crawlers — uncomment to apply.
-#
-# User-agent: GPTBot
-# Disallow: /
-#
-# User-agent: OAI-SearchBot
-# Disallow: /
-#
-# User-agent: ClaudeBot
-# Disallow: /
-#
-# User-agent: PerplexityBot
-# Disallow: /
-#
-# User-agent: Google-Extended
-# Disallow: /
-#
-# User-agent: CCBot
-# Disallow: /
-# ---------------------------------------------------------------------------
