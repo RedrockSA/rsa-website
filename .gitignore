@@ -33,6 +33,9 @@ Examples/
 # internal docs (not part of the site)
 RSA-Website-Maintenance-Guide.docx
 
+# analytics baseline kept locally, not in the repo
+data/metrics/
+
 # local QA scratch
 link-check.html
 
