@@ -17,7 +17,7 @@ import {
   FEATURED_PREVIEW,
   SHELF_BANDS,
   railShelves,
-  shelfLabel,
+  facetLabel,
   readingListUrl,
 } from '../../utils/shelves';
 import type { CollectionEntry } from 'astro:content';
@@ -41,7 +41,7 @@ const rail = railShelves(counts);
 
 const featured = FEATURED_SHELVES.filter((s) => byShelf.has(s)).map((s) => ({
   slug: s,
-  label: shelfLabel(s),
+  label: facetLabel(s),
   books: byShelf.get(s)!,
 }));
 
@@ -54,7 +54,7 @@ const bands = SHELF_BANDS.map((b) => ({
 // block - clicking one swaps the featured row for that shelf's covers.
 const railData = rail.map((s) => ({
   slug: s,
-  label: shelfLabel(s),
+  label: facetLabel(s),
   count: counts.get(s) ?? 0,
   books: byShelf.get(s)!,
 }));

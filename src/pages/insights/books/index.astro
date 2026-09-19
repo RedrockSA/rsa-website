@@ -20,7 +20,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import CoverTile from '../../../components/reading/CoverTile.astro';
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
-import { shelfLabel } from '../../../utils/shelves';
+import { facetLabel } from '../../../utils/shelves';
 import HeroImage from '../../../components/HeroImage.astro';
 
 const books = await getCollection('books');
@@ -34,6 +34,34 @@ function facetsOf(b: CollectionEntry<'books'>): Record<string, string[]> {
     geography: d.geography ? [d.geography] : [],
     type: [d.type],
   };
+}
+
+/**
+ * One lowercase haystack per book, so the box can match anything the CSV
+ * holds - title, subtitle, author, publisher, year, ISBN, and every category.
+ * Category slugs go in twice, raw and through facetLabel, so a visitor finds
+ * the same shelf whether they type "memoir-and-biography" or "Memoir &".
+ */
+function searchText(b: CollectionEntry<'books'>): string {
+  const d = b.data;
+  const slugs = [
+    d.primaryCategory,
+    d.geography,
+    d.type,
+    ...d.topics,
+    ...d.secondaryCategories,
+  ].filter(Boolean) as string[];
+
+  return [
+    d.title, d.subtitle, d.author, d.authorLastName, d.publisher,
+    d.yearPublished, d.originalPublicationYear, d.oneLiner,
+    d.isbn13, d.isbn10, d.asin,
+    ...slugs,
+    ...slugs.map(facetLabel),
+  ]
+    .filter(Boolean)
+    .join(' ')
+    .toLowerCase();
 }
 
 // Display order of the filter buttons, left to right.
@@ -53,20 +81,6 @@ const SORTS = [
   { key: 'title', label: 'Alphabetical' },
 ];
 
-/** The category the page opens on. */
-const DEFAULT_CATEGORY = 'corporate-history';
-
-function prettify(facet: string, value: string) {
-  if (facet === 'primary') return shelfLabel(value);
-  return value
-    .replace(/-/g, ' ')
-    .replace(/\b\w/g, (c) => c.toUpperCase())
-    .replace(/\bAnd\b/g, '&')
-    .replace(/\bWwii\b/g, 'WWII')
-    .replace(/\bMba\b/g, 'MBA')
-    .replace(/\bUs\b/g, 'US');
-}
-
 const tallies: Record<string, Map<string, number>> = {};
 for (const b of books) {
   for (const [facet, values] of Object.entries(facetsOf(b))) {
@@ -78,7 +92,7 @@ for (const b of books) {
 const facetGroups = FACETS.map((f) => ({
   ...f,
   options: [...(tallies[f.key] ?? new Map())]
-    .map(([value, count]) => ({ value, count, label: prettify(f.key, value) }))
+    .map(([value, count]) => ({ value, count, label: facetLabel(value) }))
     .sort((a, b) => a.label.localeCompare(b.label)),
 }));
 
@@ -96,7 +110,7 @@ const sorted = [...books].sort(
 
 <BaseLayout
   title="Reading List | Redrock Strategic Advisors"
-  description="A curated list of books we've read and recommend, spanning the leadership, strategy, and decision-making topics that matter most to business owners and executives."
+  description="A curated list of books we have read and recommend, spanning the leadership, strategy, and decision-making topics that matter most to business owners and executives."
 >
   <section class="page-hero">
     <HeroImage src="/iStock-512693445-Adj.webp" />
@@ -111,45 +125,71 @@ const sorted = [...books].sort(
       <a href="/insights/" class="text-sm" style="color:#C80026;">&larr; Back to Insights</a>
     </p>
     <p class="mb-8 max-w-3xl text-secondary-700">
-      A curated list of books we've read and recommend, spanning the leadership,
+      A curated list of books we have read and recommend, spanning the leadership,
       strategy, and decision-making topics that matter most to business owners
       and executives.
     </p>
 
-    <!-- Reset controls left, sort right-aligned, on one line above the rule. -->
+    <!-- Search left, everything else grouped right. Two flex children rather
+         than three, so a narrow viewport drops the whole right-hand cluster
+         onto its own line and leaves the search box alone on top. -->
     <div class="control-row">
-      <div class="reset-group">
-        <button type="button" class="reset-link" x-on:click="clearAll()" x-bind:disabled="!hasSelection">
-          Clear selection
-        </button>
-        <span class="reset-sep">/</span>
-        <button
-          type="button"
-          class="reset-link"
-          x-bind:class="showAll && 'reset-link--on'"
-          x-on:click="toggleShowAll()"
-        >
-          <span x-text="showAll ? 'Showing all ' + total + ' books' : 'Show all ' + total + ' books'"
-          >Show all {books.length} books</span>
-        </button>
+      <div class="search-group">
+        <svg class="search-icon" viewBox="0 0 16 16" aria-hidden="true">
+          <circle cx="7" cy="7" r="4.5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+          <path d="M10.6 10.6 14 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+        <label class="sr-only" for="book-search">Search the reading list</label>
+        <!-- The prompt clears on focus rather than on first keystroke, so the
+             box is empty the moment the visitor starts typing. -->
+        <input
+          id="book-search"
+          type="search"
+          class="search-input"
+          autocomplete="off"
+          placeholder="Type here or use filters below"
+          x-bind:value="query"
+          x-bind:placeholder="focused ? '' : 'Type here or use filters below'"
+          x-on:focus="focused = true"
+          x-on:blur="focused = false"
+          x-on:input="onQuery($event.target.value)"
+        />
       </div>
 
-      <div class="sort-group dropdown dropdown--right" x-on:click.outside="if (open === 'sort') open = null">
-        <span class="sort-label">Sort by</span>
-        <button type="button" class="sort-button"
-                x-on:click="open = open === 'sort' ? null : 'sort'">
-          <span x-text="sortLabel">Date added</span>
-          <svg class="dd-caret" viewBox="0 0 12 8" aria-hidden="true"
-               x-bind:style="open === 'sort' ? 'transform:rotate(180deg)' : ''">
-            <path d="M1 1.5 6 6.5 11 1.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-          </svg>
-        </button>
-        <div class="dd-panel dd-panel--right" x-show="open === 'sort'" x-cloak>
-          {SORTS.map((s) => (
-            <button type="button" class="dd-option"
-                    x-bind:class={`sort === '${s.key}' && 'dd-option--on'`}
-                    x-on:click={`setSort('${s.key}')`}>{s.label}</button>
-          ))}
+      <div class="control-right">
+        <div class="reset-group">
+          <button type="button" class="reset-link" x-on:click="clearAll()" x-bind:disabled="!hasSelection">
+            Clear selection
+          </button>
+          <span class="reset-sep">/</span>
+          <button
+            type="button"
+            class="reset-link"
+            x-bind:class="showAll && 'reset-link--on'"
+            x-on:click="toggleShowAll()"
+          >
+            <span x-text="showAll ? 'Showing all ' + total + ' books' : 'Show all ' + total + ' books'"
+            >Show all {books.length} books</span>
+          </button>
+        </div>
+
+        <div class="sort-group dropdown dropdown--right" x-on:click.outside="if (open === 'sort') open = null">
+          <span class="sort-label">Sort by</span>
+          <button type="button" class="sort-button"
+                  x-on:click="open = open === 'sort' ? null : 'sort'">
+            <span x-text="sortLabel">Date added</span>
+            <svg class="dd-caret" viewBox="0 0 12 8" aria-hidden="true"
+                 x-bind:style="open === 'sort' ? 'transform:rotate(180deg)' : ''">
+              <path d="M1 1.5 6 6.5 11 1.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <div class="dd-panel dd-panel--right" x-show="open === 'sort'" x-cloak>
+            {SORTS.map((s) => (
+              <button type="button" class="dd-option"
+                      x-bind:class={`sort === '${s.key}' && 'dd-option--on'`}
+                      x-on:click={`setSort('${s.key}')`}>{s.label}</button>
+            ))}
+          </div>
         </div>
       </div>
     </div>
@@ -199,7 +239,7 @@ const sorted = [...books].sort(
     <!-- ── Results ────────────────────────────────────────────────── -->
     <h2 class="results-heading">
       <span x-text="headingText">All books</span>
-      <span class="results-count"><span x-text="shown">{books.length}</span> books</span>
+      <span class="results-count" x-text="countText">{books.length} books</span>
     </h2>
 
     <div class="cover-grid" id="book-grid" style="--tile-h: 150px;">
@@ -210,6 +250,7 @@ const sorted = [...books].sort(
           data-added={book.data.dateAdded ? book.data.dateAdded.toISOString().slice(0, 10) : ''}
           data-published={String(book.data.originalPublicationYear ?? book.data.yearPublished ?? '')}
           data-title={book.data.title.replace(/^(the|a|an)\s+/i, '').toLowerCase()}
+          data-search={searchText(book)}
         >
           <CoverTile
             title={book.data.title}
@@ -224,34 +265,34 @@ const sorted = [...books].sort(
     </div>
 
     <p class="no-results" x-show="shown === 0" x-cloak>
-      No books match that combination.
+      <span x-text="query.trim() ? 'No books match \u201C' + query.trim() + '\u201D.' : 'No books match that combination.'"
+      >No books match that combination.</span>
       <button type="button" class="reset-link" x-on:click="clearAll()">Clear selection</button>
     </p>
   </main>
 
-  <script is:inline define:vars={{ labelMap, facetKeys: FACETS, sortKeys: SORTS, defaultCategory: DEFAULT_CATEGORY, total: books.length }}>
+  <script is:inline define:vars={{ labelMap, facetKeys: FACETS, sortKeys: SORTS, total: books.length }}>
     window.readingList = function () {
+      // Arrays, so several values can be active per facet. Seeded from the
+      // query string when present - that's how "More…", "See all" and a
+      // book's shelf link arrive with a filter already applied. With no
+      // query string the page opens on the full list.
+      const params = new URLSearchParams(location.search);
+      const sel = {};
+      let fromUrl = false;
+      facetKeys.forEach((f) => {
+        const raw = params.get(f.key);
+        sel[f.key] = raw ? raw.split(',').map((v) => v.trim()).filter(Boolean) : [];
+        if (sel[f.key].length) fromUrl = true;
+      });
+
       return {
         open: null,
-        showAll: false,
+        showAll: !fromUrl,
         sort: 'added',
-        // Arrays, so several values can be active per facet. Seeded from the
-        // query string when present - that's how "More…", "See all" and a
-        // book's shelf link arrive with a filter already applied.
-        sel: (() => {
-          const params = new URLSearchParams(location.search);
-          const s = {};
-          let fromUrl = false;
-          facetKeys.forEach((f) => {
-            const raw = params.get(f.key);
-            s[f.key] = raw ? raw.split(',').map((v) => v.trim()).filter(Boolean) : [];
-            if (s[f.key].length) fromUrl = true;
-          });
-          // ?all arrives from "See expanded view" - show everything rather
-          // than dropping into the default category.
-          if (!fromUrl && !params.has('all')) s.primary = [defaultCategory];
-          return s;
-        })(),
+        query: '',
+        focused: false,
+        sel,
         shown: total,
         total: total,
         tiles: [],
@@ -264,6 +305,7 @@ const sorted = [...books].sort(
             added: el.dataset.added || '',
             published: parseInt(el.dataset.published, 10) || 0,
             title: el.dataset.title || '',
+            search: el.dataset.search || '',
           }));
           this.apply();
         },
@@ -286,8 +328,15 @@ const sorted = [...books].sort(
         },
         clearAll() {
           facetKeys.forEach((f) => (this.sel[f.key] = []));
+          this.query = '';
           this.showAll = false;
           this.open = null;
+          this.apply();
+        },
+        onQuery(value) {
+          this.query = value;
+          // "Showing all N books" would contradict a narrowed result set.
+          if (value.trim()) this.showAll = false;
           this.apply();
         },
         toggleShowAll() {
@@ -301,7 +350,11 @@ const sorted = [...books].sort(
           this.apply();
         },
 
-        matches(t) {
+        // `words` is tokenised once per pass by apply(), not per tile. Every
+        // word must appear somewhere in the tile's haystack, so "arnold be"
+        // narrows rather than widens. Search applies even when showing all.
+        matches(t, words) {
+          for (const w of words) if (!t.search.includes(w)) return false;
           if (this.showAll) return true;
           for (const f of facetKeys) {
             const want = this.sel[f.key];
@@ -314,9 +367,10 @@ const sorted = [...books].sort(
 
         // One pass: set visibility, then assign CSS order for the sort.
         apply() {
+          const words = this.query.trim().toLowerCase().split(/\s+/).filter(Boolean);
           const visible = [];
           for (const t of this.tiles) {
-            const ok = this.matches(t);
+            const ok = this.matches(t, words);
             t.el.hidden = !ok;
             if (ok) visible.push(t);
           }
@@ -331,7 +385,10 @@ const sorted = [...books].sort(
         },
 
         get hasSelection() {
-          return facetKeys.some((f) => this.sel[f.key].length);
+          return !!this.query.trim() || facetKeys.some((f) => this.sel[f.key].length);
+        },
+        get countText() {
+          return this.shown + (this.shown === 1 ? ' book' : ' books');
         },
         get sortLabel() {
           const s = sortKeys.find((x) => x.key === this.sort);
@@ -345,11 +402,13 @@ const sorted = [...books].sort(
           return vals.length + ' selected';
         },
         get headingText() {
-          if (this.showAll) return 'All books';
           const parts = [];
-          for (const f of facetKeys) {
-            for (const v of this.sel[f.key]) {
-              parts.push((labelMap[f.key] || {})[v] || v);
+          if (this.query.trim()) parts.push('\u201C' + this.query.trim() + '\u201D');
+          if (!this.showAll) {
+            for (const f of facetKeys) {
+              for (const v of this.sel[f.key]) {
+                parts.push((labelMap[f.key] || {})[v] || v);
+              }
             }
           }
           return parts.length ? parts.join(' + ') : 'All books';
@@ -377,11 +436,13 @@ const sorted = [...books].sort(
     margin-bottom: 0.75rem;
   }
 
+  /* flex: none so the search box can never squeeze these onto two lines. */
   .reset-group {
     display: flex;
     align-items: center;
     gap: 0.6rem;
     font-size: 0.8rem;
+    flex: none;
   }
   .reset-sep { color: #cbd5e1; }
   .reset-link {
@@ -393,9 +454,59 @@ const sorted = [...books].sort(
     color: #C80026;
     cursor: pointer;
   }
+  .reset-link { white-space: nowrap; }
   .reset-link:hover:not(:disabled) { text-decoration: underline; }
   .reset-link:disabled { color: #cbd5e1; cursor: default; }
   .reset-link--on { color: #0f172a; text-decoration: underline; }
+
+  /* Sits with the reset links rather than above the filter bar, so the row
+     reads as one set of controls: search here, or narrow with the dropdowns. */
+  .search-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex: 0 1 20rem;
+    min-width: 11rem;
+  }
+
+  /* The reset links and the sort control travel together, right-aligned, and
+     wrap as one unit rather than breaking apart mid-row. */
+  .control-right {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5rem 1.5rem;
+    margin-left: auto;
+  }
+
+  /* Too narrow to share the line - the box takes the full top row. */
+  @media (max-width: 720px) {
+    .search-group { flex: 1 1 100%; }
+    .control-right { justify-content: flex-start; margin-left: 0; }
+  }
+  .search-icon {
+    position: absolute;
+    left: 0.6rem;
+    width: 0.85rem;
+    height: 0.85rem;
+    color: #94a3b8;
+    pointer-events: none;
+  }
+  .search-input {
+    width: 100%;
+    padding: 0.35rem 0.6rem 0.35rem 1.85rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 0.3rem;
+    background: #fff;
+    font-size: 0.8rem;
+    color: #0f172a;
+    transition: border-color 120ms ease;
+  }
+  .search-input::placeholder { color: #94a3b8; }
+  .search-input:hover { border-color: #94a3b8; }
+  .search-input:focus { outline: none; border-color: #C80026; }
+  .search-input::-webkit-search-cancel-button { cursor: pointer; }
 
   /* Deliberately unboxed and set at the reset-link size, so sorting reads as
      a minor control rather than a sixth filter. */

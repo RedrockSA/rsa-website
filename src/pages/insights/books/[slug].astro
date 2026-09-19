@@ -10,7 +10,7 @@ import CoverTile from '../../../components/reading/CoverTile.astro';
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import { buildAffiliateLink } from '../../../utils/amazon';
-import { shelfLabel, bookUrl, readingListUrl, READING_LIST_ALL } from '../../../utils/shelves';
+import { facetLabel, bookUrl, readingListUrl, READING_LIST_ALL } from '../../../utils/shelves';
 import { breadcrumbSchema } from '../../../utils/seo';
 
 export async function getStaticPaths() {
@@ -109,7 +109,7 @@ const facts: [string, string][] = [
           <p class="mt-6 text-sm text-secondary-600">
             On the
             <a href={readingListUrl([d.primaryCategory])} class="italic font-semibold" style="color:#C80026;">
-              {shelfLabel(d.primaryCategory)}
+              {facetLabel(d.primaryCategory)}
             </a>
             shelf
           </p>
@@ -118,10 +118,10 @@ const facts: [string, string][] = [
         {(d.topics.length > 0 || d.secondaryCategories.length > 0) && (
           <div class="mt-4 flex flex-wrap gap-2">
             {d.topics.map((g) => (
-              <span class="rounded-full bg-secondary-800 px-2.5 py-0.5 text-xs font-medium text-white">{g}</span>
+              <span class="rounded-full bg-secondary-800 px-2.5 py-0.5 text-xs font-medium text-white">{facetLabel(g)}</span>
             ))}
             {d.secondaryCategories.map((s) => (
-              <span class="rounded-full bg-secondary-100 px-2.5 py-0.5 text-xs text-secondary-700">{s}</span>
+              <span class="rounded-full bg-secondary-100 px-2.5 py-0.5 text-xs text-secondary-700">{facetLabel(s)}</span>
             ))}
           </div>
         )}
@@ -153,7 +153,7 @@ const facts: [string, string][] = [
     {alsoOnShelf.length > 0 && (
       <section class="mt-20">
         <h2 class="mb-4 border-b border-secondary-300 pb-2 text-lg font-bold italic text-secondary-900">
-          More on the {shelfLabel(d.primaryCategory || '')} shelf
+          More on the {facetLabel(d.primaryCategory || '')} shelf
         </h2>
         <div class="also-grid" style="--tile-h: 120px;">
           {alsoOnShelf.map((b) => (
