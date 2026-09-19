@@ -10,7 +10,7 @@ hero:
 
 ## Building the Right Team for Clients
 
-We strive for a culture centered on professional growth, career development and depth, relationship building and confident transaction execution. We populate our team with dedicated professionals who truly enjoy supporting our clients navigate complex and challenging projects and timelines to reach ideal outcomes.
+We strive for a culture centered on professional growth, career development and depth, relationship building and confident transaction execution. We populate our team with dedicated professionals who truly enjoy supporting our clients as they navigate complex and challenging projects and timelines to reach ideal outcomes.
 
 Client-responsiveness permeates our culture, starting with a clear understanding of shareholder objectives, followed with a succinct transaction strategy, and finishing with hands-on support and management of the entire process across the entire team.
 
@@ -41,7 +41,7 @@ Every client project is team-based with clear responsibilities for the entire te
 
 ## Why Join the **Redrock** Team?
 
-- **Meaningful Work.** Every project has a direct impact on our clients' businesses.
+- **Meaningful Work.** Every project has a direct impact on our clients' business.
 - **Small Teams, Big Exposure.** Work with focused teams with diverse thinking doing work that really matters. With high accountability, you will learn skills and expertise that deliver on projects for clients from start to successful completions.
 - **Growth-oriented Culture.** We hire, train and promote from within. Investing in professional development with great clients and projects is a cornerstone of the firm. 
 - **Partnership Track.** We want our professionals to grow with Redrock. Our flexible career path allows new team members to scale their career from analyst to partner, without ever leaving our firm.

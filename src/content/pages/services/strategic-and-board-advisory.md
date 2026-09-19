@@ -7,7 +7,7 @@ hero:
 pageWidth: narrow
 ---
 
-Redrock advises companies on a wide variety of strategic initiatives that surround corporate transactions. We assist with critical decisions for ownership groups, board of directors and management teams as they contemplate key strategies that could materially impact the growth and fundamentals of the business. Redrock also works with ownership teams on long-term liquidity event planning to ensure that all proper actions take place in advance of a potential transaction.
+Redrock advises companies on a wide variety of strategic initiatives that surround corporate transactions. We assist with critical decisions for ownership groups, boards of directors and management teams as they contemplate key strategies that could materially impact the growth and fundamentals of the business. Redrock also works with ownership teams on long-term liquidity event planning to ensure that all proper actions take place in advance of a potential transaction.
 
 Our firm works with public and private board of directors (and special committees) as they explore various transaction alternatives, including:
 
