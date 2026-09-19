@@ -13,16 +13,13 @@ yearPublished: 2025
 originalPublicationYear: 2024
 type: non-fiction
 primaryCategory: "economics"
-topics: ["economics", "investing"]
-secondaryCategories: ["history"]
-era: "ancient"
-eraPublished: "2020s"
+topics: ["markets-and-incentives", "trade-and-globalization", "institutions-and-governance"]
+secondaryCategories: ["history", "culture"]
 geography: "global"
 coverImage: "/books/covers/mcwilliams_the-history-of-money.webp"
 coverWidth: 400
 coverHeight: 608
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2026-08-08
 dateAdded: 2026-08-08

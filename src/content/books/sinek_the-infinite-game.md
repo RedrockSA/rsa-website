@@ -12,15 +12,13 @@ yearPublished: 2019
 originalPublicationYear: 2017
 type: non-fiction
 primaryCategory: "strategy"
-topics: ["leadership", "strategy"]
-secondaryCategories: ["business"]
-eraPublished: "2010s"
+topics: ["organizational-culture", "competition", "purpose-and-meaning", "resilience"]
+secondaryCategories: ["business", "leadership"]
 geography: "global"
 coverImage: "/books/covers/sinek_the-infinite-game.webp"
 coverWidth: 325
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2026-06-09
 dateAdded: 2026-06-09

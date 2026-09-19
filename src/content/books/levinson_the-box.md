@@ -12,17 +12,14 @@ pages: 544
 yearPublished: 2016
 originalPublicationYear: 2006
 type: non-fiction
-primaryCategory: "operations"
-topics: ["economics", "operations", "strategy"]
-secondaryCategories: ["economics", "history", "science-technology"]
-era: "late-20th-century"
-eraPublished: "2000s"
+primaryCategory: "history"
+topics: ["innovation", "trade-and-globalization", "systems-thinking", "markets-and-incentives", "logistics"]
+secondaryCategories: ["economics", "business-history", "science-and-technology"]
 geography: "global"
 coverImage: "/books/covers/levinson_the-box.webp"
 coverWidth: 331
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 4
 dateRead: 2023-09-30
 dateAdded: 2023-09-30

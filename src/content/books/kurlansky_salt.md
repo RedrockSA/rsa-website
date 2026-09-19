@@ -13,16 +13,13 @@ yearPublished: 2003
 originalPublicationYear: 2002
 type: non-fiction
 primaryCategory: "history"
-topics: ["economics", "food"]
-secondaryCategories: ["health-food"]
-era: "ancient"
-eraPublished: "2000s"
+topics: ["food", "trade-and-globalization", "markets-and-incentives", "innovation", "logistics"]
+secondaryCategories: ["health-and-food", "economics"]
 geography: "global"
 coverImage: "/books/covers/kurlansky_salt.webp"
 coverWidth: 312
 coverHeight: 475
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2026-06-03
 dateAdded: 2026-06-03

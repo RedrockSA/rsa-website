@@ -12,16 +12,14 @@ pages: 305
 yearPublished: 2013
 originalPublicationYear: 2013
 type: non-fiction
-primaryCategory: "social-commentary"
-topics: ["strategy"]
-secondaryCategories: ["psychology"]
-eraPublished: "2010s"
+primaryCategory: "psychology"
+topics: ["resilience", "risk-and-uncertainty", "human-behavior", "competition", "education-and-learning"]
+secondaryCategories: ["culture", "history"]
 geography: "global"
 coverImage: "/books/covers/gladwell_david-and-goliath.webp"
 coverWidth: 349
 coverHeight: 500
 oneLiner: ""
-featured: false
 dateAdded: 2018-08-11
 ---
 

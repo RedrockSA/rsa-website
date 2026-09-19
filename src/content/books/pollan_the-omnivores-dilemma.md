@@ -13,16 +13,13 @@ yearPublished: 2006
 originalPublicationYear: 2006
 type: non-fiction
 primaryCategory: "health"
-topics: ["food", "nature"]
-secondaryCategories: ["culture", "economics"]
-era: "contemporary"
-eraPublished: "2000s"
+topics: ["food", "nature", "markets-and-incentives", "ethics", "systems-thinking", "logistics"]
+secondaryCategories: ["culture", "economics", "science-and-technology"]
 geography: "united-states"
 coverImage: "/books/covers/pollan_the-omnivores-dilemma.webp"
 coverWidth: 323
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 4
 dateRead: 2023-02-04
 dateAdded: 2023-02-04

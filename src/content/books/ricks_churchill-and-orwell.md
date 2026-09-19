@@ -12,17 +12,14 @@ pages: 352
 yearPublished: 2017
 originalPublicationYear: 2017
 type: non-fiction
-primaryCategory: "memoir-biography"
-topics: ["leadership"]
-secondaryCategories: ["history", "politics-society"]
-era: "wwii"
-eraPublished: "2010s"
+primaryCategory: "biography-and-memoir"
+topics: ["freedom-and-individualism", "war", "communication", "ethics", "institutions-and-governance"]
+secondaryCategories: ["history", "politics-and-society", "leadership"]
 geography: "britain"
 coverImage: "/books/covers/ricks_churchill-and-orwell.webp"
 coverWidth: 329
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2025-02-04
 dateAdded: 2025-02-04

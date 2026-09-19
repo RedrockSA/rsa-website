@@ -13,15 +13,13 @@ yearPublished: 2005
 originalPublicationYear: 2001
 type: non-fiction
 primaryCategory: "psychology"
-topics: ["decision-making", "investing"]
-secondaryCategories: ["economics"]
-eraPublished: "2000s"
+topics: ["decision-making", "investing", "risk-and-uncertainty", "mental-models"]
+secondaryCategories: ["economics", "philosophy"]
 geography: "global"
 coverImage: "/books/covers/taleb_fooled-by-randomness.webp"
 coverWidth: 324
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2019-10-09
 dateAdded: 2019-10-09

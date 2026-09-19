@@ -12,16 +12,13 @@ yearPublished: 2006
 originalPublicationYear: 1946
 type: non-fiction
 primaryCategory: "psychology"
-topics: ["personal-effectiveness"]
-secondaryCategories: ["biography-memoir", "philosophy"]
-era: "wwii"
-eraPublished: "1940s"
+topics: ["resilience", "purpose-and-meaning", "ethics"]
+secondaryCategories: ["biography-and-memoir", "philosophy"]
 geography: "europe"
 coverImage: "/books/covers/frankl_mans-search-for-meaning.webp"
 coverWidth: 302
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 4
 dateRead: 2025-04-29
 dateAdded: 2025-04-29

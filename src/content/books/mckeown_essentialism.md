@@ -13,15 +13,13 @@ yearPublished: 2014
 originalPublicationYear: 2011
 type: non-fiction
 primaryCategory: "personal-effectiveness"
-topics: ["personal-effectiveness", "productivity", "strategy"]
-secondaryCategories: ["psychology"]
-eraPublished: "2010s"
+topics: ["productivity", "decision-making", "habits", "behavior-change", "purpose-and-meaning"]
+secondaryCategories: ["psychology", "philosophy"]
 geography: "global"
 coverImage: "/books/covers/mckeown_essentialism.webp"
 coverWidth: 324
 coverHeight: 500
 oneLiner: ""
-featured: false
 dateAdded: 2020-12-31
 ---
 

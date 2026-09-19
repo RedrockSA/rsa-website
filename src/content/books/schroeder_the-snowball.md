@@ -12,17 +12,14 @@ pages: 960
 yearPublished: 2008
 originalPublicationYear: 2008
 type: non-fiction
-primaryCategory: "memoir-biography"
-topics: ["entrepreneurship", "investing"]
-secondaryCategories: ["business"]
-era: "20th-century"
-eraPublished: "2000s"
+primaryCategory: "biography-and-memoir"
+topics: ["investing", "decision-making", "markets-and-incentives", "entrepreneurship", "ethics"]
+secondaryCategories: ["business-history", "leadership", "strategy"]
 geography: "united-states"
 coverImage: "/books/covers/schroeder_the-snowball.webp"
 coverWidth: 400
 coverHeight: 612
 oneLiner: ""
-featured: false
 dateAdded: 2024-10-06
 ---
 

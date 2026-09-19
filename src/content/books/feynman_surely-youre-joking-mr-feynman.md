@@ -12,17 +12,14 @@ pages: 400
 yearPublished: 2018
 originalPublicationYear: 1985
 type: non-fiction
-primaryCategory: "memoir-biography"
-topics: ["technology-and-science"]
-secondaryCategories: ["science-technology"]
-era: "mid-20th-century"
-eraPublished: "1980s"
+primaryCategory: "biography-and-memoir"
+topics: ["scientific-discovery", "problem-solving", "creativity", "education-and-learning"]
+secondaryCategories: ["science-and-technology", "psychology"]
 geography: "united-states"
 coverImage: "/books/covers/feynman_surely-youre-joking-mr-feynman.webp"
 coverWidth: 332
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2025-10-02
 dateAdded: 2025-10-02

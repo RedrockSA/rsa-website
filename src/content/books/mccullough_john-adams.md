@@ -11,17 +11,14 @@ pages: 751
 yearPublished: 2001
 originalPublicationYear: 2001
 type: non-fiction
-primaryCategory: "memoir-biography"
-topics: ["leadership"]
-secondaryCategories: ["history"]
-era: "early-modern"
-eraPublished: "2000s"
+primaryCategory: "biography-and-memoir"
+topics: ["institutions-and-governance", "war", "ethics", "relationships", "communication"]
+secondaryCategories: ["history", "politics-and-society", "leadership"]
 geography: "united-states"
 coverImage: "/books/covers/mccullough_john-adams.webp"
 coverWidth: 329
 coverHeight: 500
 oneLiner: ""
-featured: false
 dateAdded: 2018-08-11
 ---
 

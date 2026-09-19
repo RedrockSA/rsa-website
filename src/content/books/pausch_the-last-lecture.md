@@ -11,17 +11,14 @@ pages: 217
 yearPublished: 2008
 originalPublicationYear: 2008
 type: non-fiction
-primaryCategory: "memoir-biography"
-topics: ["personal-effectiveness"]
-secondaryCategories: ["philosophy"]
-era: "contemporary"
-eraPublished: "2000s"
+primaryCategory: "biography-and-memoir"
+topics: ["purpose-and-meaning", "resilience", "relationships", "education-and-learning"]
+secondaryCategories: ["philosophy", "psychology"]
 geography: "united-states"
 coverImage: "/books/covers/pausch_the-last-lecture.webp"
 coverWidth: 375
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2025-02-10
 dateAdded: 2025-02-10

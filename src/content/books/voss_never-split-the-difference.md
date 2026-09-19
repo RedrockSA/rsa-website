@@ -13,15 +13,13 @@ yearPublished: 2016
 originalPublicationYear: 2016
 type: non-fiction
 primaryCategory: "strategy"
-topics: ["negotiation"]
-secondaryCategories: ["psychology"]
-eraPublished: "2010s"
+topics: ["negotiation", "communication", "human-behavior", "decision-making", "relationships"]
+secondaryCategories: ["psychology", "business"]
 geography: "global"
 coverImage: "/books/covers/voss_never-split-the-difference.webp"
 coverWidth: 321
 coverHeight: 500
 oneLiner: ""
-featured: false
 dateAdded: 2021-11-05
 ---
 

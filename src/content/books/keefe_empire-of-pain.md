@@ -12,17 +12,14 @@ pages: 535
 yearPublished: 2021
 originalPublicationYear: 2021
 type: non-fiction
-primaryCategory: "corporate-history"
-topics: ["competitive-landscape", "culture", "medicine", "true-crime"]
-secondaryCategories: ["culture", "health-food", "history"]
-era: "contemporary"
-eraPublished: "2020s"
+primaryCategory: "business-history"
+topics: ["medicine", "marketing", "ethics", "true-crime", "institutions-and-governance"]
+secondaryCategories: ["health-and-food", "politics-and-society"]
 geography: "united-states"
 coverImage: "/books/covers/keefe_empire-of-pain.webp"
 coverWidth: 329
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2023-08-30
 dateAdded: 2023-08-30

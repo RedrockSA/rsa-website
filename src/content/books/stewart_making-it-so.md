@@ -12,17 +12,14 @@ pages: 469
 yearPublished: 2023
 originalPublicationYear: 2023
 type: non-fiction
-primaryCategory: "memoir-biography"
-topics: ["arts"]
-secondaryCategories: []
-era: "contemporary"
-eraPublished: "2020s"
+primaryCategory: "biography-and-memoir"
+topics: ["arts", "media-and-entertainment", "resilience", "teamwork", "communication"]
+secondaryCategories: ["culture", "leadership"]
 geography: "britain"
 coverImage: "/books/covers/stewart_making-it-so.webp"
 coverWidth: 331
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2024-08-24
 dateAdded: 2024-08-24

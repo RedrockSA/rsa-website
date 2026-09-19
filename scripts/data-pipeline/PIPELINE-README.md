@@ -7,8 +7,12 @@ links (tag `redrock07-20`).
 ## Layout
 
 ```
+src/data/
+  books.csv          THE DATABASE - 109 books, 24 columns, keyed on isbn13
+                     Hand-edited. Read by scripts/generate-books.mjs, which
+                     regenerates src/content/books/*.md on dev and build.
+
 data/
-  books.csv          THE DATABASE - 111 books, 25 columns, keyed on isbn13
   provenance.csv     where each cover and each identification came from
   goodreads_library_export_full_read_list_260913.csv
   archive/           superseded working files from the build
@@ -26,12 +30,22 @@ scripts/             build scripts (see below)
 
 ## books.csv
 
-`isbn13` is the primary key - present, unique and check-digit valid on all 111
+`isbn13` is the primary key - present, unique and check-digit valid on all 109
 rows. `book_id` is the URL slug and the cover filename: `covers/<book_id>.png`.
 
-Multi-value columns are **semicolon-separated**: `business_genre`, `subject`,
-`geography`, `tags`. In a real database these become a join table; the CSV keeps
-them inline so the file stays editable in a spreadsheet.
+Multi-value columns are **semicolon-separated**: `topics` and
+`secondary_category`. In a real database these become a join table; the CSV
+keeps them inline so the file stays editable in a spreadsheet.
+
+Category values are lowercase slugs, and they are identity, not display text -
+the same string is the filter key and the URL query value. An `-and-` in a slug
+is how a two-part name asks for an ampersand when rendered:
+`health-and-food` shows as "Health & Food". See `facetLabel()` in
+`src/utils/shelves.ts`; `SHELF_LABELS` in the same file overrides a primary
+category whose name the rule cannot produce.
+
+A `tags` column used to sit alongside these, holding the union of the other
+classification columns. Nothing read it, so it was removed.
 
 | column | notes |
 |---|---|
@@ -39,10 +53,9 @@ them inline so the file stays editable in a spreadsheet.
 | `isbn10` | empty for 979- prefixed books, which have no ISBN-10 |
 | `asin` | Amazon id; set only where no ISBN-10 exists |
 | `type` | fiction / non-fiction |
-| `business_genre` | leadership, strategy, economics, operations, ... (15 values) |
-| `subject` | history, biography, psychology, ... (22 values) |
-| `era_subject` | the period the book is *about* |
-| `era_published` | derived from the year - never edit by hand |
+| `primary_category` | one per book - the shelf, and the Primary Category filter (14 values) |
+| `topics` | granular, multi-value: decision-making, investing, ... (27 values) |
+| `secondary_category` | broad buckets, multi-value: culture, philosophy, ... (10 values) |
 | `my_rating` | 1-5, or empty if unrated. Goodreads' 0 has been blanked |
 | `date_read` | ISO `YYYY-MM-DD` |
 | `cover_width` / `cover_height` | set these on the `<img>` tag to avoid layout shift |
@@ -69,20 +82,30 @@ cosmetic and re-normalising is one command - just say so after an edit.
 
 ## scripts/
 
-Only two are still live:
+**Nothing in this folder runs against the live site.** These are the one-shot
+pipeline that built the list, kept for provenance - how covers were sourced,
+how ISBNs were resolved, how rows were matched to the Goodreads export. The
+only script in the build path is `scripts/generate-books.mjs`, one level up,
+which runs automatically on `npm run dev` and `npm run build`.
 
-- `tag_books.py` - rewrites the classification columns in `data/books.csv` from
-  the table inside it. Edit tags there, not in the CSV, or a re-run overwrites
-  them. It does not touch `notes`.
-- `build_links.py` - regenerates `amazon_url` from `isbn10`/`asin`. Pass
-  `--tag` to change the Associates id.
+Superseded - do not run:
 
-The rest are the one-shot build pipeline, kept for reference. Their paths refer
-to the pre-reorganisation layout and would need updating to re-run:
-`extract_covers.py` (grid detection and cropping), `build_manifest.py`,
-`match_goodreads.py`, `fetch_covers.py`, `fetch_ol_search.py`, `fetch_gbooks.py`,
-`repair_covers.py`, `resolve_isbns.py`, `apply_user_isbns.py`, `apply_review.py`,
-`rename_covers.py`, `build_master.py`, `build_db.py`.
+- `tag_books.py`, `_regen_tag_table.py` - these rewrote the classification
+  columns from a table held inside the script, and the old README said to edit
+  categories there rather than in the CSV. That is no longer true: both target
+  `data/books.csv` and the old column names (`business_genre`, `subject`,
+  `home_shelf`), none of which exist now. **Categories are edited directly in
+  `src/data/books.csv`.**
+- `build_db.py` - assembled the CSV from the build's working files, including
+  the `tags` column that has since been dropped.
+
+Kept for reference. Paths refer to the pre-reorganisation layout and would need
+updating to re-run: `build_links.py` (regenerates `amazon_url` from
+`isbn10`/`asin`; pass `--tag` to change the Associates id), `extract_covers.py`
+(grid detection and cropping), `build_manifest.py`, `match_goodreads.py`,
+`fetch_covers.py`, `fetch_ol_search.py`, `fetch_gbooks.py`, `repair_covers.py`,
+`resolve_isbns.py`, `apply_user_isbns.py`, `apply_review.py`,
+`rename_covers.py`, `build_master.py`.
 
 ## Known limits
 

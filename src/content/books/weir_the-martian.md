@@ -12,15 +12,13 @@ yearPublished: 2014
 originalPublicationYear: 2011
 type: fiction
 primaryCategory: "relevant-fiction"
-topics: ["space"]
-secondaryCategories: ["science-technology"]
-eraPublished: "2010s"
+topics: ["space", "problem-solving", "engineering", "resilience", "scientific-discovery"]
+secondaryCategories: ["science-and-technology"]
 geography: "space"
 coverImage: "/books/covers/weir_the-martian.webp"
-coverWidth: 319
-coverHeight: 500
+coverWidth: 400
+coverHeight: 616
 oneLiner: ""
-featured: false
 dateAdded: 2018-08-11
 ---
 

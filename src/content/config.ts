@@ -96,8 +96,6 @@ const books = defineCollection({
     primaryCategory: z.string().optional(),              // one per book - the shelf, and the Primary Category filter
     topics: z.array(z.string()).default([]),             // granular tags, multi-value
     secondaryCategories: z.array(z.string()).default([]), // broad buckets, multi-value
-    era: z.string().optional(),
-    eraPublished: z.string().optional(),
     geography: z.string().optional(),
 
     coverImage: z.string().optional(),                   // derived by generate-books.mjs
@@ -105,7 +103,6 @@ const books = defineCollection({
     coverHeight: z.number().optional(),
 
     oneLiner: z.string().default(''),
-    featured: z.boolean().default(false),
     myRating: z.number().optional(),                     // private - not rendered publicly
     dateRead: z.coerce.date().optional(),
     dateAdded: z.coerce.date(),

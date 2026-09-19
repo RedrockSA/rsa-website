@@ -13,16 +13,13 @@ yearPublished: 2023
 originalPublicationYear: 2023
 type: non-fiction
 primaryCategory: "history"
-topics: ["culture", "war", "leadership"]
-secondaryCategories: []
-era: "ancient"
-eraPublished: "2020s"
+topics: ["war", "institutions-and-governance", "trade-and-globalization", "logistics"]
+secondaryCategories: ["politics-and-society", "leadership"]
 geography: "mesopotamia"
 coverImage: "/books/covers/frahm_assyria.webp"
 coverWidth: 323
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 3
 dateRead: 2026-06-03
 dateAdded: 2026-06-03

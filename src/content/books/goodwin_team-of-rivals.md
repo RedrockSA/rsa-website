@@ -13,16 +13,13 @@ yearPublished: 2006
 originalPublicationYear: 2005
 type: non-fiction
 primaryCategory: "leadership"
-topics: ["leadership", "management", "teamwork"]
-secondaryCategories: ["biography-memoir", "history"]
-era: "19th-century"
-eraPublished: "2000s"
+topics: ["management", "teamwork", "negotiation", "institutions-and-governance", "war"]
+secondaryCategories: ["biography-and-memoir", "history", "politics-and-society"]
 geography: "united-states"
 coverImage: "/books/covers/goodwin_team-of-rivals.webp"
 coverWidth: 400
 coverHeight: 605
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2024-01-28
 dateAdded: 2024-01-28

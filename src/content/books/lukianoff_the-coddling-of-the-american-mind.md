@@ -13,16 +13,13 @@ yearPublished: 2018
 originalPublicationYear: 2018
 type: non-fiction
 primaryCategory: "psychology"
-topics: ["culture"]
-secondaryCategories: []
-era: "contemporary"
-eraPublished: "2010s"
+topics: ["human-behavior", "education-and-learning", "parenting-and-childhood", "resilience", "social-change"]
+secondaryCategories: ["culture", "politics-and-society"]
 geography: "united-states"
 coverImage: "/books/covers/lukianoff_the-coddling-of-the-american-mind.webp"
 coverWidth: 326
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2021-11-05
 dateAdded: 2021-11-05

@@ -13,15 +13,13 @@ yearPublished: 2009
 originalPublicationYear: 2009
 type: non-fiction
 primaryCategory: "operations"
-topics: ["management", "medicine", "operations", "project-management", "strategy"]
-secondaryCategories: ["health-food", "psychology"]
-eraPublished: "2000s"
+topics: ["systems-thinking", "management", "medicine", "project-management", "teamwork"]
+secondaryCategories: ["business", "psychology"]
 geography: "global"
 coverImage: "/books/covers/gawande_the-checklist-manifesto.webp"
 coverWidth: 335
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2026-05-22
 dateAdded: 2026-05-22

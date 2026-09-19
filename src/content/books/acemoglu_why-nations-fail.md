@@ -13,16 +13,13 @@ yearPublished: 2012
 originalPublicationYear: 2012
 type: non-fiction
 primaryCategory: "economics"
-topics: ["economics", "strategy"]
-secondaryCategories: ["history", "politics-society"]
-era: "multi-era"
-eraPublished: "2010s"
+topics: ["institutions-and-governance", "markets-and-incentives", "social-change"]
+secondaryCategories: ["history", "politics-and-society"]
 geography: "global"
 coverImage: "/books/covers/acemoglu_why-nations-fail.webp"
 coverWidth: 300
 coverHeight: 456
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2021-12-12
 dateAdded: 2021-12-12

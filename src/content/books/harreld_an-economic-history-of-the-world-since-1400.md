@@ -12,16 +12,13 @@ yearPublished: 2016
 originalPublicationYear: 2016
 type: non-fiction
 primaryCategory: "economics"
-topics: ["economics"]
-secondaryCategories: ["history"]
-era: "ancient"
-eraPublished: "2010s"
+topics: ["markets-and-incentives", "trade-and-globalization", "institutions-and-governance", "social-change"]
+secondaryCategories: ["history", "politics-and-society"]
 geography: "global"
 coverImage: "/books/covers/harreld_an-economic-history-of-the-world-since-1400.webp"
 coverWidth: 351
 coverHeight: 500
 oneLiner: ""
-featured: false
 dateAdded: 2018-08-11
 ---
 

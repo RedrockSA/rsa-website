@@ -12,16 +12,14 @@ pages: 368
 yearPublished: 2019
 originalPublicationYear: 2019
 type: non-fiction
-primaryCategory: "history"
-topics: ["innovation", "management", "strategy"]
-secondaryCategories: ["business", "science-technology"]
-eraPublished: "2010s"
+primaryCategory: "strategy"
+topics: ["innovation", "creativity", "organizational-culture", "systems-thinking", "competition"]
+secondaryCategories: ["business", "science-and-technology", "history"]
 geography: "global"
 coverImage: "/books/covers/bahcall_loonshots.webp"
 coverWidth: 329
 coverHeight: 500
 oneLiner: ""
-featured: false
 dateAdded: 2020-12-31
 ---
 

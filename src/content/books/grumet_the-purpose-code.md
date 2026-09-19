@@ -12,15 +12,13 @@ pages: 224
 yearPublished: 2025
 type: non-fiction
 primaryCategory: "psychology"
-topics: ["personal-effectiveness"]
-secondaryCategories: []
-eraPublished: "2020s"
+topics: ["purpose-and-meaning", "resilience"]
+secondaryCategories: ["philosophy", "leadership"]
 geography: "global"
 coverImage: "/books/covers/grumet_the-purpose-code.webp"
 coverWidth: 400
 coverHeight: 618
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2025-09-27
 dateAdded: 2025-09-27

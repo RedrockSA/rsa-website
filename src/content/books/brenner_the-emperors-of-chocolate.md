@@ -12,17 +12,14 @@ pages: 367
 yearPublished: 2000
 originalPublicationYear: 1998
 type: non-fiction
-primaryCategory: "corporate-history"
-topics: ["competitive-landscape", "marketing", "strategy"]
-secondaryCategories: ["business", "history"]
-era: "20th-century"
-eraPublished: "1990s"
+primaryCategory: "business-history"
+topics: ["competition", "marketing", "markets-and-incentives", "entrepreneurship"]
+secondaryCategories: ["culture", "economics", "strategy"]
 geography: "united-states"
 coverImage: "/books/covers/brenner_the-emperors-of-chocolate.webp"
 coverWidth: 321
 coverHeight: 475
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2023-12-29
 dateAdded: 2023-12-29

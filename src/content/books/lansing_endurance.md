@@ -12,17 +12,14 @@ pages: 282
 yearPublished: 1999
 originalPublicationYear: 1959
 type: non-fiction
-primaryCategory: "memoir-biography"
-topics: ["leadership", "nature", "teamwork"]
-secondaryCategories: ["culture", "history"]
-era: "early-20th-century"
-eraPublished: "1950s"
+primaryCategory: "biography-and-memoir"
+topics: ["resilience", "teamwork", "crisis-management", "exploration", "nature", "logistics"]
+secondaryCategories: ["history", "leadership"]
 geography: "antarctica"
 coverImage: "/books/covers/lansing_endurance.webp"
 coverWidth: 325
 coverHeight: 500
 oneLiner: ""
-featured: false
 dateAdded: 2018-08-11
 ---
 

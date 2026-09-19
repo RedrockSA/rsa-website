@@ -12,15 +12,13 @@ yearPublished: 1996
 originalPublicationYear: 1943
 type: fiction
 primaryCategory: "relevant-fiction"
-topics: ["entrepreneurship"]
-secondaryCategories: ["philosophy", "politics-society"]
-eraPublished: "1940s"
+topics: ["entrepreneurship", "creativity", "freedom-and-individualism", "ethics", "arts"]
+secondaryCategories: ["philosophy", "culture"]
 geography: "united-states"
 coverImage: "/books/covers/rand_the-fountainhead.webp"
 coverWidth: 400
 coverHeight: 656
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2021-01-04
 dateAdded: 2021-01-04

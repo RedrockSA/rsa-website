@@ -11,16 +11,14 @@ pages: 226
 yearPublished: 1998
 originalPublicationYear: 1988
 type: non-fiction
-primaryCategory: "technology-and-science"
-topics: ["space"]
-secondaryCategories: []
-eraPublished: "1980s"
+primaryCategory: "science-and-technology"
+topics: ["space", "scientific-discovery", "education-and-learning"]
+secondaryCategories: ["philosophy", "history"]
 geography: "space"
 coverImage: "/books/covers/hawking_a-brief-history-of-time.webp"
 coverWidth: 328
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 4
 dateRead: 2025-07-29
 dateAdded: 2025-07-29

@@ -12,17 +12,14 @@ pages: 400
 yearPublished: 2016
 originalPublicationYear: 2016
 type: non-fiction
-primaryCategory: "memoir-biography"
-topics: ["entrepreneurship", "leadership", "strategy"]
-secondaryCategories: ["business"]
-era: "late-20th-century"
-eraPublished: "2010s"
+primaryCategory: "biography-and-memoir"
+topics: ["entrepreneurship", "competition", "marketing", "resilience"]
+secondaryCategories: ["business-history", "leadership", "strategy"]
 geography: "united-states"
 coverImage: "/books/covers/knight_shoe-dog.webp"
 coverWidth: 331
 coverHeight: 500
 oneLiner: ""
-featured: false
 dateAdded: 2018-08-11
 ---
 

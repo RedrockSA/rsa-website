@@ -12,17 +12,14 @@ pages: 272
 yearPublished: 2025
 originalPublicationYear: 2025
 type: non-fiction
-primaryCategory: "technology-and-science"
-topics: ["entrepreneurship", "innovation", "strategy"]
-secondaryCategories: ["biography-memoir", "business"]
-era: "contemporary"
-eraPublished: "2020s"
+primaryCategory: "science-and-technology"
+topics: ["entrepreneurship", "innovation", "computing-and-ai", "competition"]
+secondaryCategories: ["biography-and-memoir", "business-history", "leadership", "strategy"]
 geography: "united-states"
 coverImage: "/books/covers/witt_the-thinking-machine.webp"
 coverWidth: 326
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2026-02-15
 dateAdded: 2026-02-15

@@ -12,17 +12,14 @@ pages: 531
 yearPublished: 1993
 originalPublicationYear: 1993
 type: non-fiction
-primaryCategory: "memoir-biography"
-topics: ["technology-and-science"]
-secondaryCategories: ["science-technology"]
-era: "mid-20th-century"
-eraPublished: "1990s"
+primaryCategory: "biography-and-memoir"
+topics: ["scientific-discovery", "creativity", "education-and-learning", "war", "problem-solving"]
+secondaryCategories: ["science-and-technology", "history"]
 geography: "united-states"
 coverImage: "/books/covers/gleick_genius.webp"
 coverWidth: 306
 coverHeight: 475
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2025-06-17
 dateAdded: 2025-06-17

@@ -12,17 +12,14 @@ pages: 592
 yearPublished: 2003
 originalPublicationYear: 1996
 type: non-fiction
-primaryCategory: "teamwork"
-topics: ["leadership", "project-management"]
-secondaryCategories: ["biography-memoir", "history"]
-era: "19th-century"
-eraPublished: "1990s"
+primaryCategory: "history"
+topics: ["exploration", "project-management", "resilience", "teamwork", "nature", "logistics"]
+secondaryCategories: ["biography-and-memoir", "leadership"]
 geography: "united-states"
 coverImage: "/books/covers/ambrose_undaunted-courage.webp"
 coverWidth: 325
 coverHeight: 500
 oneLiner: ""
-featured: false
 dateAdded: 2018-08-11
 ---
 

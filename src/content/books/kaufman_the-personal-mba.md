@@ -9,15 +9,14 @@ amazonUrl: "https://www.amazon.com/dp/0525543023?tag=redrock07-20"
 publisher: "Generic"
 pages: 496
 type: non-fiction
-primaryCategory: "operations"
-topics: ["entrepreneurship", "management", "marketing", "operations", "strategy"]
-secondaryCategories: ["business"]
+primaryCategory: "strategy"
+topics: ["entrepreneurship", "management", "marketing", "systems-thinking", "mental-models"]
+secondaryCategories: ["business", "psychology"]
 geography: "global"
 coverImage: "/books/covers/kaufman_the-personal-mba.webp"
 coverWidth: 327
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2025-09-03
 dateAdded: 2025-09-03

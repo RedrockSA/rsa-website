@@ -12,16 +12,13 @@ yearPublished: 1995
 originalPublicationYear: 1989
 type: non-fiction
 primaryCategory: "history"
-topics: ["war", "religion", "negotiation"]
-secondaryCategories: ["biography-memoir", "politics-society"]
-era: "late-20th-century"
-eraPublished: "1980s"
+topics: ["war", "negotiation", "religion", "institutions-and-governance", "communication"]
+secondaryCategories: ["biography-and-memoir", "politics-and-society", "culture"]
 geography: "middle-east"
 coverImage: "/books/covers/friedman_from-beirut-to-jerusalem.webp"
 coverWidth: 305
 coverHeight: 475
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2024-09-19
 dateAdded: 2024-09-19

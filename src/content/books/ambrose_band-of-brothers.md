@@ -11,17 +11,14 @@ pages: 432
 yearPublished: 2002
 originalPublicationYear: 1992
 type: non-fiction
-primaryCategory: "teamwork"
-topics: ["leadership", "war"]
-secondaryCategories: ["history"]
-era: "wwii"
-eraPublished: "1990s"
+primaryCategory: "history"
+topics: ["teamwork", "war", "resilience", "organizational-culture", "crisis-management"]
+secondaryCategories: ["biography-and-memoir", "leadership"]
 geography: "europe"
 coverImage: "/books/covers/ambrose_band-of-brothers.webp"
 coverWidth: 400
 coverHeight: 604
 oneLiner: ""
-featured: false
 dateAdded: 2019-03-24
 ---
 

@@ -13,16 +13,13 @@ yearPublished: 2019
 originalPublicationYear: 2019
 type: non-fiction
 primaryCategory: "history"
-topics: ["leadership", "teamwork"]
-secondaryCategories: []
-era: "contemporary"
-eraPublished: "2010s"
+topics: ["teamwork", "resilience", "crisis-management", "communication"]
+secondaryCategories: ["politics-and-society", "leadership"]
 geography: "united-states"
 coverImage: "/books/covers/graff_the-only-plane-in-the-sky.webp"
 coverWidth: 329
 coverHeight: 499
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2025-05-15
 dateAdded: 2025-05-15

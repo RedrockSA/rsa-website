@@ -11,17 +11,14 @@ pages: 630
 yearPublished: 2011
 originalPublicationYear: 2011
 type: non-fiction
-primaryCategory: "memoir-biography"
-topics: ["entrepreneurship", "innovation", "leadership"]
-secondaryCategories: ["science-technology"]
-era: "late-20th-century"
-eraPublished: "2010s"
+primaryCategory: "biography-and-memoir"
+topics: ["entrepreneurship", "innovation", "creativity", "computing-and-ai"]
+secondaryCategories: ["business-history", "science-and-technology", "leadership"]
 geography: "united-states"
 coverImage: "/books/covers/isaacson_steve-jobs.webp"
 coverWidth: 333
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2019-05-30
 dateAdded: 2019-05-30

@@ -13,15 +13,13 @@ yearPublished: 2016
 originalPublicationYear: 2016
 type: non-fiction
 primaryCategory: "psychology"
-topics: ["innovation", "leadership"]
-secondaryCategories: ["business"]
-eraPublished: "2010s"
+topics: ["creativity", "innovation", "human-behavior", "risk-and-uncertainty", "organizational-culture"]
+secondaryCategories: ["business", "leadership"]
 geography: "global"
 coverImage: "/books/covers/grant_originals.webp"
 coverWidth: 324
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 4
 dateRead: 2018-08-25
 dateAdded: 2018-08-25

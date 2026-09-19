@@ -12,16 +12,13 @@ yearPublished: 2018
 originalPublicationYear: 2004
 type: non-fiction
 primaryCategory: "history"
-topics: ["leadership", "strategy"]
-secondaryCategories: ["biography-memoir"]
-era: "medieval"
-eraPublished: "2000s"
+topics: ["war", "institutions-and-governance", "trade-and-globalization", "innovation", "logistics"]
+secondaryCategories: ["biography-and-memoir", "leadership", "politics-and-society"]
 geography: "mongolia"
 coverImage: "/books/covers/weatherford_genghis-khan-and-the-making-of-the-modern-world.webp"
 coverWidth: 317
 coverHeight: 475
 oneLiner: ""
-featured: false
 dateAdded: 2018-08-11
 ---
 

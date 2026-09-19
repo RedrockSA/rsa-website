@@ -13,15 +13,13 @@ yearPublished: 2023
 originalPublicationYear: 2023
 type: non-fiction
 primaryCategory: "health"
-topics: ["medicine", "personal-effectiveness"]
-secondaryCategories: []
-eraPublished: "2020s"
+topics: ["medicine", "habits", "risk-and-uncertainty", "systems-thinking"]
+secondaryCategories: ["science-and-technology", "psychology"]
 geography: "global"
 coverImage: "/books/covers/attia_outlive.webp"
 coverWidth: 385
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2023-07-31
 dateAdded: 2023-07-31

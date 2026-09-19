@@ -12,16 +12,14 @@ pages: 16
 yearPublished: 2017
 originalPublicationYear: 2017
 type: non-fiction
-primaryCategory: "operations"
-topics: ["decision-making", "investing", "leadership", "management"]
-secondaryCategories: ["biography-memoir", "business"]
-eraPublished: "2010s"
+primaryCategory: "leadership"
+topics: ["decision-making", "investing", "management", "systems-thinking", "mental-models"]
+secondaryCategories: ["biography-and-memoir", "business", "psychology"]
 geography: "united-states"
 coverImage: "/books/covers/dalio_principles.webp"
 coverWidth: 400
 coverHeight: 467
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2025-06-25
 dateAdded: 2025-06-25

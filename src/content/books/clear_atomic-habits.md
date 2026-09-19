@@ -13,15 +13,13 @@ yearPublished: 2018
 originalPublicationYear: 2018
 type: non-fiction
 primaryCategory: "personal-effectiveness"
-topics: ["personal-effectiveness", "productivity"]
+topics: ["habits", "productivity", "systems-thinking", "behavior-change"]
 secondaryCategories: ["psychology"]
-eraPublished: "2010s"
 geography: "global"
 coverImage: "/books/covers/clear_atomic-habits.webp"
 coverWidth: 369
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2019-10-02
 dateAdded: 2019-10-02

@@ -12,17 +12,14 @@ pages: 368
 yearPublished: 2014
 originalPublicationYear: 2014
 type: non-fiction
-primaryCategory: "corporate-history"
-topics: ["culture", "innovation", "leadership", "management"]
-secondaryCategories: ["biography-memoir", "science-technology"]
-era: "late-20th-century"
-eraPublished: "2010s"
+primaryCategory: "leadership"
+topics: ["creativity", "innovation", "management", "organizational-culture", "teamwork"]
+secondaryCategories: ["business-history", "science-and-technology", "biography-and-memoir", "strategy"]
 geography: "united-states"
 coverImage: "/books/covers/catmull_creativity-inc.webp"
 coverWidth: 328
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2024-07-05
 dateAdded: 2024-07-05

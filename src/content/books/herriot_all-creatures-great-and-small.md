@@ -11,17 +11,14 @@ pages: 442
 yearPublished: 2014
 originalPublicationYear: 1970
 type: fiction
-primaryCategory: "memoir-biography"
-topics: ["nature"]
-secondaryCategories: ["culture"]
-era: "early-20th-century"
-eraPublished: "1970s"
+primaryCategory: "biography-and-memoir"
+topics: ["nature", "relationships", "medicine", "resilience", "purpose-and-meaning"]
+secondaryCategories: ["culture", "health-and-food"]
 geography: "britain"
 coverImage: "/books/covers/herriot_all-creatures-great-and-small.webp"
-coverWidth: 324
-coverHeight: 500
+coverWidth: 400
+coverHeight: 606
 oneLiner: ""
-featured: false
 dateAdded: 2018-08-11
 ---
 

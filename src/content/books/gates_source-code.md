@@ -12,17 +12,14 @@ pages: 336
 yearPublished: 2025
 originalPublicationYear: 2025
 type: non-fiction
-primaryCategory: "memoir-biography"
-topics: ["entrepreneurship", "innovation"]
-secondaryCategories: ["science-technology"]
-era: "late-20th-century"
-eraPublished: "2020s"
+primaryCategory: "biography-and-memoir"
+topics: ["entrepreneurship", "innovation", "computing-and-ai", "education-and-learning"]
+secondaryCategories: ["science-and-technology", "business-history"]
 geography: "united-states"
 coverImage: "/books/covers/gates_source-code.webp"
 coverWidth: 325
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2025-04-10
 dateAdded: 2025-04-10

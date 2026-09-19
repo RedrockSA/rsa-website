@@ -12,17 +12,14 @@ pages: 400
 yearPublished: 2019
 originalPublicationYear: 2019
 type: non-fiction
-primaryCategory: "memoir-biography"
-topics: ["entrepreneurship", "investing", "leadership", "management", "strategy"]
-secondaryCategories: ["business"]
-era: "contemporary"
-eraPublished: "2010s"
+primaryCategory: "biography-and-memoir"
+topics: ["entrepreneurship", "investing", "management", "negotiation"]
+secondaryCategories: ["business-history", "leadership", "strategy"]
 geography: "united-states"
 coverImage: "/books/covers/schwarzman_what-it-takes.webp"
 coverWidth: 400
 coverHeight: 465
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2026-08-12
 dateAdded: 2026-08-12

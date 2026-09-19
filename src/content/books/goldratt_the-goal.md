@@ -11,15 +11,13 @@ pages: 384
 yearPublished: 2004
 type: non-fiction
 primaryCategory: "operations"
-topics: ["management", "operations", "project-management"]
-secondaryCategories: ["business"]
-eraPublished: "2000s"
+topics: ["systems-thinking", "management", "project-management", "productivity", "problem-solving", "logistics"]
+secondaryCategories: ["business", "psychology"]
 geography: "united-states"
 coverImage: "/books/covers/goldratt_the-goal.webp"
 coverWidth: 317
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2025-08-05
 dateAdded: 2025-08-05

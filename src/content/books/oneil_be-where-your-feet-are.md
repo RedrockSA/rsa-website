@@ -12,16 +12,13 @@ pages: 272
 yearPublished: 2021
 type: non-fiction
 primaryCategory: "leadership"
-topics: ["leadership", "personal-effectiveness"]
-secondaryCategories: ["biography-memoir", "psychology"]
-era: "contemporary"
-eraPublished: "2020s"
+topics: ["relationships", "resilience", "purpose-and-meaning", "habits"]
+secondaryCategories: ["biography-and-memoir", "psychology"]
 geography: "united-states"
 coverImage: "/books/covers/oneil_be-where-your-feet-are.webp"
 coverWidth: 400
 coverHeight: 613
 oneLiner: ""
-featured: false
 dateAdded: 2021-11-05
 ---
 

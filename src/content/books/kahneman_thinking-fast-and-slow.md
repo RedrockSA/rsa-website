@@ -12,15 +12,13 @@ yearPublished: 2011
 originalPublicationYear: 2011
 type: non-fiction
 primaryCategory: "psychology"
-topics: ["decision-making"]
-secondaryCategories: ["economics"]
-eraPublished: "2010s"
+topics: ["decision-making", "risk-and-uncertainty", "mental-models", "human-behavior"]
+secondaryCategories: ["economics", "science-and-technology"]
 geography: "global"
 coverImage: "/books/covers/kahneman_thinking-fast-and-slow.webp"
 coverWidth: 337
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 3
 dateRead: 2019-09-19
 dateAdded: 2019-09-19

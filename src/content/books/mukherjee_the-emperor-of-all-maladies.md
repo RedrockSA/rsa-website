@@ -13,16 +13,13 @@ yearPublished: 2010
 originalPublicationYear: 2010
 type: non-fiction
 primaryCategory: "health"
-topics: ["innovation", "medicine"]
-secondaryCategories: ["history", "science-technology"]
-era: "multi-era"
-eraPublished: "2010s"
+topics: ["medicine", "scientific-discovery", "innovation", "resilience", "ethics"]
+secondaryCategories: ["history", "science-and-technology"]
 geography: "global"
 coverImage: "/books/covers/mukherjee_the-emperor-of-all-maladies.webp"
 coverWidth: 324
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 5
 dateAdded: 2018-08-11
 ---

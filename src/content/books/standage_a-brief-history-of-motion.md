@@ -13,16 +13,13 @@ yearPublished: 2021
 originalPublicationYear: 2021
 type: non-fiction
 primaryCategory: "history"
-topics: ["entrepreneurship", "innovation"]
-secondaryCategories: ["science-technology"]
-era: "ancient"
-eraPublished: "2020s"
+topics: ["innovation", "engineering", "markets-and-incentives", "social-change", "logistics"]
+secondaryCategories: ["science-and-technology", "culture"]
 geography: "global"
 coverImage: "/books/covers/standage_a-brief-history-of-motion.webp"
 coverWidth: 329
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2026-08-12
 dateAdded: 2026-08-12

@@ -13,15 +13,13 @@ yearPublished: 2018
 originalPublicationYear: 2018
 type: non-fiction
 primaryCategory: "psychology"
-topics: ["personal-effectiveness"]
+topics: ["purpose-and-meaning", "resilience", "habits", "ethics"]
 secondaryCategories: ["philosophy"]
-eraPublished: "2010s"
 geography: "global"
 coverImage: "/books/covers/peterson_12-rules-for-life.webp"
 coverWidth: 331
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 4
 dateRead: 2023-01-30
 dateAdded: 2023-01-30

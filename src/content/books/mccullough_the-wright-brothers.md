@@ -11,17 +11,14 @@ pages: 320
 yearPublished: 2015
 originalPublicationYear: 2015
 type: non-fiction
-primaryCategory: "memoir-biography"
-topics: ["entrepreneurship", "innovation"]
-secondaryCategories: ["history", "science-technology"]
-era: "early-20th-century"
-eraPublished: "2010s"
+primaryCategory: "biography-and-memoir"
+topics: ["entrepreneurship", "innovation", "engineering", "resilience", "exploration"]
+secondaryCategories: ["history", "science-and-technology"]
 geography: "united-states"
 coverImage: "/books/covers/mccullough_the-wright-brothers.webp"
 coverWidth: 400
 coverHeight: 596
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2018-10-23
 dateAdded: 2018-10-23

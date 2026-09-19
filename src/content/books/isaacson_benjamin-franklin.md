@@ -12,17 +12,14 @@ pages: 586
 yearPublished: 2004
 originalPublicationYear: 2003
 type: non-fiction
-primaryCategory: "memoir-biography"
-topics: ["entrepreneurship", "leadership"]
-secondaryCategories: ["history"]
-era: "early-modern"
-eraPublished: "2000s"
+primaryCategory: "biography-and-memoir"
+topics: ["entrepreneurship", "innovation", "institutions-and-governance", "scientific-discovery", "communication"]
+secondaryCategories: ["history", "leadership", "science-and-technology"]
 geography: "united-states"
 coverImage: "/books/covers/isaacson_benjamin-franklin.webp"
 coverWidth: 400
-coverHeight: 438
+coverHeight: 605
 oneLiner: ""
-featured: false
 myRating: 5
 dateAdded: 2019-09-19
 ---

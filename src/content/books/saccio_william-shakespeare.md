@@ -13,16 +13,13 @@ yearPublished: 2013
 originalPublicationYear: 1999
 type: non-fiction
 primaryCategory: "relevant-fiction"
-topics: ["arts"]
-secondaryCategories: ["culture"]
-era: "early-modern"
-eraPublished: "1990s"
+topics: ["arts", "communication", "creativity", "human-behavior"]
+secondaryCategories: ["culture", "history"]
 geography: "britain"
 coverImage: "/books/covers/saccio_william-shakespeare.webp"
 coverWidth: 400
 coverHeight: 400
 oneLiner: ""
-featured: false
 myRating: 4
 dateRead: 2019-04-22
 dateAdded: 2019-04-22

@@ -13,15 +13,13 @@ yearPublished: 2015
 originalPublicationYear: 2015
 type: non-fiction
 primaryCategory: "health"
-topics: ["food"]
-secondaryCategories: ["science-technology"]
-eraPublished: "2010s"
+topics: ["food", "scientific-discovery", "problem-solving", "innovation"]
+secondaryCategories: ["health-and-food"]
 geography: "global"
 coverImage: "/books/covers/lopezalt_the-food-lab.webp"
 coverWidth: 389
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2025-05-23
 dateAdded: 2025-05-23

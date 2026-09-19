@@ -12,15 +12,13 @@ yearPublished: 2002
 originalPublicationYear: 1997
 type: non-fiction
 primaryCategory: "operations"
-topics: ["operations", "project-management"]
-secondaryCategories: ["business"]
-eraPublished: "1990s"
+topics: ["project-management", "systems-thinking", "decision-making", "productivity", "logistics"]
+secondaryCategories: ["business", "psychology"]
 geography: "global"
 coverImage: "/books/covers/goldratt_critical-chain.webp"
 coverWidth: 319
 coverHeight: 475
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2026-03-06
 dateAdded: 2026-03-06

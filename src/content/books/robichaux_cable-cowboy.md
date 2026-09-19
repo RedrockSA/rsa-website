@@ -12,17 +12,14 @@ pages: 336
 yearPublished: 2005
 originalPublicationYear: 2002
 type: non-fiction
-primaryCategory: "corporate-history"
-topics: ["entrepreneurship", "investing", "strategy"]
-secondaryCategories: ["biography-memoir", "science-technology"]
-era: "late-20th-century"
-eraPublished: "2000s"
+primaryCategory: "business-history"
+topics: ["entrepreneurship", "investing", "competition", "markets-and-incentives"]
+secondaryCategories: ["science-and-technology", "biography-and-memoir", "strategy"]
 geography: "united-states"
 coverImage: "/books/covers/robichaux_cable-cowboy.webp"
 coverWidth: 323
 coverHeight: 500
 oneLiner: ""
-featured: false
 dateRead: 2023-02-28
 dateAdded: 2023-02-28
 ---

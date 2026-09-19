@@ -12,17 +12,14 @@ pages: 352
 yearPublished: 2018
 originalPublicationYear: 2018
 type: non-fiction
-primaryCategory: "memoir-biography"
-topics: ["leadership"]
-secondaryCategories: []
-era: "contemporary"
-eraPublished: "2010s"
+primaryCategory: "biography-and-memoir"
+topics: ["education-and-learning", "resilience", "relationships", "religion"]
+secondaryCategories: ["culture", "psychology"]
 geography: "united-states"
 coverImage: "/books/covers/westover_educated.webp"
 coverWidth: 329
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2019-10-17
 dateAdded: 2019-10-17

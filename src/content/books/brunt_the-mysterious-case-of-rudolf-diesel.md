@@ -12,17 +12,14 @@ pages: 384
 yearPublished: 2023
 originalPublicationYear: 2023
 type: non-fiction
-primaryCategory: "memoir-biography"
-topics: ["entrepreneurship", "innovation", "true-crime"]
-secondaryCategories: ["culture", "history", "science-technology"]
-era: "early-20th-century"
-eraPublished: "2020s"
+primaryCategory: "biography-and-memoir"
+topics: ["entrepreneurship", "innovation", "engineering", "true-crime", "war"]
+secondaryCategories: ["science-and-technology", "history"]
 geography: "europe"
 coverImage: "/books/covers/brunt_the-mysterious-case-of-rudolf-diesel.webp"
 coverWidth: 331
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 4
 dateRead: 2026-07-19
 dateAdded: 2026-07-19

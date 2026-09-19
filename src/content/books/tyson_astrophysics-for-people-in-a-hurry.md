@@ -11,16 +11,14 @@ pages: 223
 yearPublished: 2017
 originalPublicationYear: 2017
 type: non-fiction
-primaryCategory: "technology-and-science"
-topics: ["space"]
-secondaryCategories: []
-eraPublished: "2010s"
+primaryCategory: "science-and-technology"
+topics: ["space", "scientific-discovery", "education-and-learning"]
+secondaryCategories: ["philosophy"]
 geography: "space"
 coverImage: "/books/covers/tyson_astrophysics-for-people-in-a-hurry.webp"
 coverWidth: 308
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2025-05-28
 dateAdded: 2025-05-28

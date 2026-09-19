@@ -11,17 +11,14 @@ pages: 568
 yearPublished: 2009
 originalPublicationYear: 2009
 type: non-fiction
-primaryCategory: "memoir-biography"
-topics: ["economics", "psychology"]
-secondaryCategories: []
-era: "mid-20th-century"
-eraPublished: "2000s"
+primaryCategory: "biography-and-memoir"
+topics: ["freedom-and-individualism", "arts", "relationships", "ethics", "institutions-and-governance"]
+secondaryCategories: ["philosophy", "politics-and-society"]
 geography: "united-states"
 coverImage: "/books/covers/heller_ayn-rand-and-the-world-she-made.webp"
 coverWidth: 328
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2025-03-21
 dateAdded: 2025-03-21

@@ -12,15 +12,13 @@ yearPublished: 2001
 originalPublicationYear: 2001
 type: non-fiction
 primaryCategory: "strategy"
-topics: ["leadership", "management", "strategy"]
-secondaryCategories: ["business"]
-eraPublished: "2000s"
+topics: ["management", "organizational-culture", "systems-thinking", "decision-making", "competition"]
+secondaryCategories: ["business", "leadership"]
 geography: "united-states"
 coverImage: "/books/covers/collins_good-to-great.webp"
 coverWidth: 330
 coverHeight: 500
 oneLiner: ""
-featured: false
 dateAdded: 2018-08-11
 ---
 

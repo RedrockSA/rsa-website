@@ -12,17 +12,14 @@ pages: 416
 yearPublished: 2023
 originalPublicationYear: 2023
 type: non-fiction
-primaryCategory: "memoir-biography"
-topics: ["entrepreneurship", "leadership", "management"]
-secondaryCategories: ["politics-society"]
-era: "contemporary"
-eraPublished: "2020s"
+primaryCategory: "biography-and-memoir"
+topics: ["ethics", "decision-making", "institutions-and-governance"]
+secondaryCategories: ["politics-and-society", "leadership"]
 geography: "united-states"
 coverImage: "/books/covers/coppins_romney.webp"
 coverWidth: 400
 coverHeight: 604
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2026-08-22
 dateAdded: 2026-08-22

@@ -12,17 +12,14 @@ pages: 288
 yearPublished: 2023
 originalPublicationYear: 2023
 type: non-fiction
-primaryCategory: "memoir-biography"
-topics: ["leadership", "personal-effectiveness"]
-secondaryCategories: ["psychology"]
-era: "contemporary"
-eraPublished: "2020s"
+primaryCategory: "biography-and-memoir"
+topics: ["resilience", "communication", "purpose-and-meaning"]
+secondaryCategories: ["leadership", "psychology"]
 geography: "united-states"
 coverImage: "/books/covers/schwarzenegger_be-useful.webp"
 coverWidth: 331
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2026-09-05
 dateAdded: 2026-09-05

@@ -12,15 +12,13 @@ yearPublished: 2021
 originalPublicationYear: 2021
 type: fiction
 primaryCategory: "relevant-fiction"
-topics: ["space"]
-secondaryCategories: ["science-technology"]
-eraPublished: "2020s"
+topics: ["space", "problem-solving", "scientific-discovery", "teamwork", "resilience"]
+secondaryCategories: ["science-and-technology"]
 geography: "space"
 coverImage: "/books/covers/weir_project-hail-mary.webp"
 coverWidth: 325
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2022-11-04
 dateAdded: 2022-11-04

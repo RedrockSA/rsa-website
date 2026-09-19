@@ -11,17 +11,14 @@ pages: 143
 yearPublished: 1969
 originalPublicationYear: 1968
 type: non-fiction
-primaryCategory: "technology-and-science"
-topics: ["innovation"]
-secondaryCategories: ["biography-memoir"]
-era: "mid-20th-century"
-eraPublished: "1960s"
+primaryCategory: "science-and-technology"
+topics: ["scientific-discovery", "genetics-and-heredity", "competition", "ethics", "innovation"]
+secondaryCategories: ["biography-and-memoir", "history"]
 geography: "britain"
 coverImage: "/books/covers/watson_the-double-helix.webp"
 coverWidth: 330
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2025-07-07
 dateAdded: 2025-07-07

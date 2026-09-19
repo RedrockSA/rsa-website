@@ -11,17 +11,14 @@ pages: 600
 yearPublished: 2017
 originalPublicationYear: 2017
 type: non-fiction
-primaryCategory: "memoir-biography"
-topics: ["innovation"]
-secondaryCategories: []
-era: "early-modern"
-eraPublished: "2010s"
+primaryCategory: "biography-and-memoir"
+topics: ["creativity", "innovation", "scientific-discovery", "arts", "engineering"]
+secondaryCategories: ["science-and-technology", "culture"]
 geography: "europe"
 coverImage: "/books/covers/isaacson_leonardo-da-vinci.webp"
 coverWidth: 329
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2019-02-09
 dateAdded: 2019-02-09

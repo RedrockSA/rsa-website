@@ -13,16 +13,13 @@ yearPublished: 2006
 originalPublicationYear: 2005
 type: non-fiction
 primaryCategory: "psychology"
-topics: ["decision-making", "investing"]
-secondaryCategories: ["culture", "philosophy"]
-era: "contemporary"
-eraPublished: "2000s"
+topics: ["decision-making", "investing", "mental-models", "risk-and-uncertainty"]
+secondaryCategories: ["business", "philosophy", "strategy"]
 geography: "united-states"
 coverImage: "/books/covers/munger_poor-charlies-almanack.webp"
 coverWidth: 400
 coverHeight: 413
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2026-09-12
 dateAdded: 2026-09-12

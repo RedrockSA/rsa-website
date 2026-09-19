@@ -11,17 +11,14 @@ pages: 1120
 yearPublished: 1993
 originalPublicationYear: 1992
 type: non-fiction
-primaryCategory: "memoir-biography"
-topics: ["leadership"]
-secondaryCategories: ["history"]
-era: "mid-20th-century"
-eraPublished: "1990s"
+primaryCategory: "biography-and-memoir"
+topics: ["decision-making", "war", "institutions-and-governance", "crisis-management", "ethics"]
+secondaryCategories: ["history", "politics-and-society", "leadership"]
 geography: "united-states"
 coverImage: "/books/covers/mccullough_truman.webp"
 coverWidth: 330
 coverHeight: 500
 oneLiner: ""
-featured: false
 dateAdded: 2018-08-11
 ---
 

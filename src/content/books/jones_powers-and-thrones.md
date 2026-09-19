@@ -13,16 +13,13 @@ yearPublished: 2021
 originalPublicationYear: 2021
 type: non-fiction
 primaryCategory: "history"
-topics: ["war", "strategy"]
-secondaryCategories: []
-era: "medieval"
-eraPublished: "2020s"
+topics: ["war", "institutions-and-governance", "religion", "trade-and-globalization", "social-change", "logistics"]
+secondaryCategories: ["politics-and-society", "culture"]
 geography: "europe"
 coverImage: "/books/covers/jones_powers-and-thrones.webp"
 coverWidth: 331
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2022-12-02
 dateAdded: 2022-12-02

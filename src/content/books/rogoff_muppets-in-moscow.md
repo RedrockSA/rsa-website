@@ -11,17 +11,14 @@ pages: 267
 yearPublished: 2022
 originalPublicationYear: 2022
 type: non-fiction
-primaryCategory: "corporate-history"
-topics: ["culture", "operations"]
-secondaryCategories: ["biography-memoir", "history"]
-era: "late-20th-century"
-eraPublished: "2020s"
+primaryCategory: "business-history"
+topics: ["media-and-entertainment", "negotiation", "teamwork", "social-change"]
+secondaryCategories: ["biography-and-memoir", "culture", "politics-and-society"]
 geography: "russia"
 coverImage: "/books/covers/rogoff_muppets-in-moscow.webp"
 coverWidth: 340
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2025-01-14
 dateAdded: 2025-01-14

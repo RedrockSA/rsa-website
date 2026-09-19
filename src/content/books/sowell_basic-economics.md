@@ -13,15 +13,13 @@ yearPublished: 2003
 originalPublicationYear: 2000
 type: non-fiction
 primaryCategory: "economics"
-topics: ["economics"]
-secondaryCategories: []
-eraPublished: "2000s"
+topics: ["markets-and-incentives", "trade-and-globalization", "institutions-and-governance", "decision-making"]
+secondaryCategories: ["politics-and-society", "history"]
 geography: "global"
 coverImage: "/books/covers/sowell_basic-economics.webp"
 coverWidth: 315
 coverHeight: 475
 oneLiner: ""
-featured: false
 dateAdded: 2021-11-05
 ---
 

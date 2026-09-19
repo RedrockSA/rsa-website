@@ -12,16 +12,13 @@ yearPublished: 2006
 originalPublicationYear: 2005
 type: non-fiction
 primaryCategory: "history"
-topics: ["economics", "food"]
-secondaryCategories: ["health-food"]
-era: "ancient"
-eraPublished: "2000s"
+topics: ["food", "trade-and-globalization", "markets-and-incentives", "social-change", "logistics"]
+secondaryCategories: ["health-and-food", "economics"]
 geography: "global"
 coverImage: "/books/covers/standage_a-history-of-the-world-in-6-glasses.webp"
 coverWidth: 333
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2025-11-13
 dateAdded: 2025-11-13

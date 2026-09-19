@@ -12,17 +12,14 @@ pages: 440
 yearPublished: 2004
 originalPublicationYear: 2003
 type: non-fiction
-primaryCategory: "corporate-history"
-topics: ["culture", "economics", "management", "true-crime"]
-secondaryCategories: ["business", "culture", "history"]
-era: "contemporary"
-eraPublished: "2000s"
+primaryCategory: "business-history"
+topics: ["management", "ethics", "true-crime", "competition", "markets-and-incentives", "organizational-culture"]
+secondaryCategories: ["economics", "culture"]
 geography: "united-states"
 coverImage: "/books/covers/mclean_the-smartest-guys-in-the-room.webp"
 coverWidth: 307
 coverHeight: 475
 oneLiner: ""
-featured: false
 myRating: 4
 dateRead: 2022-10-13
 dateAdded: 2022-10-13

@@ -13,15 +13,13 @@ yearPublished: 2023
 originalPublicationYear: 2023
 type: non-fiction
 primaryCategory: "psychology"
-topics: ["culture", "leadership", "psychology"]
-secondaryCategories: []
-eraPublished: "2020s"
+topics: ["communication", "relationships", "human-behavior"]
+secondaryCategories: ["philosophy", "leadership"]
 geography: "global"
 coverImage: "/books/covers/brooks_how-to-know-a-person.webp"
 coverWidth: 329
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2026-04-20
 dateAdded: 2026-04-20

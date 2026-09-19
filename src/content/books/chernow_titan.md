@@ -12,17 +12,14 @@ pages: 832
 yearPublished: 2004
 originalPublicationYear: 1998
 type: non-fiction
-primaryCategory: "memoir-biography"
-topics: ["entrepreneurship", "investing", "strategy"]
-secondaryCategories: ["business", "history"]
-era: "19th-century"
-eraPublished: "1990s"
+primaryCategory: "biography-and-memoir"
+topics: ["entrepreneurship", "investing", "competition", "markets-and-incentives"]
+secondaryCategories: ["business-history", "history", "leadership", "strategy"]
 geography: "united-states"
 coverImage: "/books/covers/chernow_titan.webp"
 coverWidth: 333
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2025-03-04
 dateAdded: 2025-03-04

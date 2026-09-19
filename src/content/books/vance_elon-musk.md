@@ -12,17 +12,14 @@ pages: 392
 yearPublished: 2015
 originalPublicationYear: 2015
 type: non-fiction
-primaryCategory: "memoir-biography"
-topics: ["entrepreneurship", "innovation"]
-secondaryCategories: ["science-technology"]
-era: "contemporary"
-eraPublished: "2010s"
+primaryCategory: "biography-and-memoir"
+topics: ["entrepreneurship", "innovation", "engineering", "space", "resilience"]
+secondaryCategories: ["business-history", "science-and-technology", "leadership"]
 geography: "united-states"
 coverImage: "/books/covers/vance_elon-musk.webp"
 coverWidth: 331
 coverHeight: 499
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2018-08-28
 dateAdded: 2018-08-28

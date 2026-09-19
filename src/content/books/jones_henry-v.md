@@ -13,16 +13,13 @@ yearPublished: 2024
 originalPublicationYear: 2024
 type: non-fiction
 primaryCategory: "history"
-topics: ["leadership", "war"]
-secondaryCategories: ["biography-memoir"]
-era: "medieval"
-eraPublished: "2020s"
+topics: ["war", "institutions-and-governance", "decision-making"]
+secondaryCategories: ["biography-and-memoir", "leadership"]
 geography: "britain"
 coverImage: "/books/covers/jones_henry-v.webp"
 coverWidth: 400
 coverHeight: 613
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2025-09-17
 dateAdded: 2025-09-17

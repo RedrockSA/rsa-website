@@ -12,16 +12,14 @@ pages: 176
 yearPublished: 2002
 originalPublicationYear: 2002
 type: non-fiction
-primaryCategory: "technology-and-science"
-topics: ["space"]
-secondaryCategories: []
-eraPublished: "2000s"
+primaryCategory: "science-and-technology"
+topics: ["space", "scientific-discovery", "education-and-learning"]
+secondaryCategories: ["philosophy", "history"]
 geography: "space"
 coverImage: "/books/covers/hawking_the-theory-of-everything.webp"
 coverWidth: 299
 coverHeight: 475
 oneLiner: ""
-featured: false
 myRating: 3
 dateRead: 2025-07-22
 dateAdded: 2025-07-22

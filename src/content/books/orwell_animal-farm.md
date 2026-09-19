@@ -12,15 +12,13 @@ yearPublished: 2003
 originalPublicationYear: 1945
 type: fiction
 primaryCategory: "relevant-fiction"
-topics: ["economics"]
-secondaryCategories: ["philosophy"]
-eraPublished: "1940s"
+topics: ["institutions-and-governance", "freedom-and-individualism", "communication", "ethics"]
+secondaryCategories: ["politics-and-society", "philosophy"]
 geography: "russia"
 coverImage: "/books/covers/orwell_animal-farm.webp"
-coverWidth: 330
-coverHeight: 500
+coverWidth: 400
+coverHeight: 716
 oneLiner: ""
-featured: false
 dateAdded: 2018-08-11
 ---
 

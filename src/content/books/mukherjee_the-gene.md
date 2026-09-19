@@ -12,17 +12,14 @@ pages: 592
 yearPublished: 2016
 originalPublicationYear: 2016
 type: non-fiction
-primaryCategory: "health"
-topics: ["innovation", "medicine"]
-secondaryCategories: ["history", "science-technology"]
-era: "multi-era"
-eraPublished: "2010s"
+primaryCategory: "science-and-technology"
+topics: ["scientific-discovery", "genetics-and-heredity", "medicine", "ethics"]
+secondaryCategories: ["history", "health-and-food", "philosophy"]
 geography: "global"
 coverImage: "/books/covers/mukherjee_the-gene.webp"
 coverWidth: 322
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 4
 dateAdded: 2018-08-11
 ---

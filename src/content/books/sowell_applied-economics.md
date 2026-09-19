@@ -13,15 +13,13 @@ yearPublished: 2003
 originalPublicationYear: 2003
 type: non-fiction
 primaryCategory: "economics"
-topics: ["economics"]
-secondaryCategories: []
-eraPublished: "2000s"
+topics: ["markets-and-incentives", "decision-making", "institutions-and-governance", "risk-and-uncertainty"]
+secondaryCategories: ["politics-and-society", "history"]
 geography: "global"
 coverImage: "/books/covers/sowell_applied-economics.webp"
 coverWidth: 317
 coverHeight: 475
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2021-01-29
 dateAdded: 2021-01-29

@@ -13,15 +13,13 @@ yearPublished: 1986
 originalPublicationYear: 1946
 type: non-fiction
 primaryCategory: "economics"
-topics: ["economics"]
-secondaryCategories: ["philosophy", "politics-society"]
-eraPublished: "1940s"
+topics: ["markets-and-incentives", "freedom-and-individualism", "institutions-and-governance", "ethics"]
+secondaryCategories: ["philosophy", "politics-and-society"]
 geography: "united-states"
 coverImage: "/books/covers/rand_capitalism.webp"
 coverWidth: 304
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2025-11-06
 dateAdded: 2025-11-06

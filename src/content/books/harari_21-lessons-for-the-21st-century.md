@@ -12,15 +12,13 @@ yearPublished: 2018
 originalPublicationYear: 2018
 type: non-fiction
 primaryCategory: "history"
-topics: ["strategy"]
-secondaryCategories: ["philosophy", "science-technology"]
-eraPublished: "2010s"
+topics: ["computing-and-ai", "institutions-and-governance", "social-change", "purpose-and-meaning", "education-and-learning"]
+secondaryCategories: ["philosophy", "politics-and-society", "science-and-technology"]
 geography: "global"
 coverImage: "/books/covers/harari_21-lessons-for-the-21st-century.webp"
 coverWidth: 318
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 2
 dateRead: 2025-10-28
 dateAdded: 2025-10-28

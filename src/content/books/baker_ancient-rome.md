@@ -13,16 +13,13 @@ yearPublished: 2007
 originalPublicationYear: 2006
 type: non-fiction
 primaryCategory: "history"
-topics: ["war"]
-secondaryCategories: []
-era: "ancient"
-eraPublished: "2000s"
+topics: ["war", "institutions-and-governance", "social-change", "logistics"]
+secondaryCategories: ["politics-and-society", "leadership"]
 geography: "ancient-rome"
 coverImage: "/books/covers/baker_ancient-rome.webp"
 coverWidth: 320
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 3
 dateAdded: 2018-08-11
 ---

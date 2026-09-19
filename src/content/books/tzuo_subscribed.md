@@ -12,16 +12,14 @@ pages: 254
 yearPublished: 2018
 originalPublicationYear: 2018
 type: non-fiction
-primaryCategory: "economics"
-topics: ["marketing", "operations", "strategy", "technology-and-science"]
-secondaryCategories: ["business"]
-eraPublished: "2010s"
+primaryCategory: "strategy"
+topics: ["marketing", "innovation", "markets-and-incentives"]
+secondaryCategories: ["business", "economics", "science-and-technology"]
 geography: "global"
 coverImage: "/books/covers/tzuo_subscribed.webp"
 coverWidth: 400
 coverHeight: 604
 oneLiner: ""
-featured: false
 myRating: 4
 dateRead: 2020-06-13
 dateAdded: 2020-06-13

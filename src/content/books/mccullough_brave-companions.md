@@ -13,16 +13,13 @@ yearPublished: 1992
 originalPublicationYear: 1991
 type: non-fiction
 primaryCategory: "history"
-topics: ["innovation"]
-secondaryCategories: ["biography-memoir", "culture"]
-era: "19th-century"
-eraPublished: "1990s"
+topics: ["exploration", "innovation", "scientific-discovery", "arts", "resilience"]
+secondaryCategories: ["biography-and-memoir", "culture", "science-and-technology"]
 geography: "united-states"
 coverImage: "/books/covers/mccullough_brave-companions.webp"
 coverWidth: 400
 coverHeight: 604
 oneLiner: ""
-featured: false
 dateAdded: 2018-08-11
 ---
 

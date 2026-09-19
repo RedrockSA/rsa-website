@@ -12,16 +12,14 @@ pages: 388
 yearPublished: 2019
 originalPublicationYear: 2019
 type: non-fiction
-primaryCategory: "social-commentary"
-topics: ["leadership", "negotiation"]
-secondaryCategories: ["psychology"]
-eraPublished: "2010s"
+primaryCategory: "psychology"
+topics: ["human-behavior", "communication", "negotiation", "decision-making", "risk-and-uncertainty"]
+secondaryCategories: ["culture", "politics-and-society"]
 geography: "global"
 coverImage: "/books/covers/gladwell_talking-to-strangers.webp"
 coverWidth: 336
 coverHeight: 499
 oneLiner: ""
-featured: false
 myRating: 4
 dateRead: 2023-04-30
 dateAdded: 2023-04-30

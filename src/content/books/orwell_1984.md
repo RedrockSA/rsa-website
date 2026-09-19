@@ -12,15 +12,13 @@ yearPublished: 1950
 originalPublicationYear: 1949
 type: fiction
 primaryCategory: "relevant-fiction"
-topics: ["economics"]
-secondaryCategories: ["philosophy"]
-eraPublished: "1940s"
+topics: ["institutions-and-governance", "freedom-and-individualism", "communication", "human-behavior", "ethics"]
+secondaryCategories: ["politics-and-society", "philosophy"]
 geography: "britain"
 coverImage: "/books/covers/orwell_1984.webp"
 coverWidth: 327
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 5
 dateAdded: 2018-08-11
 ---

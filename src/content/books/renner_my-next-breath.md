@@ -12,17 +12,14 @@ pages: 224
 yearPublished: 2025
 originalPublicationYear: 2025
 type: non-fiction
-primaryCategory: "memoir-biography"
-topics: ["personal-effectiveness"]
-secondaryCategories: []
-era: "contemporary"
-eraPublished: "2020s"
+primaryCategory: "biography-and-memoir"
+topics: ["resilience", "medicine", "relationships", "purpose-and-meaning"]
+secondaryCategories: ["health-and-food", "psychology"]
 geography: "united-states"
 coverImage: "/books/covers/renner_my-next-breath.webp"
 coverWidth: 400
 coverHeight: 608
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2025-12-17
 dateAdded: 2025-12-17

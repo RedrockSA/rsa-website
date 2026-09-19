@@ -12,16 +12,14 @@ pages: 309
 yearPublished: 2008
 originalPublicationYear: 2008
 type: non-fiction
-primaryCategory: "social-commentary"
-topics: ["strategy"]
-secondaryCategories: ["economics", "psychology"]
-eraPublished: "2000s"
+primaryCategory: "psychology"
+topics: ["human-behavior", "education-and-learning", "markets-and-incentives", "competition", "social-change"]
+secondaryCategories: ["culture", "economics"]
 geography: "global"
 coverImage: "/books/covers/gladwell_outliers.webp"
 coverWidth: 332
 coverHeight: 500
 oneLiner: ""
-featured: false
 dateAdded: 2018-08-11
 ---
 

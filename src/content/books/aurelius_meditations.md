@@ -12,16 +12,13 @@ yearPublished: 2006
 originalPublicationYear: 180
 type: non-fiction
 primaryCategory: "personal-effectiveness"
-topics: ["leadership", "personal-effectiveness"]
-secondaryCategories: ["philosophy"]
-era: "ancient"
-eraPublished: "ancient"
+topics: ["decision-making", "ethics", "resilience", "purpose-and-meaning", "habits"]
+secondaryCategories: ["philosophy", "leadership"]
 geography: "ancient-rome"
 coverImage: "/books/covers/aurelius_meditations.webp"
 coverWidth: 324
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 4
 dateRead: 2025-03-27
 dateAdded: 2025-03-27

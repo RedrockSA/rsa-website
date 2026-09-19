@@ -13,16 +13,13 @@ yearPublished: 2011
 originalPublicationYear: 2011
 type: non-fiction
 primaryCategory: "history"
-topics: ["arts", "technology-and-science"]
-secondaryCategories: ["biography-memoir"]
-era: "19th-century"
-eraPublished: "2010s"
+topics: ["arts", "scientific-discovery", "education-and-learning", "social-change", "exploration"]
+secondaryCategories: ["biography-and-memoir", "culture", "science-and-technology"]
 geography: "europe"
 coverImage: "/books/covers/mccullough_the-greater-journey.webp"
 coverWidth: 331
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2022-08-09
 dateAdded: 2022-08-09

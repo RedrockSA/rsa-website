@@ -13,15 +13,13 @@ yearPublished: 2024
 originalPublicationYear: 2024
 type: non-fiction
 primaryCategory: "psychology"
-topics: ["culture", "technology-and-science"]
-secondaryCategories: ["science-technology"]
-eraPublished: "2020s"
+topics: ["human-behavior", "social-change", "parenting-and-childhood", "education-and-learning"]
+secondaryCategories: ["culture", "science-and-technology"]
 geography: "global"
 coverImage: "/books/covers/haidt_the-anxious-generation.webp"
 coverWidth: 328
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 4
 dateRead: 2025-04-24
 dateAdded: 2025-04-24

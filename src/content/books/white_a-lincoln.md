@@ -12,17 +12,14 @@ pages: 816
 yearPublished: 2009
 originalPublicationYear: 2009
 type: non-fiction
-primaryCategory: "memoir-biography"
-topics: ["leadership"]
-secondaryCategories: ["history", "politics-society"]
-era: "19th-century"
-eraPublished: "2000s"
+primaryCategory: "biography-and-memoir"
+topics: ["institutions-and-governance", "war", "ethics", "communication", "decision-making"]
+secondaryCategories: ["history", "politics-and-society", "leadership"]
 geography: "united-states"
 coverImage: "/books/covers/white_a-lincoln.webp"
 coverWidth: 332
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2019-02-09
 dateAdded: 2019-02-09

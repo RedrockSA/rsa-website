@@ -13,15 +13,13 @@ yearPublished: 2016
 originalPublicationYear: 2016
 type: non-fiction
 primaryCategory: "personal-effectiveness"
-topics: ["personal-effectiveness"]
-secondaryCategories: ["psychology"]
-eraPublished: "2010s"
+topics: ["resilience", "behavior-change", "habits", "education-and-learning", "purpose-and-meaning"]
+secondaryCategories: ["psychology", "science-and-technology"]
 geography: "global"
 coverImage: "/books/covers/duckworth_grit.webp"
 coverWidth: 329
 coverHeight: 500
 oneLiner: ""
-featured: false
 dateAdded: 2018-08-11
 ---
 

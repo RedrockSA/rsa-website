@@ -3,9 +3,9 @@
  * Regenerates src/content/books/*.md from data/books.csv.
  *
  * Reads YOUR actual CSV columns directly (title_short/title_full,
- * topics, secondary_category, type, era_subject, era_published, etc.) rather
- * than forcing a reshaped format - see README for the full column
- * reference and the reasoning behind each mapping.
+ * topics, secondary_category, type, etc.) rather than forcing a reshaped
+ * format - see README for the full column reference and the reasoning
+ * behind each mapping.
  *
  * Full regeneration each run, not a merge: the books directory is cleared
  * and rewritten from the current CSV every time, so removed/renamed rows
@@ -31,10 +31,6 @@ let missingCovers = 0;
 
 function slugify(input) {
   return input.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-}
-
-function toBool(value) {
-  return ['true', '1', 'yes'].includes(String(value ?? '').trim().toLowerCase());
 }
 
 function splitList(value) {
@@ -169,14 +165,11 @@ rows.forEach((row, i) => {
     row.primary_category?.trim() ? `primaryCategory: ${yamlString(row.primary_category.trim())}` : null,
     `topics: ${yamlList(genres)}`,
     `secondaryCategories: ${yamlList(subjects)}`,
-    row.era_subject?.trim() ? `era: ${yamlString(row.era_subject.trim())}` : null,
-    row.era_published?.trim() ? `eraPublished: ${yamlString(row.era_published.trim())}` : null,
     row.geography?.trim() ? `geography: ${yamlString(row.geography.trim())}` : null,
     coverImage ? `coverImage: ${yamlString(coverImage)}` : null,
     shipped.width !== undefined ? `coverWidth: ${shipped.width}` : null,
     shipped.height !== undefined ? `coverHeight: ${shipped.height}` : null,
     `oneLiner: ${yamlString(row.notes?.trim() || '')}`,
-    `featured: ${toBool(row.featured)}`,
     toInt(row.my_rating) !== undefined ? `myRating: ${toInt(row.my_rating)}` : null,
     row.date_read?.trim() ? `dateRead: ${row.date_read.trim()}` : null,
     `dateAdded: ${row.date_added?.trim() || row.dateAdded?.trim() || new Date().toISOString().slice(0, 10)}`,

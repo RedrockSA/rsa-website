@@ -11,17 +11,14 @@ pages: 818
 yearPublished: 2005
 originalPublicationYear: 2004
 type: non-fiction
-primaryCategory: "memoir-biography"
-topics: ["economics", "leadership"]
-secondaryCategories: ["history", "politics-society"]
-era: "early-modern"
-eraPublished: "2000s"
+primaryCategory: "biography-and-memoir"
+topics: ["institutions-and-governance", "markets-and-incentives", "entrepreneurship", "war", "communication"]
+secondaryCategories: ["history", "politics-and-society", "leadership"]
 geography: "united-states"
 coverImage: "/books/covers/chernow_alexander-hamilton.webp"
 coverWidth: 328
 coverHeight: 500
 oneLiner: ""
-featured: false
 dateAdded: 2018-08-11
 ---
 

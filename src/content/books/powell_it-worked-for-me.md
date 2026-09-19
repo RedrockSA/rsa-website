@@ -13,16 +13,13 @@ yearPublished: 2012
 originalPublicationYear: 2012
 type: non-fiction
 primaryCategory: "leadership"
-topics: ["leadership"]
-secondaryCategories: ["biography-memoir"]
-era: "late-20th-century"
-eraPublished: "2010s"
+topics: ["decision-making", "management", "communication", "teamwork", "ethics"]
+secondaryCategories: ["biography-and-memoir", "politics-and-society"]
 geography: "united-states"
 coverImage: "/books/covers/powell_it-worked-for-me.webp"
 coverWidth: 333
 coverHeight: 500
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2026-04-18
 dateAdded: 2026-04-18

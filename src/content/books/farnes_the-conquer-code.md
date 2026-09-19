@@ -10,17 +10,14 @@ publisher: "Fedd Books"
 pages: 232
 yearPublished: 2024
 type: non-fiction
-primaryCategory: "memoir-biography"
-topics: ["leadership", "personal-effectiveness"]
-secondaryCategories: ["psychology"]
-era: "contemporary"
-eraPublished: "2020s"
+primaryCategory: "biography-and-memoir"
+topics: ["entrepreneurship", "resilience", "religion", "relationships"]
+secondaryCategories: ["business", "psychology", "leadership"]
 geography: "united-states"
 coverImage: "/books/covers/farnes_the-conquer-code.webp"
 coverWidth: 400
 coverHeight: 575
 oneLiner: ""
-featured: false
 myRating: 5
 dateRead: 2024-07-29
 dateAdded: 2024-07-29

@@ -12,16 +12,13 @@ yearPublished: 2006
 originalPublicationYear: 2005
 type: non-fiction
 primaryCategory: "history"
-topics: ["leadership", "war"]
-secondaryCategories: []
-era: "early-modern"
-eraPublished: "2000s"
+topics: ["war", "institutions-and-governance", "decision-making", "resilience"]
+secondaryCategories: ["biography-and-memoir", "leadership", "politics-and-society"]
 geography: "united-states"
 coverImage: "/books/covers/mccullough_1776.webp"
 coverWidth: 318
 coverHeight: 500
 oneLiner: ""
-featured: false
 dateAdded: 2018-08-11
 ---
 

@@ -13,16 +13,13 @@ yearPublished: 2015
 originalPublicationYear: 2015
 type: non-fiction
 primaryCategory: "leadership"
-topics: ["leadership", "management", "operations", "war"]
-secondaryCategories: ["business", "history"]
-era: "contemporary"
-eraPublished: "2010s"
+topics: ["management", "teamwork", "organizational-culture", "systems-thinking", "war"]
+secondaryCategories: ["business", "history", "psychology", "strategy"]
 geography: "middle-east"
 coverImage: "/books/covers/mcchrystal_team-of-teams.webp"
 coverWidth: 400
 coverHeight: 604
 oneLiner: ""
-featured: false
 myRating: 4
 dateRead: 2021-03-06
 dateAdded: 2021-03-06
