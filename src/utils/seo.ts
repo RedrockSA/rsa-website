@@ -53,6 +53,10 @@ export const organizationSchema = {
   },
   image: `${SITE_URL}/RSA_color.png`,
   email: 'info@redrocksa.com',
+  // Profiles that confirm this site and the real-world firm are the same
+  // entity. Without it, search engines have only the domain to go on when
+  // resolving a brand query.
+  sameAs: ['https://www.linkedin.com/company/redrock-strategic-advisors/'],
   description:
     'Redrock Strategic Advisors partners with middle-market business owners on mergers and acquisitions, capital advisory, and strategic and board advisory engagements.',
   address: {

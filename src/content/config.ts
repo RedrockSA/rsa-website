@@ -4,7 +4,7 @@ const pages = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
-    description: z.string().default('Redrock Strategic Advisors'),
+    description: z.string(),
     hero: z.object({
       heading: z.string(),
       subheading: z.string().optional(),

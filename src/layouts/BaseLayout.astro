@@ -21,7 +21,7 @@ interface Props {
    * the firm name and repeating it reads badly in a share card.
    */
   pageTitle?: string;
-  description?: string;
+  description: string;
   /** Site-relative path to the share image. Resolved to absolute below. */
   image?: string;
   /** Set on pages that should stay out of the index (404, thank-you pages). */
@@ -33,7 +33,7 @@ interface Props {
 const {
   title,
   pageTitle,
-  description = 'Redrock Strategic Advisors',
+  description,
   image = DEFAULT_OG_IMAGE,
   noindex = false,
   jsonLd,
@@ -43,6 +43,17 @@ const {
 // carries the trailing slash, so this matches the URL Cloudflare serves with a
 // 200 — and matches what @astrojs/sitemap emits. All three agreeing is what
 // keeps Search Console from reporting the whole site as redirects.
+// A page that passed no description used to silently inherit the site name,
+// which is how the homepage shipped with 'Redrock Strategic Advisors' as its
+// title, meta description, og:description and twitter:description alike.
+// Failing the build is louder than finding it in Search Console months later.
+if (!description?.trim()) {
+  throw new Error(
+    `BaseLayout: ${Astro.url.pathname} has no description. Pass one — it feeds ` +
+      'the meta description, og:description and twitter:description.',
+  );
+}
+
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 const ogImage = new URL(image, Astro.site).toString();
 const socialTitle = pageTitle ?? title.replace(TITLE_SUFFIX, '');

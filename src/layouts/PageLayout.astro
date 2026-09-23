@@ -19,7 +19,7 @@ interface Hero {
 
 interface Props {
   title: string;
-  description?: string;
+  description: string;
   hero?: Hero;
   pageWidth?: 'narrow' | 'wide';
   showTitle?: boolean;
@@ -33,7 +33,7 @@ interface Props {
 
 const {
   title,
-  description = 'Redrock Strategic Advisors',
+  description,
   hero,
   pageWidth = 'wide',
   showTitle = true,
