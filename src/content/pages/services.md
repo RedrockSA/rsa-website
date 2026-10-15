@@ -1,6 +1,6 @@
 ---
 title: Our Services
-description: Strategic advisory services from Redrock.
+description: "Redrock advises business owners on mergers and acquisitions, capital solutions and strategic and board advisory, tailored to each shareholder's objectives."
 hero:
   heading: Our Services
   subheading: Strategic transaction advisory tailored to your situation.

@@ -1,6 +1,6 @@
 ---
 title: Privacy Policy
-description: Privacy Policy for Redrock Strategic Advisors LLC.
+description: "Privacy Policy for Redrock Strategic Advisors LLC: how information collected through redrocksa.com is used and protected."
 pageWidth: narrow
 ---
 

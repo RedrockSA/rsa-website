@@ -1,6 +1,6 @@
 ---
 title: Career Path
-description: Explore career opportunities at Redrock Strategic Advisors.
+description: "Explore careers at Redrock Strategic Advisors: a defined path from analyst to partner, with training, mentorship and hands-on transaction experience."
 pageWidth: narrow
 hero:
   heading: The Redrock Team

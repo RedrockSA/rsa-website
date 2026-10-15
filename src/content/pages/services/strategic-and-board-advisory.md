@@ -1,6 +1,6 @@
 ---
 title: Strategic & Board Advisory
-description: M&A advisory services from Redrock Strategic Advisors.
+description: "Strategic and board advisory on carve-outs, joint ventures, inbound offers, capital structure changes and long-term liquidity planning for owners and boards."
 hero:
   heading: Strategic & Board Advisory
   backgroundImage: /iStock-481100064.webp

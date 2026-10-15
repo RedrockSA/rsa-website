@@ -1,6 +1,6 @@
 ---
 title: Capital Advisory
-description: Support unique business situations with advisory on capital solutions.
+description: "Private capital solutions for unique situations: debt refinancing, non-dilutive growth capital, ESOP funding and majority recapitalizations from Redrock."
 hero:
   heading: Capital Advisory
   backgroundImage: /iStock-108223280.webp

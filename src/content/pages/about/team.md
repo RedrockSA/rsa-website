@@ -1,6 +1,6 @@
 ---
 title: Team
-description: Meet the Redrock Strategic Advisors team.
+description: "Meet the founders and advisors of Redrock Strategic Advisors, an investment banking team serving middle-market owners on M&A and capital solutions."
 hero:
   heading: Our Team
   subheading: >-

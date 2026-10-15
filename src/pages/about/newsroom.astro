@@ -7,7 +7,7 @@ const allNews = await getCollection('news');
 const sortedNews = allNews.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
 ---
 
-<BaseLayout title="Newsroom | Redrock Strategic Advisors" description="Company news and events from Redrock Strategic Advisors.">
+<BaseLayout title="Newsroom | Redrock Strategic Advisors" description="News and events from Redrock Strategic Advisors, including new team members, firm announcements, completed transactions and industry conferences.">
 
   <!-- Hero section -->
   <section
