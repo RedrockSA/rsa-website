@@ -33,7 +33,8 @@ We will only use your personally identifiable information as described below, un
 - We may share your personally identifiable information collected in connection with providing the Service.
 - We may use your personally identifiable information to respond to your inquiries or requests.
 - We may use your personally identifiable information to send you emails from time to time about our services, but we will not provide your personally identifiable information to third parties for them to contact you directly unless otherwise permitted by this Privacy Policy or you provide your consent.
-- We may share your personally identifiable information with third parties (collectively, the “Third Party Vendors”) to further the purpose for which you provided such information to us. For example, we may share your information with Elastic Email, for the purpose of sending emails. **We urge you to read the privacy practices of all of our third-party vendors before submitting any personally identifiable information through the Service.**
+- We may share your personally identifiable information with third parties (collectively, the “Third Party Vendors”) to further the purpose for which you provided such information to us. For example, we may share your information with Amazon SES (Amazon Web Services), for the purpose of sending emails. **We urge you to read the privacy practices of all of our third-party vendors before submitting any personally identifiable information through the Service.**
+- Information you submit through the contact form on the Websites is first passed to Devro Labs, which operates the form-handling service Formsubmit.co, and is then forwarded to us so that we can respond to your inquiry.
 - We may disclose personally identifiable information as required by law or legal process.
 - We may disclose personally identifiable information to investigate suspected fraud, harassment or other violations of any law, rule or regulation, or the terms or policies for our services or our sponsors.
 - We may transfer your personally identifiable information in connection with the sale or merger or change of control of Redrock or the division responsible for the services with which your personally identifiable information is associated.
@@ -90,5 +91,5 @@ Redrock Strategic Advisors LLC
 Draper, UT 84020.
  
 ## Effective Date
-This Privacy Policy was last updated on September 17, 2026.
+This Privacy Policy was last updated on October 21, 2026.
 
