@@ -1,0 +1,4 @@
+# Cloudflare Pages redirects (https://developers.cloudflare.com/pages/configuration/redirects/)
+# /about/ has no page of its own; the About Us menu opens on Our Focus.
+/about /about/our-focus/ 301
+/about/ /about/our-focus/ 301
