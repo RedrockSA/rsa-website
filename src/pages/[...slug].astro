@@ -36,10 +36,15 @@ if (segments.length > 1) {
     services: 'Services',
     about: 'About Us',
   };
+  // /about/ has no page of its own (the About Us menu opens on Our Focus), so
+  // its crumb must point at a URL that exists or Google reports a 404.
+  const parentUrls: Record<string, string> = {
+    about: '/about/our-focus/',
+  };
   const parent = segments[0];
   nodes.push(
     breadcrumbSchema([
-      [parentLabels[parent] ?? parent, `/${parent}/`],
+      [parentLabels[parent] ?? parent, parentUrls[parent] ?? `/${parent}/`],
       [title, `/${page.slug}/`],
     ]),
   );
